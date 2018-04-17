@@ -1,0 +1,208 @@
+{% extends ':default:index.html.twig' %}
+{% block body %}
+    {% block sidebar %}
+        {{ parent() }}
+        {% endblock %}
+    {% block main %}
+    <div class="main" id="main-homepage">
+        <i class="material-icons showhide-sidebar">dehaze</i>
+
+
+        {#<div class="latest-activity"><h5>Latest activity</h5></div>
+        {{ dump(news[0]) }}
+        {{ news[0]['movie'] }}
+        {{ filmsAct[0]['poster_path']|json_encode|raw|replace({'"':''}) }}
+        {% set imgUrl = filmsAct[0]['poster_path']|json_encode|raw|replace({'"':''}) %}
+        <img src="https://image.tmdb.org/t/p/w92{{ imgUrl }}">#}
+        {% set broj = news|length-1 %}
+        {% if news|length>5 %}
+        <div class="latest-activity"><h5>Latest activities</h5></div>
+        <div class="feed-container">
+                <ul class="feed-ul">
+                   {# {{ dump(filmsActJoinMovie) }}#}
+                   {# {{ dump(news) }}
+                    {{ dump(filmsActJoinMovie) }}#}
+            {% for i in 0..5 %}
+                {%   if news[i]['is_like']==1  %}
+                        <li class="feed-li">
+                            <div>
+                                <div class="feed-li-img-container"><a href="{{ path('profile',{'id':news[i]['action_performer']}) }}">
+                                    <img src="http://localhost/project-418/web/images/profile/{{ filmsActJoinMovie[i]['profile_image'] }}"></a>
+                                </div><div class="feed-li-img-container">
+                                    <img src="{{ asset('sm.png') }}">
+                                </div><div class="feed-li-img-container"><a href="{{ path('moviePage',{'id':filmsActJoinMovie[i]['id']}) }}">
+                                        <img src="https://image.tmdb.org/t/p/w92{{ filmsActJoinMovie[i]['poster_path']|json_encode|raw|replace({'"':''}) }}"></a>
+                                </div>
+                                <div class="inner">
+                                    <a href="{{ path('profile',{'id':news[i]['action_performer']}) }}" class="feed-li-someone">{{ news[i]['first_name'] }}</a>&nbsp
+                                    likes
+                                    &nbsp <a href="{{ path('profile',{'id':news[i]['reviewer']}) }}" class="feed-li-someone-elses"> {{ news[i]['reviewer_name'] }}'s</a>&nbsp
+                                    review on &nbsp
+                                    <a href="{{ path('moviePage',{'id':filmsActJoinMovie[i]['id']}) }}" class="feed-li-movie">{{ filmsActJoinMovie[i]['title']|json_encode|raw|replace({'"':''}) }}</a>
+                                </div>
+                            </div>
+                            <div class="time-ago"><script>
+                                    var rezultat =  time_ago_(new Date('{{ news[i]['created_at']|json_encode|raw|replace({'"':''})|date('m/d/y H:i:s') }}'));
+                                    document.write(rezultat + ' ago');
+                                </script></div>
+                        </li>
+                    {% endif %}
+
+                {%   if news[i]['is_review']==1 %}
+                        <li class="feed-li">
+                            <div>
+                                <div class="feed-li-img-container"><a href="{{ path('profile',{'id':news[i]['action_performer']}) }}">
+                                        <img src="http://localhost/project-418/web/images/profile/{{ filmsActJoinMovie[i]['profile_image'] }}"></a>
+                                </div><div class="feed-li-img-container">
+                                    <img src="{{ asset('po.PNG') }}">
+                                </div><div class="feed-li-img-container"><a href="{{ path('moviePage',{'id':filmsActJoinMovie[i]['id']}) }}">
+                                        <img src="https://image.tmdb.org/t/p/w92{{ filmsActJoinMovie[i]['poster_path']|json_encode|raw|replace({'"':''}) }}"></a>
+                                </div>
+                                <div class="inner">
+                                    <a href="{{ path('profile',{'id':news[i]['action_performer']}) }}" class="feed-li-someone"> {{ news[i]['first_name'] }}</a>&nbsp
+                                    reviewed
+                                    &nbsp<a href="{{ path('moviePage',{'id':filmsActJoinMovie[i]['id']}) }}" class="feed-li-movie">{{ filmsActJoinMovie[i]['title']|json_encode|raw|replace({'"':''}) }}</a>
+                                </div>
+                            </div>
+                                <div class="time-ago"><script>
+                                        var rezultat =  time_ago_(new Date('{{ news[i]['created_at']|json_encode|raw|replace({'"':''})|date('m/d/y H:i:s') }}'));
+                                        document.write(rezultat + ' ago');
+                                    </script></div>
+                        </li>
+                    {% endif %}
+
+                    {%   if news[i]['is_add']==1  and filmsActJoinMovie[i]['is_private']==false %}
+                        <li class="feed-li">
+                            <div>
+                                <div class="feed-li-img-container"><a href="{{ path('profile',{'id':news[i]['action_performer']}) }}">
+                                        <img src="http://localhost/project-418/web/images/profile/{{ filmsActJoinMovie[i]['profile_image'] }}"></a>
+                                </div><div class="feed-li-img-container">
+                                    <img src="http://www.myiconfinder.com/uploads/iconsets/128-128-6cc6135dbcdd8f769c00fcc7440dd898-popcorn.png">
+                                </div><div class="feed-li-img-container"><a href="{{ path('moviePage',{'id':filmsActJoinMovie[i]['movie']}) }}">
+                                    <img src="https://image.tmdb.org/t/p/w92{{ filmsActJoinMovie[i]['poster_path']|json_encode|raw|replace({'"':''}) }}"></a>
+                                </div>
+                                <div class="inner">
+                                    <a href="{{ path('profile',{'id':news[i]['action_performer']}) }}" class="feed-li-someone">{{ news[i]['first_name'] }}</a>&nbsp
+                                    added
+                                    &nbsp<a href="{{ path('moviePage',{'id':filmsActJoinMovie[i]['id']}) }}" class="feed-li-movie">{{ filmsActJoinMovie[i]['title']|json_encode|raw|replace({'"':''}) }}</a>&nbsp
+                                    to
+                                    &nbsp<a href="#!">{{ news[i]['name'] }}</a>&nbsp
+                                    (list)
+                                </div>
+                            </div>
+                            <div class="time-ago"><script>
+                                    var rezultat =  time_ago_(new Date('{{ news[i]['created_at']|json_encode|raw|replace({'"':''})|date('m/d/y H:i:s') }}'));
+                                    document.write(rezultat + ' ago');
+                                </script></div>
+                        </li>
+                        {% endif %}
+            {% endfor %}
+                </ul>
+            </div>
+        {% endif %} {#end if ako vesti > 4#}
+
+        <h5>Top rated movies</h5>
+<div class="in-the-middle">
+    {#{{ dump(top_rated) }}#}
+    <ul>
+        {% for i in top_rated['results']  %}
+            {% set imgUrl = i['poster_path']|json_encode|raw|replace({'"':''}) %}
+            {% set movieId = i['id']|json_encode %}
+            <li><a href="{{ path('moviePage',{'id': movieId }) }}"> <img src="https://image.tmdb.org/t/p/w92{{ imgUrl }}"></a></li>
+            {% endfor %}
+    </ul>
+</div>
+        {#{{ dump(reviewsJoinMovie) }}#}
+        {#{% set broj = notifications|length-1 %}#}
+        {% if  reviewsJoinMovie|length>5 %}
+        <div class="latest-review-title"><h5>Latest reviews</h5></div>
+            <div class="homepage-reviews-container">
+                <div class="homepage-reviews-left-container">
+                    <ul class="home-rev-ul">
+
+                        {% for r in 0..2 %}
+                            {#{% set reviewAuthor = '' %}
+                            {% for u in users %}
+                                {% if u.id==reviews[r].user %}
+                                    {% set reviewAuthor = u  %}
+                                    {% endif %}
+                                {% endfor %}
+                            {% set title = '' %}
+                            {% set movieId = '' %}
+                            {% set imgUrl = '' %}
+                            {% for f in films %}
+                                {% if reviews[r].movie == f['id']|json_encode %}
+                                #}{#{{ dump(f) }}#}{#
+                                {%  set title = f['title']|json_encode  %}
+                                {% set movieId = f['id']|json_encode %}
+                                    {% set imgUrl = f['poster_path']|json_encode|raw|replace({'"':''}) %}
+                                {% endif %}
+                            {% endfor %}#}
+
+                            <li class="home-rev-li-grid">
+                                <div class="home-rev-image-box"><a href="{{ path('moviePage',{'id': reviewsJoinMovie[r].id }) }}"><img src="https://image.tmdb.org/t/p/w92{{ reviewsJoinMovie[r].poster_path }}"></a></div>
+                                <div class="home-rev-content">
+                                    <a href="{{ path('moviePage',{'id': reviewsJoinMovie[r].id }) }}"><span class="home-rev-title">{{ reviewsJoinMovie[r].title|replace({'"':''}) }}</span></a><br>
+                                     <img class="author-img" src="http://localhost/project-418/web/images/profile/{{ reviewsJoinMovie[r].profile_image }}"><span class="author-name">{{ reviewsJoinMovie[r].first_name }} {{ reviewsJoinMovie[r].last_name }}</span>
+                                    <span class="home-rev-date">{{ reviewsJoinMovie[r].created_at|date('M d, Y') }}</span><br>
+                                    <img src="{{ reviewsJoinMovie[r].gif_url }}">{{ reviewsJoinMovie[r].review_txt }}
+                                    {#{{ reviewsJoinMovie[r].broj }}#}
+                                    {% if reviewsJoinMovie[r].broj == 1 %}
+                                        <p class="bold-p">{{ reviewsJoinMovie[r].broj }} like</p>
+                                        {% else  %}
+                                            <p class="bold-p">{{ reviewsJoinMovie[r].broj }} likes</p>
+                                            {% endif %}
+
+                                </div>
+                            </li>
+                        {% endfor %}
+
+                    </ul>
+                </div>
+                <div class="homepage-reviews-right-container">
+                    <ul class="home-rev-ul">
+                        {% for r in 3..5 %}
+                            {#{% set reviewAuthor = '' %}
+                            {% for u in users %}
+                                {% if u.id==reviews[r].user %}
+                                    {% set reviewAuthor = u  %}
+                                {% endif %}
+                            {% endfor %}
+                            {% set title = '' %}
+                            {% set movieId = '' %}
+                            {% set imgUrl = '' %}
+                            {% for f in films %}
+                                {% if reviews[r].movie == f['id']|json_encode %}
+                                    #}{#{{ dump(f) }}#}{#
+                                    {%  set title = f['title']|json_encode  %}
+                                    {% set movieId = f['id']|json_encode %}
+                                    {% set imgUrl = f['poster_path']|json_encode|raw|replace({'"':''}) %}
+                                {% endif %}
+                            {% endfor %}#}
+
+                            <li class="home-rev-li-grid">
+                                <div class="home-rev-image-box"><a href="{{ path('moviePage',{'id': reviewsJoinMovie[r].id }) }}"><img src="https://image.tmdb.org/t/p/w92{{ reviewsJoinMovie[r].poster_path }}"></a></div>
+                                <div class="home-rev-content">
+                                    <a href="{{ path('moviePage',{'id': reviewsJoinMovie[r].id }) }}"><span class="home-rev-title">{{ reviewsJoinMovie[r].title|replace({'"':''}) }}</span></a><br>
+                                    <img class="author-img" src="http://localhost/project-418/web/images/profile/{{ reviewsJoinMovie[r].profile_image }}"><span class="author-name">{{ reviewsJoinMovie[r].first_name }} {{ reviewsJoinMovie[r].last_name }}</span>
+                                    <span class="home-rev-date">{{ reviewsJoinMovie[r].created_at|date('M d, Y') }}</span><br>
+                                    <img src="{{ reviewsJoinMovie[r].gif_url }}">{{ reviewsJoinMovie[r].review_txt }}
+                                    {#{{ reviewsJoinMovie[r].broj }}#}
+                                    {% if reviewsJoinMovie[r].broj == 1 %}
+                                        <p class="bold-p">{{ reviewsJoinMovie[r].broj }} like</p>
+                                    {% else  %}
+                                        <p class="bold-p">{{ reviewsJoinMovie[r].broj }} likes</p>
+                                    {% endif %}
+
+
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+    {% endif %} {#novosti preko 5#}
+    </div>{#END MAIN div#}
+        {% endblock %}{#ENDBLOCK MAIN#}
+
+{% endblock %}

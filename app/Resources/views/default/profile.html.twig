@@ -1,0 +1,169 @@
+{% extends ':default:index.html.twig' %}
+{% block body %}
+    {% block sidebar %}
+        {{ parent() }}
+    {% endblock %}
+    {% block main %}
+        <div class="main" id="main-profile">
+        <i class="material-icons showhide-sidebar">dehaze</i>
+
+            <div class="usr-id" id="hide-me-usr-id"  data-uid="{{ app.user.id }}" data-token="{{ csrf_token('authenticate') }}" data-receiver-id="{{ profile.id }}">user {{ profile.id }}</div>
+
+            {#<button type="button" class="start_private_chat" >start chat</button>#}
+
+
+            <div class="profile-centered-grid">
+                <div class="profile-center-top">
+                    <img src="http://localhost/project-418/web/images/profile/{{ profile.profileImage }}" alt="{{ profile.firstName }}'s profile image">
+                    <div class="center-top-content">
+                        <div class="center-top-content-name">
+                            {{ profile.firstName }} {{ profile.lastName }}
+                        </div>
+
+                        <span class="last-login">Last login:  <script>
+                                        var rezultat =  time_ago_(new Date('{{ profile.lastLogin|date('m/d/y H:i:s') }}'));
+                                        document.write(rezultat + ' ago');
+                                    </script></span><br>
+
+                        {% set status = 'nothing' %}
+                        {% set franjo='' %}
+                        {% for fr in all_fr_requests %}
+                            {% if fr.is_accepted==true %}
+                                {% set status = 'friends' %}{#prihvaceno je prijateljstvo#}
+                            {% else %}{#nismo prijatelji#}
+                                {% if fr.received_by==app.user.id %}{#on je poslao zahtev-nisam odg#}
+                                    {% set status = 'he_requested' %}
+                                    {% set franjo = fr.sent_by %}
+                                {% elseif fr.sent_by==app.user.id %}{#ja sam poslao njemu-nije odg#}
+                                    {% set status = 'i_requested' %}
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}{#ako se status nije promenio,prijateljstvo ni ne postoji#}
+
+                        {% if status=='nothing' %}
+                        <span class="add-friend-clicked-on-profile">
+                            <a class="waves-effect waves-light btn" id="add-friend" data-sent_by="{{ app.user.id }}" data-received_by="{{ profile.id }}">Add friend</a>
+                        </span>
+                        {% endif %}
+                        {% if status=='friends' %}
+                            (friends)
+                        {% endif %}
+                        {% if status=='he_requested' %}
+                            {{ profile.firstName }} wants to be your friend
+                        {% endif %}
+                        {% if status=='i_requested' %}
+                            pending friendship response from {{ profile.firstName }}
+                        {% endif %}
+{#change add-friend-clicked-on-profile text AND  respond-friend-clicked-on-profile empty then set text to  pending friendship response from {{ profile.firstName }}#}
+                        {% if app.user.id==profile.id %}
+                        {{ form_start(form) }}
+                        {# ... #}
+
+                        {{ form_row(form.profile_image) }}
+                        {{ form_end(form) }}
+                        {% endif %}
+                    </div>
+
+                </div>
+
+                <div class="profile-center-bottom">
+                    <span class="usrs-reviews">{{ profile.firstName }}'s reviews</span><br>
+
+                    <ul>
+                        {#{{ dump(reviewedmovies) }}#}
+                        {% for r in reviewedmovies %}
+                            {% set movieId = r['id']|json_encode %}
+                            {% set imgUrl = r['poster_path']|json_encode|raw|replace({'"':''}) %}
+                            <li><a href="{{ path('moviePage',{'id': movieId }) }}"><img src="https://image.tmdb.org/t/p/w92{{ imgUrl }}"></a></li>
+                            {% endfor %}
+                    </ul>
+
+                </div>
+
+                <div class="profile-center-right">
+                    {% if profile.id==app.user.id %}
+                    <input placeholder="+ new list" id="input-list" name="input-new-list" data-current-profile="{{ app.user.id }}">
+                    {% endif %}
+
+                    <ul class="users-lists-ul">
+                        <span class="usr-lists">{{ profile.firstName }}'s lists</span><br>
+{#ako je moj profil#}      {% if profile.id==app.user.id %}{#ako je moj profil#}
+                            {% for l in lists %}
+                                <div class="row" id="rowrow-{{ l.name|replace({' ': '_'}) }}" >
+                                        <div class="switch">
+                                            <label>
+                                                private
+                                                {% if l.isPrivate==true %}
+                                                    <input class="list-switcher" id="switch-{{ l.id }}" data-list_id="{{ l.id }}" type="checkbox" >
+                                                {% else %}
+                                                    <input class="list-switcher" id="switch-{{ l.id }}" data-list_id="{{ l.id }}" type="checkbox" checked>
+                                                {% endif %}
+                                                <span class="lever"></span>
+                                                public
+                                            </label>
+                                        </div>
+                                    <div class="col s12 m12">
+                                        <div class="card-panel teal">
+                                          <span class="white-text"  id="{{ l.name }}">
+                                              {% set broj = 0 %}
+                                              {% for i in listitems %}
+                                                  {% if l.id == i.listid %}
+                                                      {% set broj = broj+1 %}
+                                                      <span>{{ broj }}. {{ i.name }}
+                                                              <span class="delete-item" id="row-{{ l.id }}--{{ i.movie }}" data-list_id="{{ l.id }}" data-movie_id="{{ i.movie }}">x</span>
+                                                      </span>
+                                                      <br>
+                                                  {% endif %}
+                                              {% endfor %}{#endfor i in listitems#}
+                                              <span class="list_name_o">{{ l.name }} ({{ broj }})
+                                                      <span class="delete-list" id="row-{{ l.name|replace({' ': '_'}) }}" data-real_name="{{ l.name }}" >x</span>
+                                              </span>
+                                          </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            {% endfor %}{#endfor l in lists#}
+
+
+{#tudji profil#}            {% else %} {#tudji profil#}
+
+
+                            {% for l in lists %}
+                                {% if l.isPrivate==false %}
+                                    <div class="row" id="rowrow-{{ l.name|replace({' ': '_'}) }}" >
+                                        <div class="col s12 m12">
+                                            <div class="card-panel teal">
+                                              <span class="white-text"  id="{{ l.name }}">
+                                                  {% set broj = 0 %}
+                                                  {% for i in listitems %}
+                                                      {% if l.id == i.listid %}
+                                                          {% set broj = broj+1 %}
+                                                          <span>{{ broj }}. {{ i.name }}
+                                                          </span>
+                                                          <br>
+                                                      {% endif %}
+                                                  {% endfor %}{#endfor i in listitems#}
+                                                  <span class="list_name_o">{{ l.name }} ({{ broj }})
+                                                  </span>
+                                              </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+
+                            {% endfor %}{#endfor l in lists#}
+
+
+
+                        {% endif %} {#end provera ciji je profil#}
+
+                        {#{{ lists.liste.0.id|json_encode }}#} {# duzine je 108 karaktera umesto 3 objekta(na isti nacin se pristupa elementu samo bi morao da stampas stringove umesto lepo objekta#}
+                    </ul>
+                </div>
+            </div>
+
+        <div class=""></div>
+        </div>
+        {% endblock %}{#endblock MAIN#}
+{% endblock %}{#endblock BODY#}

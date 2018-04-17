@@ -1,0 +1,17 @@
+{% trans_default_domain 'FOSUserBundle' %}
+<body class="register-bod">
+<div class="full-register">
+    <h1>Project 418</h1>
+
+    <h4>Please register to continue</h4>
+{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+    {{ form_row(form.firstName) }}
+    {{ form_row(form.lastName) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.plainPassword) }}
+<div>
+    <input class="btn" type="submit" value="{{ 'registration.submit'|trans }}" />
+</div>
+{{ form_end(form) }}
+</div>
+</body>

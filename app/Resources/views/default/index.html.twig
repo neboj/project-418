@@ -1,0 +1,201 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    {% block sidebar %}
+    <div class="sidebar-wrapper">
+        <div class="sidebar">
+<span class="usr-id" data-uid="{{ app.user.id }}"></span>
+            <div class="sidebar-profile">
+                {#<img src="../images/profile/{{ app.user.profileImage }}" alt="{{ app.user.firstName }}'s profile image">#}
+                {#{{ app.user.profileImage }}#}
+                <div class="profile-image-container">
+                    <img class="circle" src="http://localhost/project-418/web/images/profile/{{ app.user.profileImage }}" alt="{{ app.user.firstName }}'s profile image">
+                </div>
+                <div><a href="{{ path('fos_user_security_logout')}}">Logout</a></div>
+                {% if is_granted('ROLE_USER') %}
+                    {% set profileId = app.user.id %}
+                    <div class="profile-name-container"><a href="{{ path('profile', { 'id': app.user.id }) }}">{{ app.user.firstName }} {{ app.user.lastName }}</a></div>
+
+                {% else %}
+                    <div class="profile-name-container">ime prezime</div>
+                {% endif %}
+                <div class="chats-array" data-all-chats-array="{% set broj = chats|length-1 %}{% if chats|length>0 %}{% for c in 0..broj %}{{ chats[c].chat_name }},{% endfor %}{% endif %}"  data-uid="{{ app.user.id }}" data-token="{{ csrf_token('authenticate') }}" data-receiver-id="1">all chats array inside</div>
+                <div class="recommendations-array" data-all-notifications-array="
+                        {% set broj = notifications|length-1 %}
+                        {% set neprocitanih = 0 %}
+                            {% if notifications|length>0 %}
+                                {% for r in 0..broj %}
+
+                                    {% if notifications[r].is_read==false %}
+                                        {% set neprocitanih = neprocitanih + 1 %}
+                                    {% endif %}
+
+                                    {{ notifications[r].title }}---{{ notifications[r].first_name }} {{ notifications[r].last_name }},,,
+                                    {% endfor %}
+                            {% endif %}" data-unread-recommendations-count="{{ neprocitanih }}">
+                    all unread notifications inside
+                </div>
+
+            </div>
+
+
+            <div class="sidebar-menu">
+                <li><a class="sidebar-menu-home" href="{{ path('homepage') }}">Home</a></li>
+
+                <li><a class="sidebar-menu-movies" href="{{ path('movies') }}">Movies</a> </li>
+                <li><a class="sidebar-menu-find-people" href="{{ path('search_people') }}">Find people</a></li>
+                <li><a class="sidebar-menu-home" href="{{ path('messenger') }}"><i class="material-icons">message</i>
+                        <span class="message-alert color_me_grey">{{ unread_msgs|length }}</span>
+                    </a>
+                </li>
+                <li class="showhide-unread-notifications"><span class="sidebar-menu-notifs"><i class="material-icons">notifications</i> </span><span class="notifications_count">{{ neprocitanih }}</span>
+                    <div class="expand-unread-notifications">
+                        <ul class="ul-unread-notifications collection" >
+                            {% set broj = notifications|length-1 %}
+                            {% if notifications|length>0 %}
+                                {% for r in 0..broj %}
+                                    {% if notifications[r].is_read==false %}
+                                                    {% if notifications[r].is_like == true %}
+                                                        <li class="collection-item avatar"><a  class="set-is-read-notification" id='{{ notifications[r].id }}' href="{{ path('moviePage',{'id':notifications[r].movie}) }}">
+                                                            <img src="http://localhost/project-418/web/images/profile/{{ notifications[r].profile_image }}" alt="" class="circle">
+                                                            <span class="title">{{ notifications[r].first_name }} {{  notifications[r].last_name }}<span class="notification-text"> liked a review you left on {{ notifications[r].title }}</span></span>
+                                                            </a>
+                                                            <span href="#!" class="secondary-content dismiss-notif">x</span>
+                                                        </li>
+                                                    {% endif %}
+
+                                                    {% if notifications[r].is_review == true %}
+                                                        <li class="collection-item avatar"><a href="{{ path('moviePage',{'id':notifications[r].movie}) }}">
+                                                                <img src="http://localhost/project-418/web/images/profile/{{ notifications[r].profile_image }}" alt="" class="circle">
+                                                                <span class="title">{{ notifications[r].first_name }} {{  notifications[r].last_name }}<span class="notification-text"> also reviewed {{ notifications[r].title }}</span></span>
+                                                            </a>
+                                                            <span href="#!" class="secondary-content dismiss-notif">x</span>
+                                                        </li>
+                                                    {% endif %}
+
+                                                    {% if notifications[r].is_recommend == true %}
+                                                        <li class="collection-item avatar"><a href="{{ path('moviePage',{'id':notifications[r].movie}) }}">
+                                                                <img src="http://localhost/project-418/web/images/profile/{{ notifications[r].profile_image }}" alt="" class="circle">
+                                                                <span class="title">{{ notifications[r].first_name }} {{  notifications[r].last_name }}<span class="notification-text"> has recommended you a movie {{ notifications[r].title }}</span></span>
+                                                            </a>
+                                                            <span href="#!" class="secondary-content dismiss-notif">x</span>
+                                                        </li>
+                                                    {% endif %}
+
+
+                                    {% endif %}
+                                {% endfor %} {#end for in 0..broj#}
+                            {% endif %} {#end if notifikacija > 0#}
+                        </ul>
+                    </div>
+                </li>
+                {#<li><a class="sidebar-menu-recommend" href="{{ path('notebook') }}">Notebook</a></li>#}
+                <li class="showhide-friend-requests"><span class="color_me_blue"><i class="material-icons">person</i> </span> <span class="friend_requests">{{ friend_requests|length }}</span>
+                    <div class="expand-friend-requests">
+                        <ul class="ul-friend-requests collection">
+                        {% set broj = friend_requests|length-1 %}
+                        {% if friend_requests|length > 0 %}
+                            {% for f in 0..broj %}
+                                <li class="collection-item avatar">
+                                    <img src="http://localhost/project-418/web/images/profile/{{ friend_requests[f].profile_image }}" alt="" class="circle">
+                                    <span class="title">{{ friend_requests[f].first_name }} {{  friend_requests[f].last_name }}</span>
+                                    <p><span class="accept-friend acc_fr" data-answer="accept" id="{{ friend_requests[f].sent_by }}" >accept</span>
+                                        <span class="accept-friend dec_fr" data-answer="decline" id="{{ friend_requests[f].sent_by }}">decline</span>
+                                    </p>
+                                </li>
+                            {% endfor %}
+                        {% endif %}
+                        </ul>
+                    </div>
+                </li>
+                {#<li><div class="notifikacija-broj">notifikacija-broj</div></li>#}
+                {#<li><a class="sidebar-menu-register" href="{{ path('fos_user_registration_register') }}">Registracija</a></li>#}
+            </div>
+            {#<div class="sidebar-recommend">{% if is_granted('ROLE_USER') %}
+                    <li><a href="{{ path('fos_user_security_logout')}}">Logout {{ app.user.firstName }} {{ app.user.lastName  }}</a></li>
+
+                {% else %}
+                    <li><a href="{{ path('fos_user_security_login')}}">Login</a></li>
+                {% endif %}</div>#}
+        </div>
+    </div>
+    {% endblock %}
+
+    {% block main %}
+        <div class="main">
+
+
+
+
+    {% if is_granted('ROLE_USER') %}
+        <li><a href="{{ path('fos_user_security_logout')}}">Logout {{ app.user.firstName }} {{ app.user.lastName  }}</a></li>
+    {% else %}
+        <li><a href="{{ path('fos_user_security_login')}}">Login</a></li>
+    {% endif %}
+
+    {% if is_granted('ROLE_USER') %}
+        {% if app.request.hasPreviousSession %}
+            {% for type, messages in app.flashes %}
+                {% for message in messages %}
+                    <div class="flash-{{ type }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+
+
+
+
+    {{ form_start(form) }}
+          {{ form_row(form.text) }}
+    {{ form_end(form) }}
+
+    {{ status }}
+
+        {% block postovi %}
+
+            {% for i in 1..1 %}
+            {% for post in posts|reverse %}
+                <div class="row">
+                    <div class="col s12 m7 push-m2">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="http://c4depot.com/wp-content/uploads/2012/12/director-set.jpg">
+                                <span class="card-title">{% for user in users  if user.id == post.user %}
+                    {{ user.firstName }} {{ user.lastName }}:
+                {% endfor %}</span>
+                            </div>
+                            <div class="card-content">
+                                <p>{{ post.text }}</p>
+                            </div>
+                            <div class="card-action">
+                                <a onclick="Materialize.toast('I am a toast', 4000)" href="#"> <script>
+                                        var rezultat =  time_ago_(new Date('{{ post.createdAt|date('m/d/y H:i:s') }}'));
+                                        document.write(rezultat + ' ago');
+                                    </script></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+
+
+
+               {#( {{ post.createdAt|date('F j, Y H:i') }} )#}
+            {% endfor %}
+            {% endfor %}
+        {% endblock %}
+    {% endif %}
+
+
+
+    {% endif %}
+        </div>
+    {% endblock %}
+{% endblock %}
+
+
+
+

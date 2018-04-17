@@ -1,0 +1,133 @@
+{% extends ':default:index.html.twig' %}
+{% block body %}
+
+    {% block sidebar %} {# START sidebar#}
+        {{ parent() }}
+    {% endblock %}  {# END sidebar#}
+
+    {% block main %} {# START main #}
+        <div class="main">
+
+
+            {% if is_granted('ROLE_USER') %}
+                <li><a href="{{ path('fos_user_security_logout')}}">Logout {{ app.user.firstName }} {{ app.user.lastName  }}</a></li>
+            {% else %}
+                <li><a href="{{ path('fos_user_security_login')}}">Login</a></li>
+            {% endif %}
+
+            {% if is_granted('ROLE_USER') %} {# START if ulogovan #}
+                        {% if app.request.hasPreviousSession %}
+                            {% for type, messages in app.session.flashbag.all() %}
+                                        {% for message in messages %}
+                                            <div class="flash-{{ type }}">
+                                                {{ message }}
+                                            </div>
+                                        {% endfor %}
+                            {% endfor %}
+                        {% endif %}
+
+
+
+                    {#{{ dump(info) }}#}
+                <div class="search-container">
+                    <span>Search Movies</span></div>
+                    <br><br><br>
+
+                        <div class="movies-grid-container">
+
+                    {% for i in info['results']  %} {# START json rezultate #}
+
+
+                            <div class="movie-container">
+                                <div class="movie-content">
+                                                <div class="movie-img-container">
+                                                    <div class="movie-rating">
+                                                        <span class="movie-rating-text">
+                                                            <div class="movie-rating-circle">
+
+                                                        {{ i['vote_average'] }}
+
+                                                            </div>
+                                                         </span>
+                                                    </div>
+                                                    <img class="movie-image" src="https://image.tmdb.org/t/p/w300{{ i['poster_path'] }}">
+                                                </div>
+                                                <div class="movie-content-right">
+
+
+                                                    <br>
+                                                        <span class="movie-title">
+                                                            <a href="/project-418/web/app_dev.php/movies/{{ i['id'] }}">{{ i['title'] }}</a>
+                                                        </span>
+                                                    <br>
+                                                        <span class="movie-genre">
+                                                            Comedy, Drama
+                                                        </span>
+                                                    <br>
+                                                    <div class="rating">
+                                                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+
+                                                    </div>
+                                                    <br>
+                                                         <p class="movie-overview">
+                                                                <script>
+                                                                    var rezultat =  max_words_('{{ i['overview'] }}');
+                                                                    document.write(rezultat);
+                                                                </script>
+                                                             <a class="movie-more-info" href="/project-418/web/app_dev.php/movies/{{ i['id'] }}">
+                                                                 <span class="dot"></span> <span class="dot"></span> <span class="dot"></span>
+                                                             </a>
+
+                                                               {# {{ i['overview'] }}#}
+                                                         </p>
+
+                                                </div>
+                                    <div class="dots-space" id="id{{ i['id'] }}">
+
+                                        <span class="dot-menu" id="id{{ i['id'] }}"></span>
+                                        <span class="dot-menu" id="id{{ i['id'] }}"></span>
+                                        <span class="dot-menu" id="id{{ i['id'] }}"></span>
+
+
+
+                                        <div class="dot-open-menu" id="dots-{{ i['id'] }}" >
+                                            <ul >
+                                                <li><a href="#"> Add to list</a></li>
+                                                <li><a href="#"> Add to list</a></li>
+                                                <li><a href="#"> Add to list</a></li>
+                                                <li><a href="#"> Add to list</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="dole">
+                                        <div class="a">
+                                            tekst koji dolazi dole
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+                    {% endfor %}    {# END json rezultate #}
+                        </div>
+
+                    page: {{ info['page'] }}
+
+
+            {% endif %} {# END if ulogovan #}
+        </div>
+
+        {% endblock %} {# END main #}
+
+{% endblock %} {# END body #}
+
+
+
+{% block stylesheets %}
+    {{ parent() }}
+
+{% endblock %}

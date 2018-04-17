@@ -1,0 +1,190 @@
+{% extends ':default:index.html.twig' %}
+{% block body %}
+
+
+    {% block sidebar %}
+        {{ parent() }}
+    {% endblock %}
+
+
+
+    {% block main %}
+        <div class="main" id="main-movie-page">
+
+            <i class="material-icons showhide-sidebar">dehaze</i>
+
+            {% if is_granted('ROLE_USER') %}
+                {% if app.request.hasPreviousSession %}
+                    {% for type, messages in app.session.flashbag.all() %}
+                        {% for message in messages %}
+                            <div class="flash-{{ type }}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
+                {% endif %}
+
+
+
+            {% block header %}
+              <div class="wrapper">
+                <div class="link">
+                    <div class="blur" style="background: url('https://image.tmdb.org/t/p/w300{{ info['backdrop_path'] }} ') 50% 50% / cover;"></div>
+                       <div class="holder">
+                        <img class="pic" src="https://image.tmdb.org/t/p/w300{{ info['poster_path'] }}">
+                        <div class="whole-right">
+                            {% for genre in info['genres'] %}
+                                <span class="genres-movie-page">{{ genre.name }} </span>
+                            {% endfor %}
+                            <span class="imdbrating-movie-page"><i class="material-icons">camera_roll</i> {{ info['vote_average'] }} </span>
+                        <p class="tit">{{ info['title'] }}</p>
+                            <p class="overview-movie-page">{{ info['overview'] }}</p>
+                            <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Add to</a>
+                            <ul id='dropdown1' class='dropdown-content'>
+                                {% for y in lists %}
+                                    <li><span onclick="Materialize.toast('Added {{ info['title'] }} to {{ y.name }}', 4000)"><span  class="add-to-list1" id="user{{ app.user.id }}-list{{ y.id }}-movie{{ info['id'] }}-title{{ info['title'] }}"
+                                            data-movie__id="{{ info['id'] }}"
+                                            data-movie__title="{{ info['title'] }}"
+                                            data-movie__poster_path="{{ info['poster_path'] }}"
+                                            data-movie__vote_average="{{ info['vote_average'] }}"
+                                            data-movie__overview="{{ info['overview'] }}"
+                                            data-movie__genres="{% for genre in info['genres'] %}{{ genre.id }},{% endfor %}"
+                                            data-movie__backdrop_path="{{ info['backdrop_path'] }}"
+                                            > {{ y.name }}</span></span></li>
+                                {% endfor %}
+                            </ul>
+                            <!-- Modal Trigger -->
+                            <a class="waves-effect waves-light btn modal-trigger" href="#modalRecommend">Recommend</a>
+                        </div>
+                       </div>
+                </div>
+              </div>
+
+
+            {% endblock %} {#end header block#}
+                {#{{ dump(info) }}#}
+
+                {% block white %}
+                    <div class="white">
+
+                        <div class="white-menu">
+                            <li id="comre">Comunity Reviews</li>
+                        </div>
+
+
+                        <!-- The Modal -->
+                        <div id="myModal" class="modal1">
+
+                            <!-- Modal content -->
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <div class="search-container input-field col s6">
+                                    <input type="text" name="search-gifs" id="src-gifs" class="validate" >
+                                    <label id="lbl-gif-search" for="src-gifs">Search for gifs here</label>
+                                </div>
+                                <div class="gif-results-box">
+                                    <ul class="ul-gifs">
+                                        <li></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Modal Structure --> {# RECOMMEND #}
+                        <div id="modalRecommend" class="modal bottom-sheet">
+                            <div class="modal-content">
+                                <span>Recommend</span>
+                                <span class="movie-recommend-modal-span">{{ info['title'] }}</span> to <input class="search-ppl color-me-black" name="search-people" id="src-ppl" data-is_rec="yes" data-movie_id="{{ info['id'] }}" data-title="{{ info['title'] }}">
+                                <ul class="collection" id="rez-pretrage">
+
+                                </ul>
+                            </div>
+                            {#<div class="modal-footer">
+                                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                            </div>#}
+                        </div>
+
+
+                        <div class="white-grid-container">
+                            <div class="white-submit-review-container">
+                                <div class="input-field col s6">
+                                    <input name="review-input" id="last_name" data-movid="{{ info['id'] }}" data-title="{{ info['title'] }}" data-usrid="{{ app.user.id }}" type="text" class="validate">
+                                    <label for="last_name">Write your review</label>
+
+                                </div>
+                                <a class="btn-floating btn-large waves-effect waves-light red submit-review-btn"><i class="material-icons">send</i></a>
+
+                            </div>
+                            <!-- Trigger/Open The Modal -->
+                            <button class="btn" id="myBtn">Gif Reaction</button>
+
+                            <div class="white-all-reviews-container">
+                                <ul class="collection" id="reviews-collection">
+                                    {% if reviews|length==0 %}
+                                    <span>This movie has not yet been reviewed, be the first to do it</span>
+                                    {% else %}
+                                    {% for r in reviews %}
+
+                                    <li class="collection-item avatar mov-rev" id="{{ r.id }}">
+                                        {% for u in users if u.id == r.user %}
+                                            <img src="http://localhost/project-418/web/images/profile/{{ u.profileImage }}" alt="" class="circle">
+                                            <span class="title">{{ u.firstName }} {{ u.lastName }}</span>
+                                        {% endfor %}
+                                        <p>
+                                            {{ r.reviewTxt }}<img src="{{ r.gifUrl }}">
+                                        </p>
+                                        <span href="#!" class="secondary-content rev-time"> {{ r.createdAt|date('M d, Y') }} </span>
+                                        {% set c = 0 %}{%  for l in likes if l.reviewId == r.id%}{% set c = c + 1 %} {% endfor %} {# counter lajkova #}
+                                        {% set isLiked = 'false' %}
+                                        {% for l in likes  %}
+                                            {% if (l.reviewId == r.id) and (l.user == app.user.id ) %}
+                                                {% set isLiked = 'true' %}
+                                            {% endif %}
+                                        {% endfor %}
+                                        {% if isLiked == 'true' %}
+                                        <a class="waves-effect waves-light btn btn-small like-review likerev-yes" id="el*{{r.id }}">like</a><span class="broj" id="no{{ r.id }}">({{ c  }})</span>
+                                        {% else %}
+                                        <a class="waves-effect waves-light btn btn-small like-review likerev-no" id="el*{{r.id }}" >like</a><span class="broj" id="no{{ r.id }}">({{ c  }})</span>
+                                        {% endif %}
+                                    </li>
+                                    {% endfor %}
+                                    {% endif %}
+                                </ul>
+                            </div>
+                            {#
+                            tenor api:
+                            E2RZR6WJTMEC
+                            https://api.tenor.com/v1/search?key=E2RZR6WJTMEC&q=goodluck&limit=40
+
+
+                            giphy
+                            $api_key = "rnyedGAxnFKnd0WXPWfEDN3TVnOPjNYh";
+                            $url = "http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=rnyedGAxnFKnd0WXPWfEDN3TVnOPjNYh&limit=50";
+                            Api Key: rnyedGAxnFKnd0WXPWfEDN3TVnOPjNYh
+                            print_r(json_decode(file_get_contents($url)));#}
+                        </div>
+                    </div>
+                {% endblock %} {#endblock white#}
+
+            {% endif %} {#end if ulogovan#}
+
+        </div>  {#end main div#}
+
+    {% endblock %} {#end main block #}
+
+
+
+
+{% endblock %}
+
+
+
+{% block stylesheets %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/styleDark.css') }}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa|Barlow|Didact+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/materialize.css') }}"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+{% endblock %}

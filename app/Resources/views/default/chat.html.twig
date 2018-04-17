@@ -1,0 +1,94 @@
+{% extends ':default:index.html.twig' %}
+{% block body %}
+    {% block sidebar %}
+        {{ parent() }}
+        {% endblock %}
+    {% block main %}
+    <div class="main" id="messenger-main">
+
+        <i class="material-icons showhide-sidebar" style="color:black !important;">dehaze</i>
+        <div class="messenger-main-grid">
+            <div class="messenger-left">
+                <span class="all-friends" data-all-friends-array="{% set broj = friends|length-1 %}
+                    {% if friends|length>0 %}
+                        {% for f in 0..broj %}
+                            {% if friends[f].sent_by==app.user.id %}
+                                {{ friends[f].received_by_first_name }} {{ friends[f].received_by_last_name }} {{ friends[f].received_by }},
+                            {% else %}
+                                {{ friends[f].sent_by_first_name }} {{ friends[f].sent_by_last_name }} {{ friends[f].sent_by }},
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}">
+
+
+                    {% set broj = friends|length-1 %}
+                    {% if friends|length>0 %}
+                        {% for f in 0..broj %}
+                            {% if friends[f].sent_by==app.user.id %}
+                                {{ friends[f].received_by_first_name }} {{ friends[f].received_by_last_name }} {{ friends[f].received_by }},
+                            {% else %}
+                                {{ friends[f].sent_by_first_name }} {{ friends[f].sent_by_last_name }} {{ friends[f].sent_by }},
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                </span>
+                <input class="input-new-chat" name="start-new-chat" placeholder="Start new chat with..">
+                <div class="results-input-new-chat">rezultat</div>
+
+                <ul class="collection inbox-ul">
+                    {% set broj = chats|length-1 %}
+                    {% if chats|length>0 %}
+                        {% for c in 0..broj %}
+
+                            <li class="collection-item avatar grab-chat-name"  id="{{ chats[c].chat_name }}">
+                                {% if chats[c].initiated_by==app.user.id %}
+                                    <a href="{{ path('profile',{'id':chats[c].chat_with}) }}"><img src="http://localhost/project-418/web/images/profile/{{ chats[c].chat_with_profile_image }}" alt="" class="circle inbox-profile-img"></a>
+                                    <a href="{{ path('chat',{'chatname':chats[c].chat_name}) }}" ><span class="title inbox-title">{{ chats[c].chat_with_first_name }} {{ chats[c].chat_with_last_name }}  </span></a>
+                                {% else %}
+                                    <a href="{{ path('profile',{'id':chats[c].initiated_by}) }}"><img src="http://localhost/project-418/web/images/profile/{{ chats[c].initiated_by_profile_image }}" alt="" class="circle inbox-profile-img"></a>
+                                    <a href="{{ path('chat',{'chatname':chats[c].chat_name}) }}"><span class="title inbox-title">{{ chats[c].initiated_by_first_name }} {{ chats[c].initiated_by_last_name }}  </span></a>
+                                {% endif %}
+                                {#<p >First line <br>
+                                    Second Line
+                                </p>#}
+                                <span class="secondary-content this-chat-alert br-{{ chats[c].chat_name }}" id="br-{{ chats[c].chat_name }}">
+                                    {% set neprocitanih=0 %}
+                                    {% for m in unread_msgs %}
+                                        {% if m.chatName==chats[c].chat_name %}
+                                            {% set neprocitanih=neprocitanih+1 %}
+                                        {% endif %}
+                                    {% endfor %}
+                                    {{ neprocitanih }}
+                                </span>
+                            </li>
+                        {% endfor %}
+                    {% endif %}
+                </ul>
+                {#{{ dump(chats) }}#}
+            </div>
+
+            <div class="messenger-right">
+                <div class="usr-id" id="usr-id-with-in-chat-page"  data-uid="{{ app.user.id }}" data-token="{{ csrf_token('authenticate') }}" data-receiver-id="{{ profileId }}">user {{ profileId }}</div>
+                <span class="chatName" data-chat_name="{{ chatname }}">{{ chatname }}</span>
+                {#<button type="submit" class="posalji-me" >send</button>#}
+                <div class="ovde">
+                    {% for m in msgs   %}
+                        {% if m.sentBy==app.user.id %}
+                            <li class="msg-created">{{ m.createdAt|date('m/d/y H:i:s') }}</li>
+                            <li class="sent"><span class="sent-span">{#{{ m.sentBy }}:#}{{ m.messageContent }}</span></li>
+                        {% else %}
+                            <li class="msg-created">{{ m.createdAt|date('m/d/y H:i:s') }}</li><br>
+                            <li class="received"><span class="received-span">{#{{ m.sentBy }}:#}{{ m.messageContent }}</span></li>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                    <input type="text" class="msg-content" name="message-content" >{#<button type="submit" class="posalji-me" >send</button>#}
+                {#{{ dump(msgs) }}#}
+                {#<button type="button" class="start_private_chat" >start chat</button>#}
+            </div>
+
+
+        </div> {#end messenger-main-grid div#}
+    </div>{#end main div#}
+        {% endblock  %} {#end main block#}
+{% endblock %}

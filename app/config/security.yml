@@ -1,0 +1,51 @@
+# To get started with security, check out the documentation:
+# https://symfony.com/doc/current/security.html
+security:
+    encoders:
+        AppBundle\Entity\User: bcrypt
+    # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
+    providers:
+        fos_userbundle:
+            id: fos_user.user_provider.username_email
+
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        main:
+            anonymous: ~
+            logout: ~
+            # activate different ways to authenticate
+
+            # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
+            #http_basic: ~
+
+            # https://symfony.com/doc/current/security/form_login_setup.html
+            form_login:
+                csrf_token_generator: security.csrf.token_manager
+
+            remember_me:
+                secret: '%secret%'
+
+            oauth:
+                # Declare the OAuth Callback URLs for every resource owner
+                # They will be added in the routing.yml file too later
+                resource_owners:
+                    facebook: "/connect/check-facebook"
+                    googleplus: "/connect/check-googleplus"
+                ## Provide the original login path of your application (fosuserroute)
+                ## and the failure route when the authentication fails.
+                login_path:     /login
+                failure_path:   /login
+                # Inject a service that will be created in the step #6
+                oauth_user_provider:
+                    service: app.fos_user.oauth_provider
+
+
+    access_control:
+        #....
+        - { path: ^/secure_area/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/secure_area/connect, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/secure_area, roles: ROLE_USER }

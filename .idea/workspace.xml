@@ -1,9 +1,216 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="70bd7ee8-f27b-4a8a-91d0-5698b455b924" name="Default" comment="" />
+    <list default="true" id="70bd7ee8-f27b-4a8a-91d0-5698b455b924" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/project-418.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/project-418.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/symfony2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/app/.htaccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/AppCache.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/AppCache.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/AppKernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/AppKernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/DoctrineMigrations/Version20171018115132.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DoctrineMigrations/Version20171018115132.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/DoctrineMigrations/Version20171018115415.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DoctrineMigrations/Version20171018115415.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/DoctrineMigrations/Version20171018115821.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DoctrineMigrations/Version20171018115821.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/DoctrineMigrations/Version20171018115837.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DoctrineMigrations/Version20171018115837.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/DoctrineMigrations/Version20171018120019.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DoctrineMigrations/Version20171018120019.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/DoctrineMigrations/Version20171018120308.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DoctrineMigrations/Version20171018120308.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/DoctrineMigrations/Version20171018121019.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DoctrineMigrations/Version20171018121019.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/DoctrineMigrations/Version20171018121244.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DoctrineMigrations/Version20171018121244.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/DoctrineMigrations/Version20171018121253.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DoctrineMigrations/Version20171018121253.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/DoctrineMigrations/Version20171018121434.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DoctrineMigrations/Version20171018121434.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/DoctrineMigrations/Version20171018121516.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DoctrineMigrations/Version20171018121516.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/DoctrineMigrations/Version20171019094054.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DoctrineMigrations/Version20171019094054.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/DoctrineMigrations/Version20171019180223.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DoctrineMigrations/Version20171019180223.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/DoctrineMigrations/Version20171208114437.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DoctrineMigrations/Version20171208114437.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/DoctrineMigrations/Version20171208114557.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DoctrineMigrations/Version20171208114557.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/DoctrineMigrations/Version20180102215034.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DoctrineMigrations/Version20180102215034.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/DoctrineMigrations/Version20180102215124.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DoctrineMigrations/Version20180102215124.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/DoctrineMigrations/Version20180102215436.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DoctrineMigrations/Version20180102215436.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/DoctrineMigrations/Version20180102215611.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DoctrineMigrations/Version20180102215611.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/DoctrineMigrations/Version20180102215730.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DoctrineMigrations/Version20180102215730.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/DoctrineMigrations/Version20180102215808.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DoctrineMigrations/Version20180102215808.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register_content.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register_content.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login_content.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login_content.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/layout.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/translations/FOSUserBundle.en.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/translations/FOSUserBundle.en.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/default/chat.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/default/chat.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/default/homepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/default/homepage.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/default/messenger.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/default/messenger.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/default/moviePage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/default/moviePage.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/default/movies.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/default/movies.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/default/moviesDark.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/default/moviesDark.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/default/profile.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/default/profile.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/default/searchPeople.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/default/searchPeople.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/config_dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config_dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/config_prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config_prod.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/config_test.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config_test.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/parameters.yml.dist" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/parameters.yml.dist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/routing.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/routing/registration.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/routing/registration.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/routing_dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/routing_dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/security.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/security.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/services.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/services.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/console" beforeDir="false" afterPath="$PROJECT_DIR$/bin/console" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/symfony_requirements" beforeDir="false" afterPath="$PROJECT_DIR$/bin/symfony_requirements" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer-setup.php" beforeDir="false" afterPath="$PROJECT_DIR$/composer-setup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrine_migration_20171018121132.sql" beforeDir="false" afterPath="$PROJECT_DIR$/doctrine_migration_20171018121132.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phpunit.xml.dist" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml.dist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/chat.html" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/chat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/js/PusherChatWidget.js" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/js/PusherChatWidget.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/less/less-1.1.5.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/less/less-1.1.5.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/docs/assets/css/docs.css" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/docs/assets/css/docs.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/docs/assets/ico/bootstrap-apple-114x114.png" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/docs/assets/ico/bootstrap-apple-114x114.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/docs/assets/ico/bootstrap-apple-57x57.png" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/docs/assets/ico/bootstrap-apple-57x57.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/docs/assets/ico/bootstrap-apple-72x72.png" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/docs/assets/ico/bootstrap-apple-72x72.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/docs/assets/ico/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/docs/assets/ico/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/docs/assets/img/bird.png" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/docs/assets/img/bird.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/docs/assets/img/browsers.png" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/docs/assets/img/browsers.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/docs/assets/img/example-diagram-01.png" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/docs/assets/img/example-diagram-01.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/docs/assets/img/example-diagram-02.png" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/docs/assets/img/example-diagram-02.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/docs/assets/img/example-diagram-03.png" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/docs/assets/img/example-diagram-03.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/docs/assets/img/grid-18px.png" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/docs/assets/img/grid-18px.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/docs/assets/img/twitter-logo-no-bird.png" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/docs/assets/img/twitter-logo-no-bird.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/docs/assets/js/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/docs/assets/js/application.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/docs/assets/js/google-code-prettify/prettify.css" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/docs/assets/js/google-code-prettify/prettify.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/docs/assets/js/google-code-prettify/prettify.js" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/docs/assets/js/google-code-prettify/prettify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/docs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/docs/javascript.html" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/docs/javascript.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/examples/container-app.html" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/examples/container-app.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/examples/fluid.html" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/examples/fluid.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/examples/hero.html" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/examples/hero.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/js/bootstrap-alerts.js" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/js/bootstrap-alerts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/js/bootstrap-buttons.js" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/js/bootstrap-buttons.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/js/bootstrap-dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/js/bootstrap-dropdown.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/js/bootstrap-modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/js/bootstrap-modal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/js/bootstrap-popover.js" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/js/bootstrap-popover.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/js/bootstrap-scrollspy.js" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/js/bootstrap-scrollspy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/js/bootstrap-tabs.js" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/js/bootstrap-tabs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/js/bootstrap-twipsy.js" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/js/bootstrap-twipsy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/js/tests/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/js/tests/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/js/tests/unit/bootstrap-alerts.js" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/js/tests/unit/bootstrap-alerts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/js/tests/unit/bootstrap-buttons.js" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/js/tests/unit/bootstrap-buttons.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/js/tests/unit/bootstrap-dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/js/tests/unit/bootstrap-dropdown.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/js/tests/unit/bootstrap-modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/js/tests/unit/bootstrap-modal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/js/tests/unit/bootstrap-popover.js" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/js/tests/unit/bootstrap-popover.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/js/tests/unit/bootstrap-scrollspy.js" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/js/tests/unit/bootstrap-scrollspy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/js/tests/unit/bootstrap-tabs.js" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/js/tests/unit/bootstrap-tabs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/js/tests/unit/bootstrap-twipsy.js" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/js/tests/unit/bootstrap-twipsy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/js/tests/vendor/qunit.css" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/js/tests/vendor/qunit.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/js/tests/vendor/qunit.js" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/js/tests/vendor/qunit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/lib/bootstrap.less" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/lib/bootstrap.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/lib/forms.less" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/lib/forms.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/lib/mixins.less" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/lib/mixins.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/lib/patterns.less" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/lib/patterns.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/lib/reset.less" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/lib/reset.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/lib/scaffolding.less" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/lib/scaffolding.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/lib/tables.less" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/lib/tables.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/lib/type.less" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/lib/type.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/lib/variables.less" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/lib/twitter-bootstrap/lib/variables.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/nodejs/Activity.js" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/nodejs/Activity.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/nodejs/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/nodejs/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/nodejs/config_example.js" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/nodejs/config_example.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/nodejs/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/nodejs/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/php/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/php/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/php/Activity.php" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/php/Activity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/php/chat.php" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/php/chat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/php/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/php/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/php/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/php/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/php/config_example.php" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/php/config_example.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/pusher-chat-widget.css" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/pusher-chat-widget.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/ruby-sinatra/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/ruby-sinatra/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/ruby-sinatra/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/ruby-sinatra/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/ruby-sinatra/activity.rb" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/ruby-sinatra/activity.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/ruby-sinatra/chat.rb" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/ruby-sinatra/chat.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/ruby-sinatra/config_example.rb" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/ruby-sinatra/config_example.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/pusher-realtime-chat-widget/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/src/.htaccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/AppBundle.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/AppBundle.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ChatController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ChatController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ProjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ProjectController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/RegistrationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/ChatMessage.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/ChatMessage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/ChatPrivate.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/ChatPrivate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Comment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/FOSUBUserProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/FOSUBUserProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Friends.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Friends.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Images.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Images.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/LatestNews.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/LatestNews.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Like.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Like.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Like2.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Like2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Movie.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Movie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Notifications.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Notifications.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Recommend.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Recommend.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Review.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Review.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/UserInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/UserInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/UsersList.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/UsersList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/UsersListItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/UsersListItem.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/EventListener/RedirectAfterRegistrationSubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/EventListener/RedirectAfterRegistrationSubscriber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Form/PostFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Form/PostFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Form/PostType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Form/PostType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Form/RegistrationFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Form/RegistrationFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Form/UserType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Repository/ChatMessageRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/ChatMessageRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Repository/ChatPrivateRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/ChatPrivateRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Repository/FriendsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/FriendsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Repository/LatestNewsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/LatestNewsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Repository/Like2Repository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/Like2Repository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Repository/NotificationsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/NotificationsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Repository/RecommendRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/RecommendRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Repository/ReviewRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/ReviewRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/UserRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Repository/UsersListItemRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/UsersListItemRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Repository/UsersListRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/UsersListRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Utils/MyLogger.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Utils/MyLogger.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/AppBundle/Controller/DefaultControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/AppBundle/Controller/DefaultControllerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/SymfonyRequirements.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/SymfonyRequirements.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/sessions/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/var/sessions/.gitkeep" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/web/.htaccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app_dev.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/app_dev.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/apple-touch-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/apple-touch-icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/banner.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/banner.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/bb.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/web/bb.PNG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/materialize.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/materialize.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/styleDark.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/styleDark.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/da.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/web/da.PNG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/web/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/fblogin.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/fblogin.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/profile/18a70fa593554589412f89aa6918e28f.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/web/images/profile/18a70fa593554589412f89aa6918e28f.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/profile/fa74f5981ce7878f319f276ef3834bc9.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/web/images/profile/fa74f5981ce7878f319f276ef3834bc9.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/profile/so.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/images/profile/so.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/js/pusher.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/pusher.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/js/time_ago.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/time_ago.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/po.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/web/po.PNG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/web/robots.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/sm.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/sm.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/so.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/so.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/wa.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/web/wa.PNG" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,7 +220,31 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/app.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/.htaccess">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-487">
+              <caret line="5" column="22" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/app_dev.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -60,10 +291,12 @@
       <replace />
     </replaceStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/AppBundle/Repository/UserRepository.php" />
         <option value="$PROJECT_DIR$/web/js/material_color.js" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/FriendsRepository.php" />
@@ -114,16 +347,11 @@
         <option value="$PROJECT_DIR$/web/css/styleDark.css" />
         <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login_content.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register_content.html.twig" />
+        <option value="$PROJECT_DIR$/web/app.php" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true">
+  <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
       <path value="$PROJECT_DIR$/vendor/sensiolabs/security-checker" />
@@ -180,27 +408,26 @@
     <option name="height" value="735" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="project-418" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project-418" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="project-418" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project-418" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project-418" type="462c0819:PsiDirectoryNode" />
+              <item name="var" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project-418" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project-418" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -210,11 +437,11 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="styleda&#9;FILE&#9;file://C:/wamp/www/project-418/web/css/styleDark.css&#10;styl&#9;FILE&#9;file://C:/wamp/www/project-418/web/css/styleDark.css&#10;pusher.js&#9;FILE&#9;file://C:/wamp/www/project-418/web/js/pusher.js&#10;styledar&#9;FILE&#9;file://C:/wamp/www/project-418/web/css/styleDark.css&#10;time_a&#9;FILE&#9;file://C:/wamp/www/project-418/web/js/time_ago.js&#10;project&#9;FILE&#9;file://C:/wamp/www/project-418/src/AppBundle/Controller/ProjectController.php&#10;Styl&#9;FILE&#9;file://C:/wamp/www/project-418/web/css/styleDark.css&#10;time_ag&#9;FILE&#9;file://C:/wamp/www/project-418/web/js/time_ago.js&#10;pusher&#9;FILE&#9;file://C:/wamp/www/project-418/web/js/pusher.js&#10;ProjectC&#9;FILE&#9;file://C:/wamp/www/project-418/src/AppBundle/Controller/ProjectController.php&#10;RegistrationContro&#9;FILE&#9;file://C:/wamp/www/project-418/src/AppBundle/Controller/RegistrationController.php&#10;bravo&#9;null&#9;null&#10;registration&#9;FILE&#9;file://C:/wamp64/www/project-418/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php&#10;fosuserbundle.en&#9;FILE&#9;file://C:/wamp64/www/project-418/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.en.yml&#10;layou&#9;FILE&#9;file://C:/wamp64/www/project-418/vendor/friendsofsymfony/user-bundle/Resources/views/layout.html.twig&#10;register.&#9;FILE&#9;file://C:/wamp64/www/project-418/vendor/friendsofsymfony/user-bundle/Resources/views/Registration/register.html.twig&#10;layout.html&#9;FILE&#9;file://C:/wamp64/www/project-418/vendor/friendsofsymfony/user-bundle/Resources/views/layout.html.twig&#10;securitycontro&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="SearchEverywhereHistoryKey" value="styleda&#9;FILE&#9;file://C:/wamp/www/project-418/web/css/styleDark.css&#10;styl&#9;FILE&#9;file://C:/wamp/www/project-418/web/css/styleDark.css&#10;pusher.js&#9;FILE&#9;file://C:/wamp/www/project-418/web/js/pusher.js&#10;styledar&#9;FILE&#9;file://C:/wamp/www/project-418/web/css/styleDark.css&#10;time_a&#9;FILE&#9;file://C:/wamp/www/project-418/web/js/time_ago.js&#10;project&#9;FILE&#9;file://C:/wamp/www/project-418/src/AppBundle/Controller/ProjectController.php&#10;Styl&#9;FILE&#9;file://C:/wamp/www/project-418/web/css/styleDark.css&#10;time_ag&#9;FILE&#9;file://C:/wamp/www/project-418/web/js/time_ago.js&#10;pusher&#9;FILE&#9;file://C:/wamp/www/project-418/web/js/pusher.js&#10;ProjectC&#9;FILE&#9;file://C:/wamp/www/project-418/src/AppBundle/Controller/ProjectController.php&#10;RegistrationContro&#9;FILE&#9;file://C:/wamp/www/project-418/src/AppBundle/Controller/RegistrationController.php&#10;bravo&#9;null&#9;null&#10;registration&#9;FILE&#9;file://C:/wamp64/www/project-418/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php&#10;fosuserbundle.en&#9;FILE&#9;file://C:/wamp64/www/project-418/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.en.yml&#10;layou&#9;FILE&#9;file://C:/wamp64/www/project-418/vendor/friendsofsymfony/user-bundle/Resources/views/layout.html.twig&#10;register.&#9;FILE&#9;file://C:/wamp64/www/project-418/vendor/friendsofsymfony/user-bundle/Resources/views/Registration/register.html.twig&#10;layout.html&#9;FILE&#9;file://C:/wamp64/www/project-418/vendor/friendsofsymfony/user-bundle/Resources/views/layout.html.twig&#10;securitycontro&#9;null&#9;null" />
-    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
@@ -236,9 +463,6 @@
         </RuleState>
       </list>
     </option>
-  </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -330,122 +554,91 @@
       <workItem from="1517150222247" duration="9856000" />
       <workItem from="1517173257063" duration="12404000" />
       <workItem from="1517225200162" duration="13349000" />
+      <workItem from="1556466270958" duration="1326000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="745977000" />
+    <option name="totallyTimeSpent" value="747303000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="70" y="27" width="1296" height="741" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2137628" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296355" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296355" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2176" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3296355" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3296355" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.3296355" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager />
-    <watches-manager />
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/moviesDark.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="77" column="46" lean-forward="false" selection-start-line="77" selection-start-column="46" selection-end-line="77" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="20" column="56" lean-forward="false" selection-start-line="20" selection-start-column="56" selection-end-line="20" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Security/Core/User/UserInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="89" column="35" lean-forward="false" selection-start-line="89" selection-start-column="35" selection-end-line="89" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Util/CanonicalFieldsUpdater.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="372">
-          <caret line="36" column="49" lean-forward="false" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
+          <caret line="36" column="49" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Doctrine/CouchDB/UserListener.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-590">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
+        <state relative-caret-position="-590" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/FOSUserBundle.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="11" column="14" lean-forward="false" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Security/Core/User/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
-          <caret line="76" column="30" lean-forward="false" selection-start-line="76" selection-start-column="30" selection-end-line="76" selection-end-column="30" />
+          <caret line="76" column="30" selection-start-line="76" selection-start-column="30" selection-end-line="76" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Model/UserManager.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-63">
-          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Doctrine/UserManager.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1165">
-          <caret line="20" column="6" lean-forward="false" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/hwi/oauth-bundle/OAuth/Response/UserResponseInterface.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="167">
-          <caret line="22" column="10" lean-forward="false" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+          <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/routing_dev.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state>
           <folding />
         </state>
       </provider>
@@ -454,22 +647,20 @@
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Model/UserManagerInterface.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
-          <caret line="113" column="20" lean-forward="false" selection-start-line="113" selection-start-column="20" selection-end-line="113" selection-end-column="20" />
+          <caret line="113" column="20" selection-start-line="113" selection-start-column="20" selection-end-line="113" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/hwi/oauth-bundle/OAuth/Response/AbstractUserResponse.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1882">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
+        <state relative-caret-position="-1882" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/UserInterface.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="13" column="45" lean-forward="false" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
+          <caret line="13" column="45" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
           <folding />
         </state>
       </provider>
@@ -477,7 +668,7 @@
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Model/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
           <folding />
         </state>
       </provider>
@@ -485,7 +676,7 @@
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Model/UserInterface.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="333">
-          <caret line="249" column="36" lean-forward="false" selection-start-line="249" selection-start-column="36" selection-end-line="249" selection-end-column="36" />
+          <caret line="249" column="36" selection-start-line="249" selection-start-column="36" selection-end-line="249" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -493,7 +684,7 @@
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/FOSUBUserProvider.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
-          <caret line="89" column="53" lean-forward="false" selection-start-line="89" selection-start-column="53" selection-end-line="89" selection-end-column="53" />
+          <caret line="89" column="53" selection-start-line="89" selection-start-column="53" selection-end-line="89" selection-end-column="53" />
           <folding />
         </state>
       </provider>
@@ -501,7 +692,7 @@
     <entry file="file://$PROJECT_DIR$/app/config/services.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
-          <caret line="19" column="98" lean-forward="false" selection-start-line="19" selection-start-column="98" selection-end-line="19" selection-end-column="98" />
+          <caret line="19" column="98" selection-start-line="19" selection-start-column="98" selection-end-line="19" selection-end-column="98" />
           <folding />
         </state>
       </provider>
@@ -509,7 +700,7 @@
     <entry file="file://$PROJECT_DIR$/app/config/security.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="464">
-          <caret line="46" column="19" lean-forward="false" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
+          <caret line="46" column="19" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -517,14 +708,14 @@
     <entry file="file://$PROJECT_DIR$/vendor/hwi/oauth-bundle/OAuth/ResourceOwner/AbstractResourceOwner.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="229" column="0" lean-forward="false" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
+          <caret line="229" selection-start-line="229" selection-end-line="229" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="470">
-          <caret line="36" column="10" lean-forward="false" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
+          <caret line="36" column="10" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -532,7 +723,7 @@
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/PostType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="22" column="44" lean-forward="false" selection-start-line="21" selection-start-column="7" selection-end-line="22" selection-end-column="44" />
+          <caret line="22" column="44" selection-start-line="21" selection-start-column="7" selection-end-line="22" selection-end-column="44" />
           <folding>
             <element signature="e#116#156#0#PHP" expanded="false" />
           </folding>
@@ -542,7 +733,7 @@
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/PostFormType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="26" column="3" lean-forward="false" selection-start-line="26" selection-start-column="3" selection-end-line="29" selection-end-column="5" />
+          <caret line="26" column="3" selection-start-line="26" selection-start-column="3" selection-end-line="29" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -550,7 +741,7 @@
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/UserType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="22" column="36" lean-forward="false" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
           <folding>
             <element signature="e#116#142#0#PHP" expanded="false" />
           </folding>
@@ -560,15 +751,14 @@
     <entry file="file://$PROJECT_DIR$/app/config/config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="19" />
+          <caret line="9" column="19" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state>
           <folding />
         </state>
       </provider>
@@ -576,7 +766,7 @@
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/NotificationsRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="21" column="45" lean-forward="false" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+          <caret line="21" column="45" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
           <folding>
             <marker date="1517233686121" expanded="true" signature="338:474" ph="SELECT n.*,u... notifications" />
           </folding>
@@ -586,7 +776,7 @@
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/FriendsRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="17" column="127" lean-forward="false" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="127" />
+          <caret line="17" column="127" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="127" />
           <folding>
             <marker date="1516837081723" expanded="true" signature="318:423" ph="SELECT * FRO... friends" />
             <marker date="1516837081723" expanded="true" signature="1053:1365" ph="select f.*,u... friends" />
@@ -598,7 +788,7 @@
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/LatestNewsRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="303">
-          <caret line="33" column="81" lean-forward="false" selection-start-line="33" selection-start-column="81" selection-end-line="33" selection-end-column="81" />
+          <caret line="33" column="81" selection-start-line="33" selection-start-column="81" selection-end-line="33" selection-end-column="81" />
           <folding>
             <marker date="1517234747994" expanded="true" signature="312:605" ph="SELECT ln.*,... latest_news" />
             <marker date="1517234747994" expanded="true" signature="312:614" ph="SELECT ln.*,... latest_news" />
@@ -612,7 +802,7 @@
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/ReviewRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="269">
-          <caret line="55" column="73" lean-forward="false" selection-start-line="55" selection-start-column="73" selection-end-line="55" selection-end-column="73" />
+          <caret line="55" column="73" selection-start-line="55" selection-start-column="73" selection-end-line="55" selection-end-column="73" />
           <folding>
             <marker date="1517234917436" expanded="true" signature="324:372" ph="SELECT MAX(r... AppBundle" />
             <marker date="1517234917436" expanded="true" signature="519:566" ph="SELECT DISTI... review" />
@@ -625,7 +815,7 @@
     <entry file="file://$PROJECT_DIR$/app/Resources/views/default/moviePage.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="833">
-          <caret line="129" column="119" lean-forward="false" selection-start-line="129" selection-start-column="119" selection-end-line="129" selection-end-column="119" />
+          <caret line="129" column="119" selection-start-line="129" selection-start-column="119" selection-end-line="129" selection-end-column="119" />
           <folding />
         </state>
       </provider>
@@ -633,7 +823,7 @@
     <entry file="file://$PROJECT_DIR$/app/Resources/views/default/profile.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
-          <caret line="16" column="78" lean-forward="false" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="78" />
+          <caret line="16" column="78" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="78" />
           <folding />
         </state>
       </provider>
@@ -641,7 +831,7 @@
     <entry file="file://$PROJECT_DIR$/app/Resources/views/default/searchPeople.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="1" column="7" lean-forward="false" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+          <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
           <folding>
             <element signature="e#12#36#0#Twig" expanded="false" />
           </folding>
@@ -651,7 +841,7 @@
     <entry file="file://$PROJECT_DIR$/web/js/time_ago.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
-          <caret line="799" column="213" lean-forward="false" selection-start-line="799" selection-start-column="213" selection-end-line="799" selection-end-column="213" />
+          <caret line="799" column="213" selection-start-line="799" selection-start-column="213" selection-end-line="799" selection-end-column="213" />
           <folding />
         </state>
       </provider>
@@ -659,7 +849,7 @@
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/ChatPrivateRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="269">
-          <caret line="42" column="300" lean-forward="false" selection-start-line="42" selection-start-column="300" selection-end-line="42" selection-end-column="300" />
+          <caret line="42" column="300" selection-start-line="42" selection-start-column="300" selection-end-line="42" selection-end-column="300" />
           <folding>
             <marker date="1517237222828" expanded="true" signature="316:635" ph="SELECT c.*,u... chat_private" />
             <marker date="1517237222828" expanded="true" signature="1961:2573" ph="SELECT DISTI... chat_private" />
@@ -670,7 +860,7 @@
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/RegistrationController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
-          <caret line="81" column="37" lean-forward="false" selection-start-line="81" selection-start-column="37" selection-end-line="81" selection-end-column="37" />
+          <caret line="81" column="37" selection-start-line="81" selection-start-column="37" selection-end-line="81" selection-end-column="37" />
           <folding />
         </state>
       </provider>
@@ -678,7 +868,7 @@
     <entry file="file://$PROJECT_DIR$/app/Resources/views/default/chat.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="47" column="197" lean-forward="false" selection-start-line="47" selection-start-column="197" selection-end-line="47" selection-end-column="197" />
+          <caret line="47" column="197" selection-start-line="47" selection-start-column="197" selection-end-line="47" selection-end-column="197" />
           <folding>
             <element signature="e#12#36#0#Twig" expanded="false" />
           </folding>
@@ -688,7 +878,7 @@
     <entry file="file://$PROJECT_DIR$/app/Resources/views/default/messenger.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="337">
-          <caret line="47" column="103" lean-forward="false" selection-start-line="47" selection-start-column="103" selection-end-line="47" selection-end-column="151" />
+          <caret line="47" column="103" selection-start-line="47" selection-start-column="103" selection-end-line="47" selection-end-column="151" />
           <folding />
         </state>
       </provider>
@@ -696,7 +886,7 @@
     <entry file="file://$PROJECT_DIR$/web/js/pusher.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
-          <caret line="81" column="50" lean-forward="false" selection-start-line="81" selection-start-column="24" selection-end-line="81" selection-end-column="50" />
+          <caret line="81" column="50" selection-start-line="81" selection-start-column="24" selection-end-line="81" selection-end-column="50" />
           <folding />
         </state>
       </provider>
@@ -704,7 +894,7 @@
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ProjectController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
-          <caret line="476" column="52" lean-forward="false" selection-start-line="476" selection-start-column="46" selection-end-line="476" selection-end-column="52" />
+          <caret line="476" column="52" selection-start-line="476" selection-start-column="46" selection-end-line="476" selection-end-column="52" />
           <folding />
         </state>
       </provider>
@@ -712,28 +902,25 @@
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="277">
-          <caret line="167" column="35" lean-forward="false" selection-start-line="167" selection-start-column="20" selection-end-line="167" selection-end-column="35" />
+          <caret line="167" column="35" selection-start-line="167" selection-start-column="20" selection-end-line="167" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/images/profile/18a70fa593554589412f89aa6918e28f.jpeg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/default/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
-          <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state>
           <folding />
         </state>
       </provider>
@@ -741,7 +928,7 @@
     <entry file="file://$PROJECT_DIR$/app/Resources/views/default/homepage.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="22" lean-forward="false" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -749,7 +936,7 @@
     <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/layout.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="24" lean-forward="false" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
           <folding>
             <element signature="e#12#26#0#Twig" expanded="false" />
           </folding>
@@ -759,7 +946,7 @@
     <entry file="file://$PROJECT_DIR$/web/css/styleDark.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
-          <caret line="873" column="1" lean-forward="false" selection-start-line="873" selection-start-column="1" selection-end-line="873" selection-end-column="1" />
+          <caret line="873" column="1" selection-start-line="873" selection-start-column="1" selection-end-line="873" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -767,7 +954,7 @@
     <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login_content.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="20" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <caret line="3" column="20" selection-start-line="3" selection-end-line="4" />
           <folding />
         </state>
       </provider>
@@ -775,7 +962,7 @@
     <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register_content.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="16" column="7" lean-forward="false" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -783,8 +970,25 @@
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ChatController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
-          <caret line="379" column="66" lean-forward="false" selection-start-line="379" selection-start-column="66" selection-end-line="379" selection-end-column="66" />
+          <caret line="379" column="66" selection-start-line="379" selection-start-column="66" selection-end-line="379" selection-end-column="66" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app_dev.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-487">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="22" />
         </state>
       </provider>
     </entry>

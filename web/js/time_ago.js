@@ -55,9 +55,7 @@ $(document).ready(function(){
     $(document).on("click",function(){
         $(".dot-open-menu").hide();
     });
-});
 
-$(document).ready(function(){
     $(".showhide-sidebar").click(function(){
         if($(".sidebar-wrapper").css('display') =='block'){
             $(".sidebar-wrapper").css('display','none');
@@ -78,9 +76,8 @@ $(document).ready(function(){
             }
         }
     });
-});
 
-$(document).ready(function(){
+
     $(document).on("click",".showhide-friend-requests",function(){
         if($(".expand-friend-requests").css('display') =='block'){
             $(".expand-friend-requests").css('display','none');
@@ -106,10 +103,8 @@ $(document).ready(function(){
             container.css('display','none');
         }
     });
-});
 
 
-$(document).ready(function(){
     $(document).on("click",".showhide-unread-notifications",function(){
         if($(".expand-unread-notifications").css('display') =='block'){
             $(".expand-unread-notifications").css('display','none');
@@ -134,10 +129,8 @@ $(document).ready(function(){
             container.css('display','none');
         }
     });
-});
 
 
-$(document).ready(function(){
     $(window).scroll(function() {
         if($(window).scrollTop() + $(window).height() == $(document).height()) {
             /*alert("bottom!");*/
@@ -160,20 +153,20 @@ $(document).ready(function(){
                     for(i=0;i<obj.results.length;i++){
                         /*$('.search-container').append(obj.results[i].vote_count);*/
 
-                       /* data-movie__id="{{ i['id'] }}"
-                        data-movie__title="{{ i['title'] }}"
-                        data-movie__poster_path="{{ i['poster_path'] }}"
-                        data-movie__vote_average="{{ i['vote_average'] }}"
-                        data-movie__overview="{{ i['overview'] }}"
-                        data-movie__genres="{% for genre in i['genre_ids'] %}{{ genre }},{% endfor %}"*/
+                        /* data-movie__id="{{ i['id'] }}"
+                         data-movie__title="{{ i['title'] }}"
+                         data-movie__poster_path="{{ i['poster_path'] }}"
+                         data-movie__vote_average="{{ i['vote_average'] }}"
+                         data-movie__overview="{{ i['overview'] }}"
+                         data-movie__genres="{% for genre in i['genre_ids'] %}{{ genre }},{% endfor %}"*/
 
 
-                       var genres = '';
-                       for(h=0;h<obj.results[i].genre_ids.length;h++){
-                           genres += obj.results[i].genre_ids[h] + ',';
-                       }
+                        var genres = '';
+                        for(h=0;h<obj.results[i].genre_ids.length;h++){
+                            genres += obj.results[i].genre_ids[h] + ',';
+                        }
 
-                       var allDataNeccessery = "data-movie__id='"+obj.results[i].id+"' data-movie__title='"+obj.results[i].title+"' data-movie__poster_path='"+obj.results[i].poster_path+"' data-movie__vote_average='"+obj.results[i].vote_average+"' data-movie__overview='"+obj.results[i].overview+"' data-movie__backdrop_path='"+obj.results[i].backdrop_path+"'  data-movie__genres='"+genres+"'  ";
+                        var allDataNeccessery = "data-movie__id='"+obj.results[i].id+"' data-movie__title='"+obj.results[i].title+"' data-movie__poster_path='"+obj.results[i].poster_path+"' data-movie__vote_average='"+obj.results[i].vote_average+"' data-movie__overview='"+obj.results[i].overview+"' data-movie__backdrop_path='"+obj.results[i].backdrop_path+"'  data-movie__genres='"+genres+"'  ";
 
                         var  a = $('#lists-and-names').data('mlan');
                         var usssser = a.split("*****ii*");
@@ -223,9 +216,9 @@ $(document).ready(function(){
             });
         }
     });
-});
 
-$(document).ready(function(){
+
+
     $("#src").keypress(function (event) {
         if(event.which==13){
             var podaci = $('input[name=search]').val();
@@ -247,9 +240,9 @@ $(document).ready(function(){
                         for(h=0;h<obj.results[i].genre_ids.length;h++){
                             genres += obj.results[i].genre_ids[h] + ',';
                         }
- 
+
                         var allDataNeccessery = "data-movie__id='"+obj.results[i].id+"' data-movie__title='"+obj.results[i].title+"' data-movie__poster_path='"+obj.results[i].poster_path+"' data-movie__vote_average='"+obj.results[i].vote_average+"' data-movie__overview='"+obj.results[i].overview+"' data-movie__backdrop_path='"+obj.results[i].backdrop_path+"'  data-movie__genres='"+genres+"'  ";
- 
+
                         var  a = $('#lists-and-names').data('mlan');
                         var usssser = a.split("*****ii*");
                         var userid=usssser[0];
@@ -301,7 +294,12 @@ $(document).ready(function(){
 
         }
     });
+
+
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
 });
+
 
 $(document).ready(function(){
     $(document).on("click",".add-to-list",function(event){
@@ -475,7 +473,7 @@ $(document).ready(function(){
                    }
                    $('#reviews-collection').append(
                        "                                    <li class=\"collection-item avatar\" id='"+revNiz[i]['id']+"'>\n" +
-                       "                                        <img src='http://localhost/project-418/web/images/profile/"+slika+"' alt=\"\" class=\"circle\">\n" +
+                       "                                        <img src='http://localhost:8888/project-418/web/images/profile/"+slika+"' alt=\"\" class=\"circle\">\n" +
                        "                                        <span class=\"title\">"+imeprezime+"</span>\n" +
                        "                                        <p>\n" +
                        "                                            "+revNiz[i]['reviewTxt']+"<img src='"+revNiz[i]['gifUrl']+"'>"+"\n" +
@@ -762,66 +760,66 @@ $(document).ready(function () {
     });
 });
 
-$(document).ready(function(){
-    $("#src-ppl").keypress(function (event) {
-        if(event.which==13){
-            var podaci = $('input[name=search-people]').val();
-            var eventData = {
-                'query': podaci
-            };
-            $('#rez-pretrage').empty();
-            $('#rez-pretrage').append("<li><div class=\"preloader-wrapper small active\">\n" +
-                "    <div class=\"spinner-layer spinner-green-only\">\n" +
-                "      <div class=\"circle-clipper left\">\n" +
-                "        <div class=\"circle\"></div>\n" +
-                "      </div><div class=\"gap-patch\">\n" +
-                "        <div class=\"circle\"></div>\n" +
-                "      </div><div class=\"circle-clipper right\">\n" +
-                "        <div class=\"circle\"></div>\n" +
-                "      </div>\n" +
-                "    </div>\n" +
-                "  </div></li>")
-            $.ajax({
-                url: 'http://localhost/project-418/web/app_dev.php/search',
-                type: 'POST',
-                data: eventData,
-                success: function (data, status) {
-                    console.log(data);
-                    var obj = JSON.parse(data);
-                    var userNiz = obj['rez'];
-                    $('#rez-pretrage').empty();
-
-                    var is_rec = $('input[name=search-people]').data('is_rec');
-                    var secondary_content_span = '';
-
-
-                    for(var i=0;i<userNiz.length;i++){
-
-                        if(is_rec==='yes'){
-                            secondary_content_span = "<span class='secondary-content' id='rec-sec-cont' data-received_by='"+userNiz[i]['id']+"' data-ime_i_prezime='"+userNiz[i]['ime_i_prezime']+"'><i class='material-icons'>send</i></span>";
-                        }
-
-
-                        $('#rez-pretrage').append("<li class=\"collection-item avatar\">\n" +
-                            "                   <a href='http://localhost/project-418/web/app_dev.php/profile/"+userNiz[i]['id']+"'><img src='http://localhost/project-418/web/images/profile/"+userNiz[i]['profile_image']+"' alt=\"\" class=\"circle\"></a>\n" +
-                            "                   <a href='http://localhost/project-418/web/app_dev.php/profile/"+userNiz[i]['id']+"'><span class=\"title\">"+userNiz[i]['ime_i_prezime']+"</span></a>\n" +
-                            "                        <p>"+userNiz[i]['username']+" <br>\n" +
-                            "                           " +
-                            "                        </p>\n" +
-                            "                        " + secondary_content_span+
-                            "                    </li>");
-                        }
-                }, error: function () {
-                }
-            });
-        }
-    });
-});
-
-
-
-
-
+// import { WebHelper } from "./components/Helpers/WebHelper.js";
+// const webHelper = new WebHelper();
+//
+// $(document).ready(function(){
+//     $("#src-ppl").keypress(function (event) {
+//
+//         const searchEndpoint = webHelper.generateEndpoint('search');
+//         if(event.which==13){
+//             var podaci = $('input[name=search-people]').val();
+//             var eventData = {
+//                 'query': podaci
+//             };
+//             $('#rez-pretrage').empty();
+//             $('#rez-pretrage').append("<li><div class=\"preloader-wrapper small active\">\n" +
+//                 "    <div class=\"spinner-layer spinner-green-only\">\n" +
+//                 "      <div class=\"circle-clipper left\">\n" +
+//                 "        <div class=\"circle\"></div>\n" +
+//                 "      </div><div class=\"gap-patch\">\n" +
+//                 "        <div class=\"circle\"></div>\n" +
+//                 "      </div><div class=\"circle-clipper right\">\n" +
+//                 "        <div class=\"circle\"></div>\n" +
+//                 "      </div>\n" +
+//                 "    </div>\n" +
+//                 "  </div></li>")
+//             $.ajax({
+//                 url: searchEndpoint,
+//                 type: 'POST',
+//                 data: eventData,
+//                 success: function (data, status) {
+//                     console.log(data);
+//                     var obj = JSON.parse(data);
+//                     var userNiz = obj['rez'];
+//                     $('#rez-pretrage').empty();
+//
+//                     var is_rec = $('input[name=search-people]').data('is_rec');
+//                     var secondary_content_span = '';
+//
+//
+//                     for(var i=0;i<userNiz.length;i++){
+//
+//                         if(is_rec==='yes'){
+//                             secondary_content_span = "<span class='secondary-content' id='rec-sec-cont' data-received_by='"+userNiz[i]['id']+"' data-ime_i_prezime='"+userNiz[i]['ime_i_prezime']+"'><i class='material-icons'>send</i></span>";
+//                         }
+//
+//
+//                         $('#rez-pretrage').append("<li class=\"collection-item avatar\">\n" +
+//                             "                   <a href='http://localhost/project-418/web/app_dev.php/profile/"+userNiz[i]['id']+"'><img src='http://localhost/project-418/web/images/profile/"+userNiz[i]['profile_image']+"' alt=\"\" class=\"circle\"></a>\n" +
+//                             "                   <a href='http://localhost/project-418/web/app_dev.php/profile/"+userNiz[i]['id']+"'><span class=\"title\">"+userNiz[i]['ime_i_prezime']+"</span></a>\n" +
+//                             "                        <p>"+userNiz[i]['username']+" <br>\n" +
+//                             "                           " +
+//                             "                        </p>\n" +
+//                             "                        " + secondary_content_span+
+//                             "                    </li>");
+//                         }
+//                 }, error: function () {
+//                 }
+//             });
+//         }
+//     });
+// });
 
 
 
@@ -858,7 +856,7 @@ $(document).ready(function(){
            movie__backdrop_path:movie__backdrop_path
        };
        $.ajax({
-           url: 'http://localhost/project-418/web/app_dev.php/movies/'+movie_id,
+           url: 'http://localhost:8888/project-418/web/app_dev.php/movies/'+movie_id,
            type: 'POST',
            data: eventData,
            success: function (data, status) {
@@ -1010,11 +1008,5 @@ $(document).ready(function () {
             }
         });
     });
-});
-
-
-$(document).ready(function(){
-    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
-    $('.modal').modal();
 });
 

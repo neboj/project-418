@@ -39,7 +39,7 @@ class ProjectController extends Controller
     /**
      * @Route("/", name="homepage")
      */
-    public function indexAction(Request $request)
+    public function indexAction(Request $request§)
     {
         $securityContext = $this->container->get('security.authorization_checker');
         if (!$securityContext->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
@@ -1047,7 +1047,7 @@ class ProjectController extends Controller
                 $serializer = new Serializer(array($normalizer), array($encoder));
                 $results=$serializer->serialize($results, 'json');
 
-                $final = '{"rez":'.$results .'}';
+                $final = '{"responseData":'.$results .'}';
                 return new JsonResponse($final);
             }
         }

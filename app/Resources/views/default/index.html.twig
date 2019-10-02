@@ -9,7 +9,7 @@
                 {#<img src="../images/profile/{{ app.user.profileImage }}" alt="{{ app.user.firstName }}'s profile image">#}
                 {#{{ app.user.profileImage }}#}
                 <div class="profile-image-container">
-                    <img class="circle" src="http://localhost/project-418/web/images/profile/{{ app.user.profileImage }}" alt="{{ app.user.firstName }}'s profile image">
+                    <img class="circle" src="http://localhost:8888/project-418/web/images/profile/{{ app.user.profileImage }}" alt="{{ app.user.firstName }}'s profile image">
                 </div>
                 <div><a href="{{ path('fos_user_security_logout')}}">Logout</a></div>
                 {% if is_granted('ROLE_USER') %}

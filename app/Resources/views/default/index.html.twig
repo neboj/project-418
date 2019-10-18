@@ -2,9 +2,9 @@
 {% block body %}
 
     {% block sidebar %}
-    <div class="sidebar-wrapper">
+    <div id="sidebar-wrapper">
         <div class="sidebar">
-<span class="usr-id" data-uid="{{ app.user.id }}"></span>
+            <span class="usr-id" data-uid="{{ app.user.id }}"></span>
             <div class="sidebar-profile">
                 {#<img src="../images/profile/{{ app.user.profileImage }}" alt="{{ app.user.firstName }}'s profile image">#}
                 {#{{ app.user.profileImage }}#}
@@ -48,8 +48,8 @@
                         <span class="message-alert color_me_grey">{{ unread_msgs|length }}</span>
                     </a>
                 </li>
-                <li class="showhide-unread-notifications"><span class="sidebar-menu-notifs"><i class="material-icons">notifications</i> </span><span class="notifications_count">{{ neprocitanih }}</span>
-                    <div class="expand-unread-notifications">
+                <li id="showhide-unread-notifications"><span class="sidebar-menu-notifs"><i class="material-icons">notifications</i> </span><span class="notifications_count">{{ neprocitanih }}</span>
+                    <div id="expand-unread-notifications">
                         <ul class="ul-unread-notifications collection" >
                             {% set broj = notifications|length-1 %}
                             {% if notifications|length>0 %}
@@ -90,8 +90,8 @@
                     </div>
                 </li>
                 {#<li><a class="sidebar-menu-recommend" href="{{ path('notebook') }}">Notebook</a></li>#}
-                <li class="showhide-friend-requests"><span class="color_me_blue"><i class="material-icons">person</i> </span> <span class="friend_requests">{{ friend_requests|length }}</span>
-                    <div class="expand-friend-requests">
+                <li id="showhide-friend-requests"><span class="color_me_blue"><i class="material-icons">person</i> </span> <span id="friend_requests">{{ friend_requests|length }}</span>
+                    <div id="expand-friend-requests">
                         <ul class="ul-friend-requests collection">
                         {% set broj = friend_requests|length-1 %}
                         {% if friend_requests|length > 0 %}
@@ -195,7 +195,6 @@
         </div>
     {% endblock %}
 {% endblock %}
-
-
-
-
+{% block bodyEndScripts %}
+    <script type="module" src="{{ asset('js/components/Sidebar/Sidebar.js') }}"></script>
+{% endblock %}

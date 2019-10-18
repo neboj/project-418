@@ -3,20 +3,21 @@
     {% block sidebar %}
         {{ parent() }}
     {% endblock %}
+
     <div class="search-header" id="search-people-header">
-        <i class="material-icons showhide-sidebar">dehaze</i>
+        <i id="showhide-sidebar" class="material-icons">dehaze</i>
         <div class="search-container">
             <span class="movies-dark-search-span">Search people</span><input class="search-ppl" name="search-people" id="src-ppl" data-is_rec="no">
         </div>
-
-
     </div>
-        {% block main %}
-        <div class="main" id="main-homepage">
-            <ul class="collection" id="rez-pretrage">
 
-            </ul>
-        </div>
+
+    {% block main %}
+    <div class="main" id="main-homepage">
+        <ul class="collection" id="rez-pretrage">
+
+        </ul>
+    </div>
 
 
         {% endblock %}{#end main#}

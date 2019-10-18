@@ -5,9 +5,7 @@
         {% endblock %}
     {% block main %}
     <div class="main" id="main-homepage">
-        <i class="material-icons showhide-sidebar">dehaze</i>
-
-
+        <i id="showhide-sidebar" class="material-icons">dehaze</i>
         {#<div class="latest-activity"><h5>Latest activity</h5></div>
         {{ dump(news[0]) }}
         {{ news[0]['movie'] }}
@@ -205,4 +203,8 @@
     </div>{#END MAIN div#}
         {% endblock %}{#ENDBLOCK MAIN#}
 
+{% endblock %}
+
+{% block bodyEndScripts %}
+    {{ parent() }}
 {% endblock %}

@@ -2,26 +2,27 @@
 <html>
     <head>
         <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Project-418 provides a platform for all movie fans to socialize." />
+        <meta name="keywords" content="Project-418, movies, share, recommend, social, fans, chat" />
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <link rel="stylesheet" type="text/css" href="{{ asset('css/styleDark.css') }}"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Comfortaa|Barlow|Didact+Gothic" rel="stylesheet">
-            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-            <link rel="stylesheet" type="text/css" href="{{ asset('css/materialize.css') }}"/>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/materialize.css') }}"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
         {% endblock %}
         {% block javascripts %}
             <script src="{{ asset('js/time_ago.js') }}"></script>
             <script src="https://js.pusher.com/4.2/pusher.min.js"></script>
             <script src="{{ asset('js/pusher.js') }}"></script>
-
         {% endblock %}
     </head>
     <body>
-        {% block body %}
-        {% endblock %}
+        {% block body %}{% endblock %}
+        {% block bodyEndScripts %}{% endblock %}
     </body>
 </html>

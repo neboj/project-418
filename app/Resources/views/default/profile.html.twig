@@ -5,7 +5,7 @@
     {% endblock %}
     {% block main %}
         <div class="main" id="main-profile">
-        <i class="material-icons showhide-sidebar">dehaze</i>
+            <i id="showhide-sidebar" class="material-icons">dehaze</i>
 
             <div class="usr-id" id="hide-me-usr-id"  data-uid="{{ app.user.id }}" data-token="{{ csrf_token('authenticate') }}" data-receiver-id="{{ profile.id }}">user {{ profile.id }}</div>
 
@@ -167,3 +167,8 @@
         </div>
         {% endblock %}{#endblock MAIN#}
 {% endblock %}{#endblock BODY#}
+
+{% block bodyEndScripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/pages/Profile/Profile.js') }}"></script>
+{% endblock %}

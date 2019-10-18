@@ -11,7 +11,8 @@
     {% block main %}
         <div class="main" id="main-movie-page">
 
-            <i class="material-icons showhide-sidebar">dehaze</i>
+            <i id="showhide-sidebar" class="material-icons">dehaze</i>
+
 
             {% if is_granted('ROLE_USER') %}
                 {% if app.request.hasPreviousSession %}
@@ -127,7 +128,7 @@
 
                                     <li class="collection-item avatar mov-rev" id="{{ r.id }}">
                                         {% for u in users if u.id == r.user %}
-                                            <img src="http://localhost/project-418/web/images/profile/{{ u.profileImage }}" alt="" class="circle">
+                                            <img src="http://localhost/project-418/web/images/profile/{{ u.profileImage }}" alt="hello" class="circle">
                                             <span class="title">{{ u.firstName }} {{ u.lastName }}</span>
                                         {% endfor %}
                                         <p>
@@ -176,16 +177,11 @@
 
 
 {% endblock %}
-
-
+{% block bodyEndScripts %}
+    {{ parent() }}
+    <script type="module" src="{{ asset('js/pages/Movies/Movie/Movie.js') }}"></script>
+{% endblock %}
 
 {% block stylesheets %}
-    <script type="module" src="{{ asset('js/pages/Movies/Movie/Movie.js') }}"></script>
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/styleDark.css') }}"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Comfortaa|Barlow|Didact+Gothic" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/materialize.css') }}"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    {{ parent() }}
 {% endblock %}

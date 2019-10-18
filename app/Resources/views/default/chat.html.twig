@@ -5,8 +5,7 @@
         {% endblock %}
     {% block main %}
     <div class="main" id="messenger-main">
-
-        <i class="material-icons showhide-sidebar" style="color:black !important;">dehaze</i>
+        <i id="showhide-sidebar" class="material-icons" style="color:black !important;">dehaze</i>
         <div class="messenger-main-grid">
             <div class="messenger-left">
                 <span class="all-friends" data-all-friends-array="{% set broj = friends|length-1 %}
@@ -92,3 +91,10 @@
     </div>{#end main div#}
         {% endblock  %} {#end main block#}
 {% endblock %}
+
+
+{% block bodyEndScripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/pages/Chat/Chat.js') }}"></script>
+{% endblock %}
+

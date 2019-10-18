@@ -8,7 +8,7 @@
     <div class="search-header">
         <span id="lists-and-names" data-mlan="{{ app.user.id }}*****ii*{% for a in lists %}*/*{{ a.id }}-**-{{ a.name }}{% endfor %}">{% for a in lists %} */*{{ a.id }}-{{ a.name }} {% endfor %}</span>
         {#{{ dump(info) }}#}
-        <i class="material-icons showhide-sidebar">dehaze</i>
+        <i id="showhide-sidebar" class="material-icons">dehaze</i>
         <div class="search-container">
             <span class="movies-dark-search-span">Search<input type="text" name="search" id="src"></span>
         </div>
@@ -90,7 +90,7 @@
 
                     {% endfor %}    {# END json rezultate #}
                 </div>
-                <div class="pagination">
+                <div id="pagination">
                 {{ info['page'] }}
                 </div>
             {% endif %} {# END if ulogovan #}
@@ -100,6 +100,12 @@
 
 {% endblock %} {# END body #}
 
+{% block bodyEndScripts %}
+    {{ parent() }}
+    <script type="module" src="{{ asset('js/pages/Movies/Movies.js') }}"></script>
+    <script src="{{ asset('js/pages/Movies/InfiniteScroll.js') }}"></script>
+    <script src="{{ asset('js/pages/Movies/Search.js') }}"></script>
+{% endblock %}
 
 
 

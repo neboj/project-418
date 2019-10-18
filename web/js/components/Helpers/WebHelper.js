@@ -2,8 +2,12 @@ export function WebHelper () {
      this.baseUrl = () => {
         let urlTokens = window.location.href.split('/');
         let baseUrl = '';
-        for (let i = 0; i < urlTokens.length - 2; i++) {
-            baseUrl += urlTokens[i] + '/';
+        let lastToken = 'app_dev.php';
+        for (let i of urlTokens) {
+            baseUrl += i + '/';
+            if (i === lastToken) {
+                return baseUrl;
+            }
         }
         return baseUrl
     }

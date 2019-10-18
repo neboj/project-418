@@ -14,7 +14,7 @@ body{
 *
 */
 
-.sidebar-wrapper{
+#sidebar-wrapper{
     width:15%;
     height:100%;
     position: fixed;
@@ -558,7 +558,7 @@ h5{
     font-weight: bold;
     margin-top:5%;
 }
-.showhide-sidebar{
+#showhide-sidebar{
     position: fixed;
     z-index: 2;
     color:white;
@@ -673,7 +673,7 @@ h5{
     width: 40vh !important;
     display:none;
 }
-.expand-unread-notifications{
+#expand-unread-notifications{
     display:none;
 }
 .ul-unread-notifications{

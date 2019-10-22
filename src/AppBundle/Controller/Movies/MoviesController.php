@@ -22,6 +22,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 
 class MoviesController extends CommonController {
+
     /**
      * @var ObjectManager | Object
      */
@@ -45,22 +46,20 @@ class MoviesController extends CommonController {
         }
         $this->entityManager = $this->getDoctrine()->getManager();
         $this->userId = $this->getUser()->getId();
+        if($request->isXmlHttpRequest()){
+            $result = $this->handleAjax($request);
+            return $result;
+        }
         $popularMoviesJSON = file_get_contents(
             "https://api.themoviedb.org/3/movie/popular?api_key=831c33c0ee756b98159b05350405d661");
         $popularMovies = json_decode($popularMoviesJSON,true);
         $usersMovieLists = $this->entityManager->getRepository(UsersList::class)->findBy(
             ['user' => $this->userId]);
-
         $friend_requests = $this->entityManager->getRepository(Friends::class)->getFriendRequests(
             $this->getUser()->getId());
         $chats = $this->entityManager->getRepository(ChatPrivate::class)->getAllChats($this->getUser()->getId());
         $unread_msgs = $this->entityManager->getRepository(ChatMessage::class)->findBy(['received_by'=>$this->getUser()->getId(),'is_read'=>false]);
         $notifications = $this->entityManager->getRepository(Notifications::class)->getAllNotifications($this->getUser()->getId());
-
-        if($request->isXmlHttpRequest()){
-            $result = $this->handleAjax($request);
-            return $result;
-        }
         return $this->render('default/moviesDark.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
             'info' => $popularMovies,
@@ -122,56 +121,33 @@ class MoviesController extends CommonController {
      * @throws \Exception
      */
     private function addToPersonalList($movieData) {
-        $usrID = $this->userId;
         $listID = $movieData['list'];
         $tmdbID = $movieData['tmdbid'];
-        $title = $movieData['title'];
         $movieId = $movieData['movie__id'];
         $movieVoteAverage = $movieData['movie__vote_average'];
         $movieBackdropPath = $movieData['movie__backdrop_path'];
-        $movieOverview = $movieData['movie__overview'];
+        $movieOverview = mb_strimwidth($movieData['movie__overview'],0,254,'utf-8');
         $movieGenres = $movieData['movie__genres'];
         $moviePosterPath = $movieData['movie__poster_path'];
         $movieTitle = $movieData['movie__title'];
-        $postoji = $this->entityManager->getRepository(Movie::class)->find($movieData['movie__id']);
-        if(!$postoji){
-            $movie=new Movie();
-            $movie->setId($movieId);
-            $movie->setTitle($movieTitle);
-            $movie->setPosterPath($moviePosterPath);
-            $movie->setVoteAverage($movieVoteAverage);
-            $movie->setOverview(mb_strimwidth($movieOverview,0,254,'utf-8'));
-            $movie->setGenres($movieGenres);
-            $movie->setBackdropPath($movieBackdropPath);
-
+        $movieInDB = $this->entityManager->getRepository(Movie::class)->find($movieId);
+        if(!$movieInDB){
+            $movie = new Movie($movieId, $movieTitle, $moviePosterPath, $movieOverview, $movieGenres, $movieVoteAverage, $movieBackdropPath);
             $this->entityManager->persist($movie);
-            $this->entityManager->flush();
         }
-//        $listaMaxID = $this->getDoctrine()->getRepository(UsersList::class)->maxID();
-        $stavkaListeMaxID = $this->getDoctrine()->getRepository(UsersListItem::class)->getMaxID($listID);
-        $postoji = $this->getDoctrine()->getRepository(UsersListItem::class)->alreadyInList($usrID,$listID,$tmdbID);
-        if(!$postoji){
-            $item = new UsersListItem();
-            $item->setName($title);
-            $item->setListid($listID);
-            $item->setMovie($tmdbID);
-            $item->setListitemid($stavkaListeMaxID[0]['broj']+1);
+        $listItemMaxID = $this->getDoctrine()->getRepository(UsersListItem::class)->getMaxID($listID);
+        $movieInPersonalList = $this->getDoctrine()->getRepository(UsersListItem::class)->alreadyInList($this->userId,$listID,$tmdbID);
+        if(!$movieInPersonalList){
+            $listItemID = $listItemMaxID[0]['maxID'] + 1;
+            $item = new UsersListItem($listID, $listItemID, $tmdbID, $movieTitle);
             $privacy = $this->entityManager->getRepository(UsersList::class)->find($listID);
-            if($privacy->getisPrivate()==false){
-                $latestNews = new LatestNews();
-                $latestNews->setIsLike(false);
-                $latestNews->setCreatedAt(new\DateTime());
-                $latestNews->setMovie($tmdbID);
-                $latestNews->setReview(0);
-                $latestNews->setActionPerformer($usrID);
-                $latestNews->setIsReview(false);
-                $latestNews->setIsAdd(true);
-                $latestNews->setList($listID);
+            if($privacy->getIsPrivate() == false){
+                $latestNews = new LatestNews($this->userId, false, false,  true, false, $listID, $tmdbID, new \DateTime());
                 $this->entityManager->persist($latestNews);
             }
             $this->entityManager->persist($item);
-            $this->entityManager->flush();
         }
-        return new JsonResponse('sve ok');
+        $this->entityManager->flush();
+        return new JsonResponse('Success');
     }
 }

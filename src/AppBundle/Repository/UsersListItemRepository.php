@@ -14,19 +14,19 @@ use Doctrine\ORM\EntityRepository;
 class UsersListItemRepository extends EntityRepository
 {
 
-    public function getMaxID($x){
+    public function getMaxID($listId){
         return $this->getEntityManager()
             ->createQuery(
-                "SELECT count(p.listitemid) as broj FROM AppBundle:UsersListItem p WHERE p.listid='.$x.'"
+                "SELECT count(p.listitemid) as maxID FROM AppBundle:UsersListItem p WHERE p.listid={$listId}"
             )
             ->getResult();
     }
 
-    public function alreadyInList($y,$z,$u){
+    public function alreadyInList($userId, $listId, $movieId){
 
         return $this->getEntityManager()
             ->createQuery(
-                "SELECT l FROM AppBundle:UsersList ul JOIN AppBundle:UsersListItem l  WHERE ul.user=$y AND l.listid=$z AND l.movie=$u"
+                "SELECT l FROM AppBundle:UsersList ul JOIN AppBundle:UsersListItem l  WHERE ul.user={$userId} AND l.listid={$listId} AND l.movie={$movieId}"
             )
             ->getResult();
     }
@@ -47,7 +47,7 @@ class UsersListItemRepository extends EntityRepository
 
     public function findItemsForThisUser($user){
         $em = $this->getEntityManager();
-        $RAW_QUERY = 'SELECT items.*,list.name as list_name FROM `users_list_item` items join users_list list on items.listid=list.id where list.user='.$user;
+        $RAW_QUERY = 'SELECT items.*,list.name as list_name FROM `users_list_item` items join users_list list on items.listid=list.id where list.user=' . $user;
         $statement = $em->getConnection()->prepare($RAW_QUERY);
         $statement->execute();
 

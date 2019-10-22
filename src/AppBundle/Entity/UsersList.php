@@ -92,7 +92,7 @@ class UsersList
     /**
      * @return mixed
      */
-    public function getisPrivate()
+    public function getIsPrivate()
     {
         return $this->is_private;
     }

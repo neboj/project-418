@@ -34,7 +34,7 @@ function AddToPersonalList(event, classname, endpoint) {
         data: {movieData: movieData, methodName: 'AddToPersonalList'},
         success: function(data,status) {
             console.log(data);
-            console.log('kurcina',JSON.stringify(movieData));
+            console.log('kurcina', JSON.stringify(movieData));
         },
         error:function(err) { console.log(err); }
     });

@@ -33,28 +33,11 @@ class LatestNews
     }
 
     /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
-
-
-    /**
      * @return mixed
      */
     public function getActionPerformer()
     {
         return $this->actionPerformer;
-    }
-
-    /**
-     * @param mixed $actionPerformer
-     */
-    public function setActionPerformer($actionPerformer)
-    {
-        $this->actionPerformer = $actionPerformer;
     }
 
     /**
@@ -66,27 +49,11 @@ class LatestNews
     }
 
     /**
-     * @param mixed $isLike
-     */
-    public function setIsLike($isLike)
-    {
-        $this->isLike = $isLike;
-    }
-
-    /**
      * @return mixed
      */
     public function getisReview()
     {
         return $this->isReview;
-    }
-
-    /**
-     * @param mixed $isReview
-     */
-    public function setIsReview($isReview)
-    {
-        $this->isReview = $isReview;
     }
 
     /**
@@ -98,27 +65,11 @@ class LatestNews
     }
 
     /**
-     * @param mixed $isAdd
-     */
-    public function setIsAdd($isAdd)
-    {
-        $this->isAdd = $isAdd;
-    }
-
-    /**
      * @return mixed
      */
     public function getReview()
     {
         return $this->review;
-    }
-
-    /**
-     * @param mixed $review
-     */
-    public function setReview($review)
-    {
-        $this->review = $review;
     }
 
     /**
@@ -130,14 +81,6 @@ class LatestNews
     }
 
     /**
-     * @param mixed $list
-     */
-    public function setList($list)
-    {
-        $this->list = $list;
-    }
-
-    /**
      * @return mixed
      */
     public function getMovie()
@@ -146,27 +89,11 @@ class LatestNews
     }
 
     /**
-     * @param mixed $movie
-     */
-    public function setMovie($movie)
-    {
-        $this->movie = $movie;
-    }
-
-    /**
      * @return mixed
      */
     public function getCreatedAt()
     {
         return $this->created_at;
-    }
-
-    /**
-     * @param mixed $created_at
-     */
-    public function setCreatedAt($created_at)
-    {
-        $this->created_at = $created_at;
     }
 
     /**
@@ -201,4 +128,17 @@ class LatestNews
      * @ORM\Column(type="datetime")
      */
     private $created_at;
+
+    public function __construct(
+        $actionPerformer, $isLike, $isReview, $isAdd,$review, $list, $movie, $createdAt
+    ) {
+        $this->actionPerformer = $actionPerformer;
+        $this->isLike = $isLike;
+        $this->isReview = $isReview;
+        $this->isAdd = $isAdd;
+        $this->review = $review;
+        $this->list = $list;
+        $this->movie = $movie;
+        $this->created_at  = $createdAt;
+    }
 }

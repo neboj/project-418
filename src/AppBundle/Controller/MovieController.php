@@ -498,7 +498,7 @@ class MovieController extends CommonController
 
                     $privatnost = $em->getRepository(UsersList::class)->find($listID);
 
-                    if($privatnost->getisPrivate()==false){
+                    if($privatnost->getIsPrivate()==false){
                         $latestNews = new LatestNews();
                         $latestNews->setIsLike(false);
                         $latestNews->setCreatedAt(new\DateTime());

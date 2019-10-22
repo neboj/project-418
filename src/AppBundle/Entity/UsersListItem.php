@@ -22,25 +22,46 @@ class UsersListItem
      * @ORM\Column(type="integer")
      */
     private $listid;
+
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
      */
     private $listitemid;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $name;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $movie;
+
+    /**
+     * UsersListItem constructor.
+     *
+     * @param $listID
+     * @param $listItemID
+     * @param $movieTMDBID
+     * @param $title
+     */
+    public function __construct(
+        $listID, $listItemID, $movieTMDBID, $title
+    ) {
+        $this->listid = $listID;
+        $this->listitemid = $listItemID;
+        $this->movie = $movieTMDBID;
+        $this->name = $title;
+    }
+
     /**
      * @return mixed
      */
     public function getListid()
     {
         return $this->listid;
-    }
-
-    /**
-     * @param mixed $listid
-     */
-    public function setListid($listid)
-    {
-        $this->listid = $listid;
     }
 
     /**
@@ -52,27 +73,11 @@ class UsersListItem
     }
 
     /**
-     * @param mixed $listitemid
-     */
-    public function setListitemid($listitemid)
-    {
-        $this->listitemid = $listitemid;
-    }
-
-    /**
      * @return mixed
      */
     public function getName()
     {
         return $this->name;
-    }
-
-    /**
-     * @param mixed $name
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
     }
 
     /**
@@ -82,24 +87,5 @@ class UsersListItem
     {
         return $this->movie;
     }
-
-    /**
-     * @param mixed $movie
-     */
-    public function setMovie($movie)
-    {
-        $this->movie = $movie;
-    }
-
-    /**
-     * @ORM\Column(type="string")
-     */
-    private $name;
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $movie;
-
-
 
 }

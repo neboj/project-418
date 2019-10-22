@@ -14,119 +14,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="movie")
  */
-class Movie
-{
-    /**
-     * @return mixed
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getTitle()
-    {
-        return $this->title;
-    }
-
-    /**
-     * @param mixed $title
-     */
-    public function setTitle($title)
-    {
-        $this->title = $title;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPosterPath()
-    {
-        return $this->poster_path;
-    }
-
-    /**
-     * @param mixed $poster_path
-     */
-    public function setPosterPath($poster_path)
-    {
-        $this->poster_path = $poster_path;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getVoteAverage()
-    {
-        return $this->vote_average;
-    }
-
-    /**
-     * @param mixed $vote_average
-     */
-    public function setVoteAverage($vote_average)
-    {
-        $this->vote_average = $vote_average;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getOverview()
-    {
-        return $this->overview;
-    }
-
-    /**
-     * @param mixed $overview
-     */
-    public function setOverview($overview)
-    {
-        $this->overview = $overview;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getGenres()
-    {
-        return $this->genres;
-    }
-
-    /**
-     * @param mixed $genres
-     */
-    public function setGenres($genres)
-    {
-        $this->genres = $genres;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getBackdropPath()
-    {
-        return $this->backdrop_path;
-    }
-
-    /**
-     * @param mixed $backdrop_path
-     */
-    public function setBackdropPath($backdrop_path)
-    {
-        $this->backdrop_path = $backdrop_path;
-    }
+class Movie {
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
@@ -158,5 +46,82 @@ class Movie
     private $backdrop_path;
 
 
+    /**
+     * Movie constructor.
+     * @param $id int
+     * @param $title string
+     * @param $poster_path string
+     * @param $overview string
+     * @param $genres array
+     * @param $vote_average int|string
+     * @param $backdrop_path
+     */
+    public function __construct (
+        $id, $title, $poster_path, $overview, $genres, $vote_average, $backdrop_path
+    ) {
+        $this->id = $id;
+        $this->title = $title;
+        $this->poster_path = $poster_path;
+        $this->overview = $overview;
+        $this->genres = $genres;
+        $this->vote_average = $vote_average;
+        $this->backdrop_path = $backdrop_path;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPosterPath()
+    {
+        return $this->poster_path;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getVoteAverage()
+    {
+        return $this->vote_average;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getOverview()
+    {
+        return $this->overview;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getGenres()
+    {
+        return $this->genres;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBackdropPath()
+    {
+        return $this->backdrop_path;
+    }
 
 }

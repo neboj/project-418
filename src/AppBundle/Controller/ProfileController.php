@@ -128,7 +128,7 @@ class ProfileController extends Controller
                 $list_to_change_privacy = $em->getRepository(UsersList::class)->findOneBy([
                     'id'=>$request->request->get('list_id_for_privacy_change'),
                 ]);
-                if($list_to_change_privacy->getisPrivate()==false){
+                if($list_to_change_privacy->getIsPrivate()==false){
                     $list_to_change_privacy->setIsPrivate(true);
                 }else{
                     $list_to_change_privacy->setIsPrivate(false);

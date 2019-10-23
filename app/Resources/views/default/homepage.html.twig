@@ -28,7 +28,7 @@
                                     <img src="http://localhost/project-418/web/images/profile/{{ filmsActJoinMovie[i]['profile_image'] }}"></a>
                                 </div><div class="feed-li-img-container">
                                     <img src="{{ asset('sm.png') }}">
-                                </div><div class="feed-li-img-container"><a href="{{ path('moviePage',{'id':filmsActJoinMovie[i]['id']}) }}">
+                                </div><div class="feed-li-img-container"><a href="{{ path('moviePage',{'movieId':filmsActJoinMovie[i]['id']}) }}">
                                         <img src="https://image.tmdb.org/t/p/w92{{ filmsActJoinMovie[i]['poster_path']|json_encode|raw|replace({'"':''}) }}"></a>
                                 </div>
                                 <div class="inner">
@@ -53,13 +53,13 @@
                                         <img src="http://localhost/project-418/web/images/profile/{{ filmsActJoinMovie[i]['profile_image'] }}"></a>
                                 </div><div class="feed-li-img-container">
                                     <img src="{{ asset('po.PNG') }}">
-                                </div><div class="feed-li-img-container"><a href="{{ path('moviePage',{'id':filmsActJoinMovie[i]['id']}) }}">
+                                </div><div class="feed-li-img-container"><a href="{{ path('moviePage',{'movieId':filmsActJoinMovie[i]['id']}) }}">
                                         <img src="https://image.tmdb.org/t/p/w92{{ filmsActJoinMovie[i]['poster_path']|json_encode|raw|replace({'"':''}) }}"></a>
                                 </div>
                                 <div class="inner">
                                     <a href="{{ path('profile',{'id':news[i]['action_performer']}) }}" class="feed-li-someone"> {{ news[i]['first_name'] }}</a>&nbsp
                                     reviewed
-                                    &nbsp<a href="{{ path('moviePage',{'id':filmsActJoinMovie[i]['id']}) }}" class="feed-li-movie">{{ filmsActJoinMovie[i]['title']|json_encode|raw|replace({'"':''}) }}</a>
+                                    &nbsp<a href="{{ path('moviePage',{'movieId':filmsActJoinMovie[i]['id']}) }}" class="feed-li-movie">{{ filmsActJoinMovie[i]['title']|json_encode|raw|replace({'"':''}) }}</a>
                                 </div>
                             </div>
                                 <div class="time-ago"><script>
@@ -76,13 +76,13 @@
                                         <img src="http://localhost/project-418/web/images/profile/{{ filmsActJoinMovie[i]['profile_image'] }}"></a>
                                 </div><div class="feed-li-img-container">
                                     <img src="http://www.myiconfinder.com/uploads/iconsets/128-128-6cc6135dbcdd8f769c00fcc7440dd898-popcorn.png">
-                                </div><div class="feed-li-img-container"><a href="{{ path('moviePage',{'id':filmsActJoinMovie[i]['movie']}) }}">
+                                </div><div class="feed-li-img-container"><a href="{{ path('moviePage',{'movieId':filmsActJoinMovie[i]['movie']}) }}">
                                     <img src="https://image.tmdb.org/t/p/w92{{ filmsActJoinMovie[i]['poster_path']|json_encode|raw|replace({'"':''}) }}"></a>
                                 </div>
                                 <div class="inner">
                                     <a href="{{ path('profile',{'id':news[i]['action_performer']}) }}" class="feed-li-someone">{{ news[i]['first_name'] }}</a>&nbsp
                                     added
-                                    &nbsp<a href="{{ path('moviePage',{'id':filmsActJoinMovie[i]['id']}) }}" class="feed-li-movie">{{ filmsActJoinMovie[i]['title']|json_encode|raw|replace({'"':''}) }}</a>&nbsp
+                                    &nbsp<a href="{{ path('moviePage',{'movieId':filmsActJoinMovie[i]['id']}) }}" class="feed-li-movie">{{ filmsActJoinMovie[i]['title']|json_encode|raw|replace({'"':''}) }}</a>&nbsp
                                     to
                                     &nbsp<a href="#!">{{ news[i]['name'] }}</a>&nbsp
                                     (list)
@@ -106,7 +106,7 @@
         {% for i in top_rated['results']  %}
             {% set imgUrl = i['poster_path']|json_encode|raw|replace({'"':''}) %}
             {% set movieId = i['id']|json_encode %}
-            <li><a href="{{ path('moviePage',{'id': movieId }) }}"> <img src="https://image.tmdb.org/t/p/w92{{ imgUrl }}"></a></li>
+            <li><a href="{{ path('moviePage',{'movieId': movieId }) }}"> <img src="https://image.tmdb.org/t/p/w92{{ imgUrl }}"></a></li>
             {% endfor %}
     </ul>
 </div>

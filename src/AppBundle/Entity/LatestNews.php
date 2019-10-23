@@ -129,14 +129,25 @@ class LatestNews
      */
     private $created_at;
 
+    /**
+     * LatestNews constructor.
+     * @param $actionPerformer
+     * @param $isLike
+     * @param $isReview
+     * @param $isAdd
+     * @param $reviewId integer
+     * @param $list
+     * @param $movie
+     * @param $createdAt
+     */
     public function __construct(
-        $actionPerformer, $isLike, $isReview, $isAdd,$review, $list, $movie, $createdAt
+        $actionPerformer, $isLike, $isReview, $isAdd,$reviewId, $list, $movie, $createdAt
     ) {
         $this->actionPerformer = $actionPerformer;
         $this->isLike = $isLike;
         $this->isReview = $isReview;
         $this->isAdd = $isAdd;
-        $this->review = $review;
+        $this->review = $reviewId;
         $this->list = $list;
         $this->movie = $movie;
         $this->created_at  = $createdAt;

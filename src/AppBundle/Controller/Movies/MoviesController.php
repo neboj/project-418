@@ -2,7 +2,7 @@
 namespace AppBundle\Controller\Movies;
 
 use AppBundle\Controller\CommonController;
-use AppBundle\Controller\Movies\Constants\Constants;
+use AppBundle\Controller\Movies\Constants\Constants as Constants;
 use AppBundle\Entity\ChatMessage;
 use AppBundle\Entity\ChatPrivate;
 use AppBundle\Entity\Friends;
@@ -12,6 +12,7 @@ use AppBundle\Entity\Notifications;
 use AppBundle\Entity\UsersList;
 use AppBundle\Entity\UsersListItem;
 use Doctrine\Common\Persistence\ObjectManager;
+use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -19,6 +20,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Doctrine\ORM\Mapping as ORM;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use AppBundle\Controller\Constants\API_Credentials;
 
 
 class MoviesController extends CommonController {
@@ -37,7 +39,7 @@ class MoviesController extends CommonController {
      * @Route("/movies",name="movies")
      * @param Request $request
      * @return JsonResponse|RedirectResponse|Response
-     * @throws \Exception
+     * @throws Exception
      */
     public function moviesAction(Request $request){
         $securityContext = $this->container->get('security.authorization_checker');
@@ -51,23 +53,23 @@ class MoviesController extends CommonController {
             return $result;
         }
         $popularMoviesJSON = file_get_contents(
-            "https://api.themoviedb.org/3/movie/popular?api_key=831c33c0ee756b98159b05350405d661");
+            "https://api.themoviedb.org/3/movie/popular?api_key=" . API_Credentials::API_KEY);
         $popularMovies = json_decode($popularMoviesJSON,true);
         $usersMovieLists = $this->entityManager->getRepository(UsersList::class)->findBy(
             ['user' => $this->userId]);
         $friend_requests = $this->entityManager->getRepository(Friends::class)->getFriendRequests(
-            $this->getUser()->getId());
+            $this->userId);
         $chats = $this->entityManager->getRepository(ChatPrivate::class)->getAllChats($this->getUser()->getId());
-        $unread_msgs = $this->entityManager->getRepository(ChatMessage::class)->findBy(['received_by'=>$this->getUser()->getId(),'is_read'=>false]);
-        $notifications = $this->entityManager->getRepository(Notifications::class)->getAllNotifications($this->getUser()->getId());
+        $unread_msgs = $this->entityManager->getRepository(ChatMessage::class)->findBy(['received_by'=>$this->userId,'is_read'=>false]);
+        $notifications = $this->entityManager->getRepository(Notifications::class)->getAllNotifications($this->userId);
         return $this->render('default/moviesDark.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
             'info' => $popularMovies,
-            'lists'=> $usersMovieLists,
-            'friend_requests'=>$friend_requests,
-            'chats'=>$chats,
-            'unread_msgs'=>$unread_msgs,
-            'notifications'=>$notifications
+            'lists' => $usersMovieLists,
+            'friend_requests' => $friend_requests,
+            'chats' => $chats,
+            'unread_msgs' => $unread_msgs,
+            'notifications' => $notifications
         ]);
 
 
@@ -76,7 +78,7 @@ class MoviesController extends CommonController {
     /**
      * @param Request $request
      * @return JsonResponse
-     * @throws \Exception
+     * @throws Exception
      */
     private function handleAjax(Request $request) {
         switch ($request->request->get('methodName')) {
@@ -102,7 +104,7 @@ class MoviesController extends CommonController {
         $searchMovieByString = $movieName;
         $searchMovieByString = preg_replace('/\s+/', '+', $searchMovieByString);
         $searchResultJSON = file_get_contents(
-            "https://api.themoviedb.org/3/search/movie?query=$searchMovieByString&api_key=831c33c0ee756b98159b05350405d661&language=en-US&page=" . ($pageNumber+1));
+            "https://api.themoviedb.org/3/search/movie?query=$searchMovieByString&api_key=" . API_Credentials::API_KEY . "&language=en-US&page=" . ($pageNumber+1));
         return new JsonResponse($searchResultJSON);
     }
 
@@ -111,43 +113,8 @@ class MoviesController extends CommonController {
      * @return JsonResponse
      */
     private function nextPage($pageNumber) {
-        $popularMoviesJSON = file_get_contents("https://api.themoviedb.org/3/movie/popular?api_key=831c33c0ee756b98159b05350405d661&page=" . ($pageNumber + 1));
+        $popularMoviesJSON = file_get_contents("https://api.themoviedb.org/3/movie/popular?api_key=" . API_Credentials::API_KEY . "&page=" . ($pageNumber + 1));
         return new JsonResponse($popularMoviesJSON);
     }
 
-    /**
-     * @param $movieData
-     * @return JsonResponse
-     * @throws \Exception
-     */
-    private function addToPersonalList($movieData) {
-        $listID = $movieData['list'];
-        $tmdbID = $movieData['tmdbid'];
-        $movieId = $movieData['movie__id'];
-        $movieVoteAverage = $movieData['movie__vote_average'];
-        $movieBackdropPath = $movieData['movie__backdrop_path'];
-        $movieOverview = mb_strimwidth($movieData['movie__overview'],0,254,'utf-8');
-        $movieGenres = $movieData['movie__genres'];
-        $moviePosterPath = $movieData['movie__poster_path'];
-        $movieTitle = $movieData['movie__title'];
-        $movieInDB = $this->entityManager->getRepository(Movie::class)->find($movieId);
-        if(!$movieInDB){
-            $movie = new Movie($movieId, $movieTitle, $moviePosterPath, $movieOverview, $movieGenres, $movieVoteAverage, $movieBackdropPath);
-            $this->entityManager->persist($movie);
-        }
-        $listItemMaxID = $this->getDoctrine()->getRepository(UsersListItem::class)->getMaxID($listID);
-        $movieInPersonalList = $this->getDoctrine()->getRepository(UsersListItem::class)->alreadyInList($this->userId,$listID,$tmdbID);
-        if(!$movieInPersonalList){
-            $listItemID = $listItemMaxID[0]['maxID'] + 1;
-            $item = new UsersListItem($listID, $listItemID, $tmdbID, $movieTitle);
-            $privacy = $this->entityManager->getRepository(UsersList::class)->find($listID);
-            if($privacy->getIsPrivate() == false){
-                $latestNews = new LatestNews($this->userId, false, false,  true, false, $listID, $tmdbID, new \DateTime());
-                $this->entityManager->persist($latestNews);
-            }
-            $this->entityManager->persist($item);
-        }
-        $this->entityManager->flush();
-        return new JsonResponse('Success');
-    }
 }

@@ -22,55 +22,87 @@ class Notifications
      * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\Column(type="integer")
      */private $id;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $title;
+
+
     /**
      * @ORM\Column(type="boolean")
      */
     private $is_read;
+
     /**
      * @ORM\Column(type="integer")
      */
     private $action_performer;
+
     /**
      * @ORM\Column(type="boolean")
      */
     private $is_like;
+
     /**
      * @ORM\Column(type="boolean")
      */
     private $is_review;
+
     /**
      * @ORM\Column(type="boolean")
      */
     private $is_recommend;
 
-    /**
-     * @return mixed
-     */
-    public function getisRecommend()
-    {
-        return $this->is_recommend;
-    }
-
-    /**
-     * @param mixed $is_recommend
-     */
-    public function setIsRecommend($is_recommend)
-    {
-        $this->is_recommend = $is_recommend;
-    }
 
     /**
      * @ORM\Column(type="integer")
      */
     private $review;
+
     /**
      * @ORM\Column(type="integer")
      */
     private $list;
+
     /**
      * @ORM\Column(type="integer")
      */
     private $movie;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $received_by;
+
+    /**
+     * Notifications constructor.
+     *
+     * @param $isRead
+     * @param $actionPerformer
+     * @param $isLike
+     * @param $isReview
+     * @param $isRecommend
+     * @param $reviewId
+     * @param $listId
+     * @param $movieTMDBID
+     * @param $receivedBy
+     * @param $title
+     */
+    public function __construct(
+         $isRead, $actionPerformer, $isLike, $isReview, $isRecommend, $reviewId, $listId, $movieTMDBID, $receivedBy, $title
+    ) {
+        $this->is_read = $isRead;
+        $this->action_performer = $actionPerformer;
+        $this->is_like = $isLike;
+        $this->is_review = $isReview;
+        $this->is_recommend = $isRecommend;
+        $this->review = $reviewId;
+        $this->list = $listId;
+        $this->movie = $movieTMDBID;
+        $this->received_by = $receivedBy;
+        $this->title = $title;
+    }
 
     /**
      * @return mixed
@@ -81,27 +113,19 @@ class Notifications
     }
 
     /**
-     * @param mixed $id
+     * @return mixed
      */
-    public function setId($id)
+    public function getIsRecommend()
     {
-        $this->id = $id;
+        return $this->is_recommend;
     }
 
     /**
      * @return mixed
      */
-    public function getisRead()
+    public function getIsRead()
     {
         return $this->is_read;
-    }
-
-    /**
-     * @param mixed $is_read
-     */
-    public function setIsRead($is_read)
-    {
-        $this->is_read = $is_read;
     }
 
     /**
@@ -113,49 +137,20 @@ class Notifications
     }
 
     /**
-     * @param mixed $action_performer
-     */
-    public function setActionPerformer($action_performer)
-    {
-        $this->action_performer = $action_performer;
-    }
-
-    /**
      * @return mixed
      */
-    public function getisLike()
+    public function getIsLike()
     {
         return $this->is_like;
     }
 
     /**
-     * @param mixed $is_like
-     */
-    public function setIsLike($is_like)
-    {
-        $this->is_like = $is_like;
-    }
-
-    /**
      * @return mixed
      */
-    public function getisReview()
+    public function getIsReview()
     {
         return $this->is_review;
     }
-
-    /**
-     * @param mixed $is_review
-     */
-    public function setIsReview($is_review)
-    {
-        $this->is_review = $is_review;
-    }
-
-
-
-
-
 
     /**
      * @return mixed
@@ -163,14 +158,6 @@ class Notifications
     public function getReview()
     {
         return $this->review;
-    }
-
-    /**
-     * @param mixed $review
-     */
-    public function setReview($review)
-    {
-        $this->review = $review;
     }
 
     /**
@@ -182,34 +169,12 @@ class Notifications
     }
 
     /**
-     * @param mixed $list
-     */
-    public function setList($list)
-    {
-        $this->list = $list;
-    }
-
-    /**
      * @return mixed
      */
     public function getMovie()
     {
         return $this->movie;
     }
-
-    /**
-     * @param mixed $movie
-     */
-    public function setMovie($movie)
-    {
-        $this->movie = $movie;
-    }
-
-
-    /**
-     * @ORM\Column(type="string")
-     */
-    private $title;
 
     /**
      * @return mixed
@@ -220,32 +185,11 @@ class Notifications
     }
 
     /**
-     * @param mixed $title
-     */
-    public function setTitle($title)
-    {
-        $this->title = $title;
-    }
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $received_by;
-
-    /**
      * @return mixed
      */
     public function getReceivedBy()
     {
         return $this->received_by;
-    }
-
-    /**
-     * @param mixed $received_by
-     */
-    public function setReceivedBy($received_by)
-    {
-        $this->received_by = $received_by;
     }
 
 }

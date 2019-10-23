@@ -74,7 +74,7 @@
                         {% for r in reviewedmovies %}
                             {% set movieId = r['id']|json_encode %}
                             {% set imgUrl = r['poster_path']|json_encode|raw|replace({'"':''}) %}
-                            <li><a href="{{ path('moviePage',{'id': movieId }) }}"><img src="https://image.tmdb.org/t/p/w92{{ imgUrl }}"></a></li>
+                            <li><a href="{{ path('moviePage',{'movieId': movieId }) }}"><img src="https://image.tmdb.org/t/p/w92{{ imgUrl }}"></a></li>
                             {% endfor %}
                     </ul>
 

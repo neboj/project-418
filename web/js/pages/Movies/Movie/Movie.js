@@ -1,9 +1,9 @@
 import { WebHelper } from "../../../components/Helpers/WebHelper.js";
 import {AddToPersonalList} from "../AddToPersonalList.js";
+const webHelper = new WebHelper();
 
 document.getElementById('src-ppl').addEventListener('keypress', function (ev) {
     if (ev.keyCode === 13) {
-        const webHelper = new WebHelper();
         const profileUrl = webHelper.generateEndpoint('profile/');
         const searchEndpoint = webHelper.generateEndpoint('search');
         const inputElement = document.getElementsByName('search-people')[0];
@@ -91,12 +91,6 @@ window.onclick = function(event) {
 
 
 
-
-
-
-
-
-
 //SEARCH GIF
 $("#src-gifs").keypress(function (event) {
     if (event.which == 13) {
@@ -139,7 +133,6 @@ $("#src-gifs").keypress(function (event) {
 });
 
 
-
 //LIKE REVIEW
 $(document).on("click",".like-review",function(event){
     var reviewid = event.target.parentElement.id;
@@ -176,7 +169,6 @@ $(document).on("click",".like-review",function(event){
         }
     });
 });
-
 
 
 $(document).on("click",".add-gif-review",function(event){
@@ -279,37 +271,35 @@ $(document).on("click",".add-gif-review",function(event){
 
 //ADD REVIEW, SUBMIT REVIEW
 $(document).on("click",".submit-review-btn",function(event){
-    var  mslug = $('input[name=review-input]').data('movid');
-    var usrid =$('input[name=review-input]').data('usrid');
-    var podaci = $('input[name=review-input]').val();
-    var route = "{{ path('moviePage', {'slug': mslug})|escape('js') }}";
-    var title = $('input[name=review-input]').data('title');
-    $('input[name=review-input]').val('');
-
-
-    var movie__id = $('.add-to-list1').data('movie__id');
-    var movie__title= $('.add-to-list1').data('movie__title');
-    var movie__poster_path= $('.add-to-list1').data('movie__poster_path');
-    var movie__vote_average= $('.add-to-list1').data('movie__vote_average');
-    var movie__overview= $('.add-to-list1').data('movie__overview');
-    var movie__genres= $('.add-to-list1').data('movie__genres');
-    var movie__backdrop_path= $('.add-to-list1').data('movie__backdrop_path');
-
-
+    const inputElement = document.getElementsByName('review-input')[0];
+    const reviewInput = inputElement.value;
+    const usrid = inputElement.dataset.usrid;
+    const title = inputElement.dataset.title;
+    const dataElement = document.getElementsByClassName('add-to-list1')[0];
+    const movie__id = dataElement.dataset.movie__id;
+    const movie__title= dataElement.dataset.movie__title;
+    const movie__poster_path = dataElement.dataset.movie__poster_path;
+    const movie__vote_average = dataElement.dataset.movie__vote_average;
+    const movie__overview = dataElement.dataset.movie__overview;
+    const movie__genres = dataElement.dataset.movie__genres;
+    const movie__backdrop_path = dataElement.dataset.movie__backdrop_path;
+    const movieData = { user:usrid,review:reviewInput,title:title,
+        movie__id:movie__id,
+        movie__title:movie__title,
+        movie__poster_path:movie__poster_path,
+        movie__vote_average:movie__vote_average,
+        movie__overview:movie__overview,
+        movie__genres:movie__genres,
+        movie__backdrop_path:movie__backdrop_path
+    };
+    inputElement.value = '';
     $.ajax({
-        url: mslug,
+        url: movie__id,
         type: 'POST',
-        data: {user:usrid,review:podaci,title:title,
-            movie__id:movie__id,
-            movie__title:movie__title,
-            movie__poster_path:movie__poster_path,
-            movie__vote_average:movie__vote_average,
-            movie__overview:movie__overview,
-            movie__genres:movie__genres,
-            movie__backdrop_path:movie__backdrop_path
-        },
+        data: {movieData: movieData, methodName: "AddMovieReview"},
         success: function(data,status){
-            console.log(data);
+            console.log('KURCINA', data);
+            return;
             var obj = JSON.parse(data);
             var userNiz = obj['kor'];
             var revNiz  = obj['kom'];
@@ -368,7 +358,8 @@ $(document).on("click",".submit-review-btn",function(event){
                         "                                    </li>")
                 }
             }
-        },error:function(){
+        },error:function(err){
+            console.log(err);
             alert('less success, still awesome');
         }
     });

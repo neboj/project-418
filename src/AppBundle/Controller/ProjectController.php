@@ -56,7 +56,7 @@ class ProjectController extends Controller
 
  /*izlistaj latest reviews*/
         $max = $em->getRepository(Review::class)->getMaxID();
-        $max = $max[0]['maxi'];
+        $max = $max[0]['maxID'];
         $offset = (int)$max - 11-6;
 
         /*$reviews = $em->getRepository(Review::class)->findBy(array('is_gif'=>0),array('created_at'=>'DESC'));*/

@@ -65,7 +65,7 @@
                                                     {% endif %}
 
                                                     {% if notifications[r].is_review == true %}
-                                                        <li class="collection-item avatar"><a href="{{ path('moviePage',{'id':notifications[r].movie}) }}">
+                                                        <li class="collection-item avatar"><a href="{{ path('moviePage',{'movieId':notifications[r].movie}) }}">
                                                                 <img src="http://localhost/project-418/web/images/profile/{{ notifications[r].profile_image }}" alt="" class="circle">
                                                                 <span class="title">{{ notifications[r].first_name }} {{  notifications[r].last_name }}<span class="notification-text"> also reviewed {{ notifications[r].title }}</span></span>
                                                             </a>
@@ -74,7 +74,7 @@
                                                     {% endif %}
 
                                                     {% if notifications[r].is_recommend == true %}
-                                                        <li class="collection-item avatar"><a href="{{ path('moviePage',{'id':notifications[r].movie}) }}">
+                                                        <li class="collection-item avatar"><a href="{{ path('moviePage',{'movieId':notifications[r].movie}) }}">
                                                                 <img src="http://localhost/project-418/web/images/profile/{{ notifications[r].profile_image }}" alt="" class="circle">
                                                                 <span class="title">{{ notifications[r].first_name }} {{  notifications[r].last_name }}<span class="notification-text"> has recommended you a movie {{ notifications[r].title }}</span></span>
                                                             </a>

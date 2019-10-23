@@ -17,21 +17,62 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Review
 {
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $user;
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $movie;
     /**
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\Column(type="integer")
      */
     private $id;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $user;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $movie;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $review_txt;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $created_at;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $state;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $gif_url;
+
+    /**
+     * Review constructor.
+     * @param $user
+     * @param $movieTMDBID
+     * @param $reviewText
+     * @param $createdAt
+     * @param $state
+     * @param $isGif
+     * @param $gifUrl
+     */
+    public function __construct($user, $movieTMDBID, $reviewText, $createdAt, $state, $isGif, $gifUrl) {
+        $this->user = $user;
+        $this->movie = $movieTMDBID;
+        $this->review_txt = $reviewText;
+        $this->created_at = $createdAt;
+        $this->state = $state;
+        $this->is_gif = $isGif;
+        $this->gif_url = $gifUrl;
+    }
 
     /**
      * @return mixed
@@ -42,39 +83,11 @@ class Review
     }
 
     /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
-    /**
-     * @ORM\Column(type="string")
-     */
-    private $review_txt;
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    private $created_at;
-    /**
-     * @ORM\Column(type="string")
-     */
-    private $state;
-
-    /**
      * @return mixed
      */
     public function getUser()
     {
         return $this->user;
-    }
-
-    /**
-     * @param mixed $user
-     */
-    public function setUser($user)
-    {
-        $this->user = $user;
     }
 
     /**
@@ -86,27 +99,11 @@ class Review
     }
 
     /**
-     * @param mixed $movie
-     */
-    public function setMovie($movie)
-    {
-        $this->movie = $movie;
-    }
-
-    /**
      * @return mixed
      */
     public function getReviewTxt()
     {
         return $this->review_txt;
-    }
-
-    /**
-     * @param mixed $review_txt
-     */
-    public function setReviewTxt($review_txt)
-    {
-        $this->review_txt = $review_txt;
     }
 
     /**
@@ -118,27 +115,11 @@ class Review
     }
 
     /**
-     * @param mixed $created_at
-     */
-    public function setCreatedAt($created_at)
-    {
-        $this->created_at = $created_at;
-    }
-
-    /**
      * @return mixed
      */
     public function getState()
     {
         return $this->state;
-    }
-
-    /**
-     * @param mixed $state
-     */
-    public function setState($state)
-    {
-        $this->state = $state;
     }
 
     /**
@@ -149,23 +130,10 @@ class Review
     /**
      * @return mixed
      */
-    public function getisGif()
+    public function getIsGif()
     {
         return $this->is_gif;
     }
-
-    /**
-     * @param mixed $is_gif
-     */
-    public function setIsGif($is_gif)
-    {
-        $this->is_gif = $is_gif;
-    }
-
-    /**
-     * @ORM\Column(type="string")
-     */
-    private $gif_url;
 
     /**
      * @return mixed
@@ -174,14 +142,5 @@ class Review
     {
         return $this->gif_url;
     }
-
-    /**
-     * @param mixed $gif_url
-     */
-    public function setGifUrl($gif_url)
-    {
-        $this->gif_url = $gif_url;
-    }
-
 
 }

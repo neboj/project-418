@@ -13,10 +13,13 @@ use Doctrine\ORM\EntityRepository;
 
 class ReviewRepository extends EntityRepository
 {
+    /**
+     * @return array[obj]
+     */
     public function getMaxID(){
         return $this->getEntityManager()
             ->createQuery(
-                "SELECT MAX(r.id) as maxi FROM AppBundle:Review r"
+                "SELECT MAX(r.id) as maxID FROM AppBundle:Review r"
             )->getResult();
     }
 

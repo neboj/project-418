@@ -18,6 +18,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class UsersList
 {
+    const LIST_STATE_PUBLIC = "public";
+    const LIST_STATE_PRIVATE = "private";
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -25,15 +28,21 @@ class UsersList
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\UsersListItem",mappedBy="userslist")
      */
     private $id;
+
     /**
      * @ORM\Column(type="string")
      */
     private $name;
+
     /**
      * @ORM\Column(type="integer")
      */
     private $user;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $is_private;
 
     /**
      * @return mixed
@@ -41,14 +50,6 @@ class UsersList
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
     }
 
     /**
@@ -60,14 +61,6 @@ class UsersList
     }
 
     /**
-     * @param mixed $name
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
-
-    /**
      * @return mixed
      */
     public function getUser()
@@ -76,34 +69,11 @@ class UsersList
     }
 
     /**
-     * @param mixed $user
-     */
-    public function setUser($user)
-    {
-        $this->user = $user;
-    }
-
-
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    private $is_private;
-
-    /**
      * @return mixed
      */
     public function getIsPrivate()
     {
         return $this->is_private;
     }
-
-    /**
-     * @param mixed $is_private
-     */
-    public function setIsPrivate($is_private)
-    {
-        $this->is_private = $is_private;
-    }
-
 
 }

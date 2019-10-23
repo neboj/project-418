@@ -44,17 +44,14 @@ class Like2
     private $is_comment;
 
     /**
-     * @return mixed
+     * @ORM\Column(type="integer")
      */
-    public function getComment()
-    {
-        return $this->comment;
-    }
+    private $user;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $user;
+    private $review_id;
 
     /**
      * @ORM\Column(type="string")
@@ -62,14 +59,39 @@ class Like2
     private $state;
 
     /**
+     * @ORM\Column(type="boolean")
+     */
+    private $is_review;
+
+    /**
+     * Like2 constructor.
+     * @param $created_at
+     * @param $is_comment
+     * @param $is_review
+     * @param $post
+     * @param $comment
+     * @param $user
+     * @param $review_id
+     * @param $state
+     */
+    public function __construct($created_at, $is_comment, $is_review, $post, $comment, $user, $review_id, $state) {
+        $this->created_at = $created_at;
+        $this->is_comment = $is_comment;
+        $this->is_review = $is_review;
+        $this->post = $post;
+        $this->user = $user;
+        $this->comment = $comment;
+        $this->review_id = $review_id;
+        $this->state = $state;
+    }
+
+
+    /**
      * @return mixed
      */
-    /**
-     * @param mixed $comment
-     */
-    public function setComment($comment)
+    public function getComment()
     {
-        $this->comment = $comment;
+        return $this->comment;
     }
 
     /**
@@ -81,27 +103,11 @@ class Like2
     }
 
     /**
-     * @param mixed $post
-     */
-    public function setPost($post)
-    {
-        $this->post = $post;
-    }
-
-    /**
      * @return mixed
      */
-    public function getisComment()
+    public function getIsComment()
     {
         return $this->is_comment;
-    }
-
-    /**
-     * @param mixed $is_comment
-     */
-    public function setIsComment($is_comment)
-    {
-        $this->is_comment = $is_comment;
     }
 
     /**
@@ -113,14 +119,6 @@ class Like2
     }
 
     /**
-     * @param mixed $user
-     */
-    public function setUser($user)
-    {
-        $this->user = $user;
-    }
-
-    /**
      * @return mixed
      */
     public function getState()
@@ -128,26 +126,9 @@ class Like2
         return $this->state;
     }
 
-    /**
-     * @param mixed $state
-     */
-    public function setState($state)
-    {
-        $this->state = $state;
-    }
-
-
     public function getCreatedAt()
     {
         return $this->created_at;
-    }
-
-    /**
-     * @param mixed $created_at
-     */
-    public function setCreatedAt($created_at)
-    {
-        $this->created_at = $created_at;
     }
 
     /**
@@ -159,11 +140,6 @@ class Like2
     }
 
     /**
-     * @ORM\Column(type="integer")
-     */
-    private $review_id;
-
-    /**
      * @return mixed
      */
     public function getReviewId()
@@ -172,34 +148,11 @@ class Like2
     }
 
     /**
-     * @param mixed $review_id
-     */
-    public function setReviewId($review_id)
-    {
-        $this->review_id = $review_id;
-    }
-
-
-
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    private $is_review;
-
-    /**
      * @return mixed
      */
-    public function getisReview()
+    public function getIsReview()
     {
         return $this->is_review;
-    }
-
-    /**
-     * @param mixed $is_review
-     */
-    public function setIsReview($is_review)
-    {
-        $this->is_review = $is_review;
     }
 
 }

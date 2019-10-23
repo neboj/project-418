@@ -49,8 +49,7 @@ class MoviesController extends CommonController {
         $this->entityManager = $this->getDoctrine()->getManager();
         $this->userId = $this->getUser()->getId();
         if($request->isXmlHttpRequest()){
-            $result = $this->handleAjax($request);
-            return $result;
+            return $this->handleAjax($request);
         }
         $popularMoviesJSON = file_get_contents(
             "https://api.themoviedb.org/3/movie/popular?api_key=" . API_Credentials::API_KEY);
@@ -59,7 +58,8 @@ class MoviesController extends CommonController {
             ['user' => $this->userId]);
         $friend_requests = $this->entityManager->getRepository(Friends::class)->getFriendRequests(
             $this->userId);
-        $chats = $this->entityManager->getRepository(ChatPrivate::class)->getAllChats($this->getUser()->getId());
+        $chats = $this->entityManager->getRepository(ChatPrivate::class)->getAllChats(
+            $this->getUser()->getId());
         $unread_msgs = $this->entityManager->getRepository(ChatMessage::class)->findBy(['received_by'=>$this->userId,'is_read'=>false]);
         $notifications = $this->entityManager->getRepository(Notifications::class)->getAllNotifications($this->userId);
         return $this->render('default/moviesDark.html.twig', [

@@ -36,7 +36,7 @@
                                     likes
                                     &nbsp <a href="{{ path('profile',{'id':news[i]['reviewer']}) }}" class="feed-li-someone-elses"> {{ news[i]['reviewer_name'] }}'s</a>&nbsp
                                     review on &nbsp
-                                    <a href="{{ path('moviePage',{'id':filmsActJoinMovie[i]['id']}) }}" class="feed-li-movie">{{ filmsActJoinMovie[i]['title']|json_encode|raw|replace({'"':''}) }}</a>
+                                    <a href="{{ path('moviePage',{'movieId':filmsActJoinMovie[i]['id']}) }}" class="feed-li-movie">{{ filmsActJoinMovie[i]['title']|json_encode|raw|replace({'"':''}) }}</a>
                                 </div>
                             </div>
                             <div class="time-ago"><script>

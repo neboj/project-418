@@ -9,10 +9,30 @@
 namespace AppBundle\Repository;
 
 
+use Doctrine\DBAL\DBALException;
 use Doctrine\ORM\EntityRepository;
 
 class ReviewRepository extends EntityRepository
 {
+    /**
+     * @param $userId
+     * @param $movieId
+     * @return array
+     * @throws DBALException
+     */
+    public function getReviewsInformation($userId, $movieId) {
+        $em = $this->getEntityManager();
+        $RAW_QUERY = "SELECT r.id, count(l.id) as likes_nr, IF(l.user = {$userId}, 'yes', 'no') as current_user_has_liked, r.user,
+        r.review_txt, r.created_at, u.first_name, u.last_name, u.profile_image, r.gif_url from review as r
+        LEFT JOIN user as u on r.user = u.id LEFT JOIN like2 as l on r.id = l.review_id 
+        WHERE r.movie = {$movieId}
+         GROUP BY r.id, l.id";
+        $statement = $em->getConnection()->prepare($RAW_QUERY);
+        $statement->execute();
+        $result = $statement->fetchAll();
+        return $result;
+    }
+
     /**
      * @return array[obj]
      */

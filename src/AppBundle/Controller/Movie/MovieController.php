@@ -89,11 +89,8 @@ class MovieController extends CommonController
         $movieJSON = file_get_contents("https://api.themoviedb.org/3/movie/{$this->movieId}?api_key="
             . API_Credentials::API_KEY);
         $movieObj = json_decode($movieJSON,true);
-        // @TODO make this one DB call
-        $reviews = $this->entityManager->getRepository(Review::class)->findBy(['movie'=>$this->movieId]);
-        $users = $this->entityManager->getRepository(User::class)->findAll();
-        $revlikes = $this->entityManager->getRepository(Like2::class)->getLikesOfReviews($this->movieId);
-
+        $reviewsData = $this->entityManager->getRepository(Review::class)->getReviewsInformation(
+            $this->userId, $this->movieId);
         $lists = $this->entityManager->getRepository(UsersList::class)->findBy(['user'=>$this->userId]);
         $friend_requests = $this->entityManager->getRepository(Friends::class)->getFriendRequests($this->userId);
         $chats = $this->entityManager->getRepository(ChatPrivate::class)->getAllChats($this->userId);
@@ -104,9 +101,7 @@ class MovieController extends CommonController
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
             'info' => $movieObj,
             'lists'=>$lists,
-            'reviews'=>$reviews,
-            'users'=>$users,
-            'likes'=>$revlikes,
+            'reviewsData' => $reviewsData,
             'friend_requests'=>$friend_requests,
             'chats'=>$chats,
             'unread_msgs'=>$unread_msgs,

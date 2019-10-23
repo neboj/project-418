@@ -121,48 +121,28 @@
 
                             <div class="white-all-reviews-container">
                                 <ul class="collection" id="reviews-collection">
-                                    {% if reviews|length==0 %}
-                                    <span>This movie has not yet been reviewed, be the first to do it</span>
-                                    {% else %}
-                                    {% for r in reviews %}
-
-                                    <li class="collection-item avatar mov-rev" id="{{ r.id }}">
-                                        {% for u in users if u.id == r.user %}
-                                            <img src="http://localhost:8888/project-418/web/images/profile/{{ u.profileImage }}" alt="hello" class="circle">
-                                            <span class="title">{{ u.firstName }} {{ u.lastName }}</span>
-                                        {% endfor %}
-                                        <p>
-                                            {{ r.reviewTxt }}<img src="{{ r.gifUrl }}">
-                                        </p>
-                                        <span href="#!" class="secondary-content rev-time"> {{ r.createdAt|date('M d, Y') }} </span>
-                                        {% set c = 0 %}{%  for l in likes if l.reviewId == r.id%}{% set c = c + 1 %} {% endfor %} {# counter lajkova #}
-                                        {% set isLiked = 'false' %}
-                                        {% for l in likes  %}
-                                            {% if (l.reviewId == r.id) and (l.user == app.user.id ) %}
-                                                {% set isLiked = 'true' %}
-                                            {% endif %}
-                                        {% endfor %}
-                                        {% if isLiked == 'true' %}
-                                        <a class="waves-effect waves-light btn btn-small like-review likerev-yes" id="el*{{r.id }}">like</a><span class="broj" id="no{{ r.id }}">({{ c  }})</span>
+                                    {% if reviewsData|length==0 %}
+                                        <span>This movie has not yet been reviewed, be the first to do it</span>
                                         {% else %}
-                                        <a class="waves-effect waves-light btn btn-small like-review likerev-no" id="el*{{r.id }}" >like</a><span class="broj" id="no{{ r.id }}">({{ c  }})</span>
-                                        {% endif %}
-                                    </li>
-                                    {% endfor %}
+                                            {% for r in reviewsData %}
+
+                                            <li class="collection-item avatar mov-rev" id="{{ r.id }}">
+                                                    <img src="http://localhost:8888/project-418/web/images/profile/{{ r.profile_image }}" alt="hello" class="circle">
+                                                    <span class="title">{{ r.first_name }} {{ r.last_name }}</span>
+                                                <p>
+                                                    {{ r.review_txt }}<img src="{{ r.gif_url }}">
+                                                </p>
+                                                <span href="#!" class="secondary-content rev-time"> {{ r.created_at|date('M d, Y') }} </span>
+                                                {% if r.current_user_has_liked == 'yes' %}
+                                                <a class="waves-effect waves-light btn btn-small like-review likerev-yes" id="el*{{r.id }}">like</a><span class="broj" id="no{{ r.id }}">({{ r.likes_nr }})</span>
+                                                {% else %}
+                                                <a class="waves-effect waves-light btn btn-small like-review likerev-no" id="el*{{r.id }}" >like</a><span class="broj" id="no{{ r.id }}">({{ r.likes_nr }})</span>
+                                                {% endif %}
+                                            </li>
+                                            {% endfor %}
                                     {% endif %}
                                 </ul>
                             </div>
-                            {#
-                            tenor api:
-                            E2RZR6WJTMEC
-                            https://api.tenor.com/v1/search?key=E2RZR6WJTMEC&q=goodluck&limit=40
-
-
-                            giphy
-                            $api_key = "rnyedGAxnFKnd0WXPWfEDN3TVnOPjNYh";
-                            $url = "http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=rnyedGAxnFKnd0WXPWfEDN3TVnOPjNYh&limit=50";
-                            Api Key: rnyedGAxnFKnd0WXPWfEDN3TVnOPjNYh
-                            print_r(json_decode(file_get_contents($url)));#}
                         </div>
                     </div>
                 {% endblock %} {#endblock white#}

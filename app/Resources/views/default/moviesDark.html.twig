@@ -17,13 +17,6 @@
     {% block main %} {# START main #}
         <div class="main" id="sss">
 
-
-            {#{% if is_granted('ROLE_USER') %}
-                <li><a href="{{ path('fos_user_security_logout')}}">Logout {{ app.user.firstName }} {{ app.user.lastName  }}</a></li>
-            {% else %}
-                <li><a href="{{ path('fos_user_security_login')}}">Login</a></li>
-            {% endif %}#}
-
             {% if is_granted('ROLE_USER') %} {# START if ulogovan #}
                 {% if app.request.hasPreviousSession %}
                     {% for type, messages in app.session.flashbag.all() %}
@@ -34,8 +27,6 @@
                         {% endfor %}
                     {% endfor %}
                 {% endif %}
-
-
 
 
                 <div class="movies-grid-container">

@@ -262,25 +262,8 @@ class MovieController extends CommonController
         $this->entityManager->persist($notification);
         $this->entityManager->persist($review);
         $this->entityManager->flush();
-        // @TODO redo this completely
-        return $this->generateAllReviews();
-    }
-
-    /**
-     * @return JsonResponse
-     */
-    private function generateAllReviews() {
-        $reviews = $this->entityManager->getRepository(Review::class)->findAll();
-        $users = $this->entityManager->getRepository(User::class)->findAll();
-        $normalizer = new ObjectNormalizer();
-        $encoder = new JsonEncoder();
-        $serializer = new Serializer(array($normalizer), array($encoder));
-        $revs=$serializer->serialize($reviews, 'json');
-        $usrs=$serializer->serialize($users,'json');
-        $revlikes1 = $this->entityManager->getRepository(Like2::class)->getLikesOfReviews($this->movieId);
-        $reviewLikesObj=$serializer->serialize($revlikes1, 'json');
-        $result = '{"kor":'.$usrs .',"lik":'.$reviewLikesObj.',"kom":'. $revs. '}';
-        return new JsonResponse($result);
+        $today = date("M j, Y");                 // March 10, 2001
+        return new JsonResponse(json_encode(['review_id' => $maxID, 'review_date' => $today]));
     }
 
     /**

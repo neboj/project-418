@@ -62,7 +62,7 @@ class Movie {
         $this->id = $id;
         $this->title = $title;
         $this->poster_path = $poster_path;
-        $this->overview = $overview;
+        $this->overview = mb_strimwidth($overview, 0, 254, 'utf-8');
         $this->genres = $genres;
         $this->vote_average = $vote_average;
         $this->backdrop_path = $backdrop_path;

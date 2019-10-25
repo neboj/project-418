@@ -1,5 +1,6 @@
-import { WebHelper } from "../../../components/Helpers/WebHelper.js";
+import {WebHelper} from "../../../components/Helpers/WebHelper.js";
 import {AddToPersonalList} from "../AddToPersonalList.js";
+import {ReviewItem} from "./Review/ReviewItem.js";
 const webHelper = new WebHelper();
 
 document.getElementById('src-ppl').addEventListener('keypress', function (ev) {
@@ -48,10 +49,6 @@ document.getElementById('src-ppl').addEventListener('keypress', function (ev) {
         });
     }
 });
-
-
-
-
 
 
 var classname = document.getElementsByClassName("add-to-list1");
@@ -216,100 +213,46 @@ $(document).ready(function(){
 });
 
 
+const inputElement = document.getElementsByName('review-input')[0];
+const usrid = inputElement.dataset.usrid;
+const title = inputElement.dataset.title;
+const dataElement = document.getElementsByClassName('add-to-list1')[0];
+const movie__id = dataElement.dataset.movie__id;
+const movie__title= dataElement.dataset.movie__title;
+const movie__poster_path = dataElement.dataset.movie__poster_path;
+const movie__vote_average = dataElement.dataset.movie__vote_average;
+const movie__overview = dataElement.dataset.movie__overview;
+const movie__genres = dataElement.dataset.movie__genres;
+const movie__backdrop_path = dataElement.dataset.movie__backdrop_path;
+const reviewsCollection = document.getElementById("reviews-collection");
+const movieData = {
+    user:usrid,
+    title:title,
+    movie__id:movie__id,
+    movie__title:movie__title,
+    movie__poster_path:movie__poster_path,
+    movie__vote_average:movie__vote_average,
+    movie__overview:movie__overview,
+    movie__genres:movie__genres,
+    movie__backdrop_path:movie__backdrop_path
+};
+
+//ADD GIF REVIEW
 $(document).on("click",".add-gif-review",function(event){
     var gifurl = event.target.parentElement.id;
-    var usrid =$('input[name=review-input]').data('usrid');
-    var  mslug = $('input[name=review-input]').data('movid');
-    var  title = $('input[name=review-input]').data('title');
     var modal = document.getElementById('myModal');
     modal.style.display='none';
-
     Materialize.toast('You reacted with a gif!', 4000);
-
-    var movie__id = $('.add-to-list1').data('movie__id');
-    var movie__title= $('.add-to-list1').data('movie__title');
-    var movie__poster_path= $('.add-to-list1').data('movie__poster_path');
-    var movie__vote_average= $('.add-to-list1').data('movie__vote_average');
-    var movie__overview= $('.add-to-list1').data('movie__overview');
-    var movie__genres= $('.add-to-list1').data('movie__genres');
-    var movie__backdrop_path= $('.add-to-list1').data('movie__backdrop_path');
-
     const methodName = "AddGifReaction";
-    const movieData = {gifurl: gifurl,user:usrid,title:title,
-        movie__id:movie__id,
-        movie__title:movie__title,
-        movie__poster_path:movie__poster_path,
-        movie__vote_average:movie__vote_average,
-        movie__overview:movie__overview,
-        movie__genres:movie__genres,
-        movie__backdrop_path:movie__backdrop_path};
-    $.ajax({
-        url: mslug,
-        type: 'POST',
-        data: {movieData, methodName},
-        async: true,
+    movieData.gifurl = gifurl;
+    $.ajax({url: movie__id, type: 'POST', data: {movieData, methodName}, async: true,
         success: function (data, status) {
-            console.log(data);
-            var obj = JSON.parse(data);
-            var userNiz = obj['kor'];
-            var revNiz  = obj['kom'];
-            var likesNiz = obj['lik'];
-            $('#reviews-collection').empty();
-            /*var konj='';
-            for(var i=0;i<userNiz.length;i++){
-                konj+=userNiz[i]['firstName'] + ' ';
-            }
-            /!*alert(userNiz[0]['id']);*!/
-            alert(konj);*/
-            for(var i=0;i<revNiz.length;i++){
-                var identif = 'no'+revNiz[i]['id'];
-
-
-                if(revNiz[i]['movie']==mslug){
-                    var brojLajkova=0;
-                    for(var u=0;u<likesNiz.length;u++){
-                        if(likesNiz[u]['reviewId']===revNiz[i]['id']){
-                            brojLajkova++;
-                        }
-                    }
-
-                    var tree = "<a class=\"waves-effect waves-light btn btn-small like-review likerev-no\" >like</a><span class=\"broj\" id="+identif+">("+brojLajkova+")</span>\n" ;
-                    for(var u=0;u<likesNiz.length;u++){
-                        if((likesNiz[u]['reviewId']===revNiz[i]['id']) && (likesNiz[u]['user']===parseInt(usrid))){
-                            tree="<a class=\"waves-effect waves-light btn btn-small like-review likerev-yes\">like</a><span class=\"broj\" id="+identif+">("+brojLajkova+")</span>\n" ;
-                            break;
-                        }
-                    }
-
-                    var tm = revNiz[i]['createdAt']['timestamp'];
-                    var d = new Date(tm*1000);
-                    var n = d.toDateString();
-                    var s = n.split(' ');
-                    var vr = s[1]+' '+s[2]+', '+s[3];
-                    console.log(vr);
-
-                    var imeprezime=$('.profile-name-container').text();
-                    var slika='';
-                    for(var j=0;j<userNiz.length;j++){
-                        if(revNiz[i]['user']===userNiz[j]['id']){
-                            imeprezime = userNiz[j]['firstName'] + ' ' + userNiz[j]['lastName'];
-                            slika=userNiz[j]['profileImage'];
-                        }
-                    }
-                    $('#reviews-collection').append(
-                        "                                    <li class=\"collection-item avatar\" id='"+revNiz[i]['id']+"'>\n" +
-                        "                                        <img src='http://localhost/project-418/web/images/profile/"+slika+"' alt=\"\" class=\"circle\">\n" +
-                        "                                        <span class=\"title\">"+imeprezime+"</span>\n" +
-                        "                                        <p>\n" +
-                        "                                            "+revNiz[i]['reviewTxt']+"<img src='"+revNiz[i]['gifUrl']+"'>"+"\n" +
-                        "                                        </p>\n" +
-                        "<span href=\"#!\" class=\"secondary-content rev-time\"> "+vr+" </span>"+
-                        "                                       " +tree+
-                        "                                    </li>")
-                }
-            }
-        },error:function(){
-
+            const obj = JSON.parse(data);
+            const reviewItem = new ReviewItem(true, obj.review_id, obj.review_date, '', gifurl);
+            reviewsCollection.appendChild(reviewItem);
+        },error:function(err){
+            console.log('operation failed');
+            console.log(err);
         }
     });
 });
@@ -317,96 +260,19 @@ $(document).on("click",".add-gif-review",function(event){
 
 //ADD REVIEW, SUBMIT REVIEW
 $(document).on("click",".submit-review-btn",function(event){
-    const inputElement = document.getElementsByName('review-input')[0];
     const reviewInput = inputElement.value;
-    const usrid = inputElement.dataset.usrid;
-    const title = inputElement.dataset.title;
-    const dataElement = document.getElementsByClassName('add-to-list1')[0];
-    const movie__id = dataElement.dataset.movie__id;
-    const movie__title= dataElement.dataset.movie__title;
-    const movie__poster_path = dataElement.dataset.movie__poster_path;
-    const movie__vote_average = dataElement.dataset.movie__vote_average;
-    const movie__overview = dataElement.dataset.movie__overview;
-    const movie__genres = dataElement.dataset.movie__genres;
-    const movie__backdrop_path = dataElement.dataset.movie__backdrop_path;
-    const movieData = { user:usrid,review:reviewInput,title:title,
-        movie__id:movie__id,
-        movie__title:movie__title,
-        movie__poster_path:movie__poster_path,
-        movie__vote_average:movie__vote_average,
-        movie__overview:movie__overview,
-        movie__genres:movie__genres,
-        movie__backdrop_path:movie__backdrop_path
-    };
+    movieData.review = reviewInput;
     inputElement.value = '';
-    $.ajax({
-        url: movie__id,
-        type: 'POST',
-        data: {movieData: movieData, methodName: "AddMovieReview"},
+    $.ajax({url: movie__id, type: 'POST', data: {movieData: movieData, methodName: "AddMovieReview"},
         success: function(data,status){
-            console.log('KURCINA', data);
-            return;
-            var obj = JSON.parse(data);
-            var userNiz = obj['kor'];
-            var revNiz  = obj['kom'];
-            var likesNiz = obj['lik'];
-            $('#reviews-collection').empty();
-            /*var konj='';
-            for(var i=0;i<userNiz.length;i++){
-                konj+=userNiz[i]['firstName'] + ' ';
-            }
-            /!*alert(userNiz[0]['id']);*!/
-            alert(konj);*/
-            for(var i=0;i<revNiz.length;i++){
-                var identif = 'no'+revNiz[i]['id'];
-
-
-                if(revNiz[i]['movie']==mslug){
-                    var brojLajkova=0;
-                    for(var u=0;u<likesNiz.length;u++){
-                        if(likesNiz[u]['reviewId']===revNiz[i]['id']){
-                            brojLajkova++;
-                        }
-                    }
-
-                    var tree = "<a class=\"waves-effect waves-light btn btn-small like-review likerev-no\" >like</a><span class=\"broj\" id="+identif+">("+brojLajkova+")</span>\n" ;
-                    for(var u=0;u<likesNiz.length;u++){
-                        if((likesNiz[u]['reviewId']===revNiz[i]['id']) && (likesNiz[u]['user']===parseInt(usrid))){
-                            tree="<a class=\"waves-effect waves-light btn btn-small like-review likerev-yes\">like</a><span class=\"broj\" id="+identif+">("+brojLajkova+")</span>\n" ;
-                            break;
-                        }
-                    }
-
-                    var tm = revNiz[i]['createdAt']['timestamp'];
-                    var d = new Date(tm*1000);
-                    var n = d.toDateString();
-                    var s = n.split(' ');
-                    var vr = s[1]+' '+s[2]+', '+s[3];
-                    console.log(vr);
-
-                    var imeprezime=$('.profile-name-container').text();
-                    var slika = '';
-                    for(var j=0;j<userNiz.length;j++){
-                        if(revNiz[i]['user']===userNiz[j]['id']){
-                            imeprezime = userNiz[j]['firstName'] + ' ' + userNiz[j]['lastName'];
-                            slika = userNiz[j]['profileImage'];
-                        }
-                    }
-                    $('#reviews-collection').append(
-                        "                                    <li class=\"collection-item avatar\" id='"+revNiz[i]['id']+"'>\n" +
-                        "                                        <img src='http://localhost:8888/project-418/web/images/profile/"+slika+"' alt=\"\" class=\"circle\">\n" +
-                        "                                        <span class=\"title\">"+imeprezime+"</span>\n" +
-                        "                                        <p>\n" +
-                        "                                            "+revNiz[i]['reviewTxt']+"<img src='"+revNiz[i]['gifUrl']+"'>"+"\n" +
-                        "                                        </p>\n" +
-                        "<span href=\"#!\" class=\"secondary-content rev-time\"> "+vr+" </span>"+
-                        "                                       " +tree+
-                        "                                    </li>")
-                }
-            }
+            const obj = JSON.parse(data);
+            const reviewItem = new ReviewItem(false, obj.review_id, obj.review_date, reviewInput, '');
+            reviewsCollection.appendChild(reviewItem);
         },error:function(err){
+            console.log('operation failed');
             console.log(err);
-            alert('operation failed');
         }
     });
 });
+
+

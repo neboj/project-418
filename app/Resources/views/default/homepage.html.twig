@@ -138,9 +138,9 @@
                             {% endfor %}#}
 
                             <li class="home-rev-li-grid">
-                                <div class="home-rev-image-box"><a href="{{ path('moviePage',{'id': reviewsJoinMovie[r].id }) }}"><img src="https://image.tmdb.org/t/p/w92{{ reviewsJoinMovie[r].poster_path }}"></a></div>
+                                <div class="home-rev-image-box"><a href="{{ path('moviePage',{'movieId': reviewsJoinMovie[r].id }) }}"><img src="https://image.tmdb.org/t/p/w92{{ reviewsJoinMovie[r].poster_path }}"></a></div>
                                 <div class="home-rev-content">
-                                    <a href="{{ path('moviePage',{'id': reviewsJoinMovie[r].id }) }}"><span class="home-rev-title">{{ reviewsJoinMovie[r].title|replace({'"':''}) }}</span></a><br>
+                                    <a href="{{ path('moviePage',{'movieId': reviewsJoinMovie[r].id }) }}"><span class="home-rev-title">{{ reviewsJoinMovie[r].title|replace({'"':''}) }}</span></a><br>
                                      <img class="author-img" src="http://localhost/project-418/web/images/profile/{{ reviewsJoinMovie[r].profile_image }}"><span class="author-name">{{ reviewsJoinMovie[r].first_name }} {{ reviewsJoinMovie[r].last_name }}</span>
                                     <span class="home-rev-date">{{ reviewsJoinMovie[r].created_at|date('M d, Y') }}</span><br>
                                     <img src="{{ reviewsJoinMovie[r].gif_url }}">{{ reviewsJoinMovie[r].review_txt }}
@@ -179,9 +179,9 @@
                             {% endfor %}#}
 
                             <li class="home-rev-li-grid">
-                                <div class="home-rev-image-box"><a href="{{ path('moviePage',{'id': reviewsJoinMovie[r].id }) }}"><img src="https://image.tmdb.org/t/p/w92{{ reviewsJoinMovie[r].poster_path }}"></a></div>
+                                <div class="home-rev-image-box"><a href="{{ path('moviePage',{'movieId': reviewsJoinMovie[r].id }) }}"><img src="https://image.tmdb.org/t/p/w92{{ reviewsJoinMovie[r].poster_path }}"></a></div>
                                 <div class="home-rev-content">
-                                    <a href="{{ path('moviePage',{'id': reviewsJoinMovie[r].id }) }}"><span class="home-rev-title">{{ reviewsJoinMovie[r].title|replace({'"':''}) }}</span></a><br>
+                                    <a href="{{ path('moviePage',{'movieId': reviewsJoinMovie[r].id }) }}"><span class="home-rev-title">{{ reviewsJoinMovie[r].title|replace({'"':''}) }}</span></a><br>
                                     <img class="author-img" src="http://localhost/project-418/web/images/profile/{{ reviewsJoinMovie[r].profile_image }}"><span class="author-name">{{ reviewsJoinMovie[r].first_name }} {{ reviewsJoinMovie[r].last_name }}</span>
                                     <span class="home-rev-date">{{ reviewsJoinMovie[r].created_at|date('M d, Y') }}</span><br>
                                     <img src="{{ reviewsJoinMovie[r].gif_url }}">{{ reviewsJoinMovie[r].review_txt }}

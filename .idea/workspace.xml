@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70bd7ee8-f27b-4a8a-91d0-5698b455b924" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/web/js/pages/Movies/Movie/GifImage/GifImageBlock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/pages/Movies/Movie/Review/ReviewItem.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/default/homepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/default/homepage.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/default/moviePage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/default/moviePage.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/Movie/Constants/Constants.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/Movie/Constants/Constants.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/default/moviesDark.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/default/moviesDark.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/Movie/MovieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/Movie/MovieController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/Movies/MoviesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/Movies/MoviesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Like2.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Like2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Recommend.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Recommend.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/UsersList.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/UsersList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Movie.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Movie.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/js/pages/Movies/Movie/Movie.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/pages/Movies/Movie/Movie.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/js/time_ago.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/time_ago.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -105,6 +101,7 @@
   </component>
   <component name="ProjectId" id="1RdjOlhuA1YqZOxsWUeOMG7hJAf" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SearchEverywhereHistoryKey" value="styleda&#9;FILE&#9;file://C:/wamp/www/project-418/web/css/styleDark.css&#10;styl&#9;FILE&#9;file://C:/wamp/www/project-418/web/css/styleDark.css&#10;pusher.js&#9;FILE&#9;file://C:/wamp/www/project-418/web/js/pusher.js&#10;styledar&#9;FILE&#9;file://C:/wamp/www/project-418/web/css/styleDark.css&#10;time_a&#9;FILE&#9;file://C:/wamp/www/project-418/web/js/time_ago.js&#10;project&#9;FILE&#9;file://C:/wamp/www/project-418/src/AppBundle/Controller/ProjectController.php&#10;Styl&#9;FILE&#9;file://C:/wamp/www/project-418/web/css/styleDark.css&#10;time_ag&#9;FILE&#9;file://C:/wamp/www/project-418/web/js/time_ago.js&#10;pusher&#9;FILE&#9;file://C:/wamp/www/project-418/web/js/pusher.js&#10;ProjectC&#9;FILE&#9;file://C:/wamp/www/project-418/src/AppBundle/Controller/ProjectController.php&#10;RegistrationContro&#9;FILE&#9;file://C:/wamp/www/project-418/src/AppBundle/Controller/RegistrationController.php&#10;bravo&#9;null&#9;null&#10;registration&#9;FILE&#9;file://C:/wamp64/www/project-418/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php&#10;fosuserbundle.en&#9;FILE&#9;file://C:/wamp64/www/project-418/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.en.yml&#10;layou&#9;FILE&#9;file://C:/wamp64/www/project-418/vendor/friendsofsymfony/user-bundle/Resources/views/layout.html.twig&#10;register.&#9;FILE&#9;file://C:/wamp64/www/project-418/vendor/friendsofsymfony/user-bundle/Resources/views/Registration/register.html.twig&#10;layout.html&#9;FILE&#9;file://C:/wamp64/www/project-418/vendor/friendsofsymfony/user-bundle/Resources/views/layout.html.twig&#10;securitycontro&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -113,15 +110,15 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/js" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/js/pages/Movies/Movie" />
       <recent name="$PROJECT_DIR$/src/AppBundle/Controller/Movie" />
       <recent name="$PROJECT_DIR$/web/js/pages/Movies" />
       <recent name="$PROJECT_DIR$/src/AppBundle/Controller/Movies" />
       <recent name="$PROJECT_DIR$/web/js/components/Sidebar" />
-      <recent name="$PROJECT_DIR$/web/js/components/Helpers" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/web/js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -247,7 +244,10 @@
       <workItem from="1571653034381" duration="862000" />
       <workItem from="1571731927295" duration="21539000" />
       <workItem from="1571816263205" duration="922000" />
-      <workItem from="1571821121385" duration="10120000" />
+      <workItem from="1571821121385" duration="15187000" />
+      <workItem from="1571902467477" duration="15837000" />
+      <workItem from="1571948486160" duration="571000" />
+      <workItem from="1571988352052" duration="1195000" />
     </task>
     <servers />
   </component>

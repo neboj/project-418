@@ -5,7 +5,7 @@
 
 
 
-
+Movie enthusiast social network built with the help of TMDB Api in PHP Symfony 3.3, JavaScript & JQuery. Includes realtime notifications using Pusher service.
 
 
 

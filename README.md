@@ -5,7 +5,7 @@
 
 
 
-Movie enthusiast social network built with the help of TMDB Api in **PHP Symfony 3.3**, **JavaScript** & **JQuery**. Includes realtime notifications using **Pusher service**.
+Movie enthusiast social network built with the help of [**TMDB Api**][15] in **PHP Symfony 3.3**, **JavaScript** & **JQuery**. Includes realtime notifications using **Pusher service**.
 
 
 
@@ -83,3 +83,4 @@ Enjoy!
 [11]: https://symfony.com/doc/3.3/logging.html
 [13]: https://symfony.com/doc/current/bundles/SensioGeneratorBundle/index.html
 [14]: https://symfony.com/doc/current/setup/built_in_web_server.html
+[15]: https://www.themoviedb.org/documentation/api

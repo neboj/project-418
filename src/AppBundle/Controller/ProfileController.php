@@ -4,6 +4,7 @@
 namespace AppBundle\Controller;
 
 
+use AppBundle\Component\HttpFoundation\ResponseI;
 use AppBundle\Entity\ChatMessage;
 use AppBundle\Entity\ChatPrivate;
 use AppBundle\Entity\Friends;
@@ -15,17 +16,20 @@ use AppBundle\Entity\UsersListItem;
 use AppBundle\Form\UserType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
-use Symfony\Component\HttpFoundation\JsonResponse;
+use AppBundle\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\Mapping as ORM;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-class ProfileController extends Controller
+class ProfileController extends CommonController
 {
     /**
      * @Route("/profile/{id}",name="profile")
+     * @param Request $request
+     * @param $id
+     * @return ResponseI
      */
-    public function profileAction(Request $request,$id){
+    public function profileAction(Request $request,$id): ResponseI{
         $securityContext = $this->container->get('security.authorization_checker');
         if (!$securityContext->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
             // authenticated REMEMBERED, FULLY will imply REMEMBERED (NON anonymous)
@@ -38,29 +42,18 @@ class ProfileController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // $file stores the uploaded PDF file
             /** @var UploadedFile $file */
             $file = $user->getProfileImage();
-
-            // Generate a unique name for the file before saving it
             $fileName = md5(uniqid()).'.'.$file->guessExtension();
-
-            // Move the file to the directory where brochures are stored
             $file->move(
                 $this->getParameter('image_directory'),
                 $fileName
             );
-
-            // Update the 'brochure' property to store the PDF file name
-            // instead of its contents
             $user=$this->getUser();
             $user->setProfileImage($fileName);
             $em=$this->getDoctrine()->getManager();
             $em->persist($user);
             $em->flush();
-
-            // ... persist the $product variable or any other work
-
             return $this->redirect($this->generateUrl('profile',['id'=>$id]));
         }
 
@@ -78,7 +71,7 @@ class ProfileController extends Controller
         $unread_msgs = $em->getRepository(ChatMessage::class)->findBy(['received_by'=>$this->getUser()->getId(),'is_read'=>false]);
         /*izlistaj notifications*/
         $notifications = $em->getRepository(Notifications::class)->getAllNotifications($this->getUser()->getId());
-        $reviewedmovies=array();
+        $reviewedmovies = [];
 
         if($request->isXmlHttpRequest()) {
             /*kreiranje nove liste*/
@@ -141,13 +134,10 @@ class ProfileController extends Controller
 
         }
 
+        // @TODO loads in ~9seconds => Cause: VERY EXPENSIVE API CALLS - EVERY CALL IS ~1second => NOT SCALABLE
+        $reviewedmovies = $em->getRepository(Review::class)->userReviewedMovies($this->getUser()->getId());
 
-        foreach ($reviews as $r){
-            $f = $r['movie'];
-            $jsonContent = file_get_contents("https://api.themoviedb.org/3/movie/$f?api_key=831c33c0ee756b98159b05350405d661");
-            $jsonObject = json_decode($jsonContent,true);
-            array_push($reviewedmovies,$jsonObject);
-        }
+
 
         $all_fr_requests = $em->getRepository(Friends::class)->getRequestsFromAndToUser($this->getUser()->getId());
 

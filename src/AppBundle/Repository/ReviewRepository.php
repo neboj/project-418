@@ -43,9 +43,16 @@ class ReviewRepository extends EntityRepository
             )->getResult();
     }
 
-    public function userReviewedMovies($user){
+    /**
+     * Get all movies on which the current user had left a review on.
+     *
+     * @param $userId
+     * @return mixed[]
+     * @throws DBALException
+     */
+    public function userReviewedMovies($userId){
         $em = $this->getEntityManager();
-        $RAW_QUERY = 'SELECT DISTINCT movie FROM `review` WHERE user='.$user;
+        $RAW_QUERY = "SELECT DISTINCT m.id, m.title, m.poster_path FROM review r JOIN movie m on r.movie = m.id WHERE user = {$userId} ";
         $statement = $em->getConnection()->prepare($RAW_QUERY);
         $statement->execute();
 
@@ -57,9 +64,16 @@ class ReviewRepository extends EntityRepository
         return $result;
     }
 
+//    @TODO move this to MovieRepository
+    /**
+     * Get people who had left the review on current movie
+     *
+     * @return mixed[]
+     * @throws DBALException
+     */
     public function getAllWhoReviewed(){
         $em = $this->getEntityManager();
-        $RAW_QUERY = "SELECT movie,user FROM `review` GROUP BY user,movie ";
+        $RAW_QUERY = "SELECT movie, user FROM `review` GROUP BY user,movie ";
         $statement = $em->getConnection()->prepare($RAW_QUERY);
         $statement->execute();
 

@@ -30,6 +30,8 @@ document.getElementById('src-ppl').addEventListener('keypress', function (ev) {
                 let users = JSON.parse(data)['responseData'];
                 resultElement.innerHTML = '';
                 let secondary_content_span = '';
+
+                //@TODO needs refactoring OOP
                 for (let i = 0; i < users.length; i++) {
                     if (inputElement.dataset.is_rec) {
                         secondary_content_span = "<span class='secondary-content' id='rec-sec-cont' data-received_by='" +
@@ -90,6 +92,8 @@ $("#src-gifs").keypress(function (event) {
         var queryStringGIF = $('input[name=search-gifs]').val();
         queryStringGIF = queryStringGIF.replace(" ","-");
         var  mslug = $('input[name=review-input]').data('movid');
+
+        //@TODO needs refactoring OOP
         $('.ul-gifs').empty();
         $('.ul-gifs').append("<li><div class=\"preloader-wrapper small active\">\n" +
             "    <div class=\"spinner-layer spinner-green-only\">\n" +
@@ -174,7 +178,7 @@ $(document).ready(function(){
         var ime_i_prezime = $('#rec-sec-cont').data('ime_i_prezime');
         $('input[name=input-new-list]').val('');
 
-
+        //@TODO needs refactoring OOP - create class for this
         var movie__id = $('.add-to-list1').data('movie__id');
         var movie__title= $('.add-to-list1').data('movie__title');
         var movie__poster_path= $('.add-to-list1').data('movie__poster_path');

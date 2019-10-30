@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\AppBundle;
+use AppBundle\Component\HttpFoundation\ResponseI;
 use AppBundle\Entity\ChatMessage;
 use AppBundle\Entity\ChatPrivate;
 use AppBundle\Entity\Friends;
@@ -18,13 +19,13 @@ use AppBundle\Entity\UsersListItem;
 use AppBundle\Form\PostType;
 use AppBundle\Form\UserType;
 use Doctrine\ORM\Mapping as ORM;
+use Exception;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Post;
 use AppBundle\Form\PostFormType;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
@@ -34,83 +35,37 @@ use Symfony\Component\Validator\Constraints\DateTime;
 use Pusher;
 
 
-class ProjectController extends Controller
+class ProjectController extends CommonController
 {
     /**
      * @Route("/", name="homepage")
+     * @param Request $request
+     * @return ResponseI
      */
-    public function indexAction(Request $request§)
+    public function indexAction(Request $request): ResponseI
     {
         $securityContext = $this->container->get('security.authorization_checker');
         if (!$securityContext->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
             // authenticated REMEMBERED, FULLY will imply REMEMBERED (NON anonymous)
             return $this->redirectToRoute('fos_user_security_login');
         }
-
-
-
         $jsonContentTopRated = file_get_contents("https://api.themoviedb.org/3/movie/top_rated?api_key=831c33c0ee756b98159b05350405d661");
         $jsonObjectTopRated = json_decode($jsonContentTopRated,true);
-
         $em = $this->getDoctrine()->getManager();
-
- /*izlistaj latest reviews*/
-        $max = $em->getRepository(Review::class)->getMaxID();
-        $max = $max[0]['maxID'];
-        $offset = (int)$max - 11-6;
-
-        /*$reviews = $em->getRepository(Review::class)->findBy(array('is_gif'=>0),array('created_at'=>'DESC'));*/
         $reviewsJoinMovie= $em->getRepository(Review::class)->getLatestReviewsJoinMovie();
-
         $users = $em->getRepository(User::class)->findAll();
-/*        $revlikes='';*/
-        /*$films = array();
-        foreach ($reviews as $r){
-            $f = $r->getMovie();
-            $jsonContent = file_get_contents("https://api.themoviedb.org/3/movie/$f?api_key=831c33c0ee756b98159b05350405d661");
-            $jsonObject = json_decode($jsonContent,true);
-
-            $revlikes = $em->getRepository(Like2::class)->getLikesOfReviews($f);
-
-
-            array_push($films,$jsonObject);
-        }*/
-
-
-  /*izlistaj latest activity*/
         $news = $em->getRepository(LatestNews::class)->getLatestNews();
         $filmsLatestActivityJoinMovieEntity =$em->getRepository(LatestNews::class)->getLatestNewsJoinMovieEntity();
-        /*$filmsLatestActivity=array();
-        foreach ($news as $n){
-            $f = $n['movie'];
-            $jsonContent = file_get_contents("https://api.themoviedb.org/3/movie/$f?api_key=831c33c0ee756b98159b05350405d661");
-            $jsonObject = json_decode($jsonContent,true);
-            array_push($filmsLatestActivity,$jsonObject);
-        }*/
-        /*$a = $news[0]['movie'];*/
-
-        /*izlistaj sve ljude*/
         $people = $em->getRepository(User::class)->findAll();
-        /*izlistaj frend requests*/
         $friend_requests = $em->getRepository(Friends::class)->getFriendRequests($this->getUser()->getId());
-        /*izlistaj chatove*/
         $chats = $em->getRepository(ChatPrivate::class)->getAllChats($this->getUser()->getId());
-        /*izlistaj neprocitane poruke gde je receiver=current user*/
         $unread_msgs = $em->getRepository(ChatMessage::class)->findBy(['received_by'=>$this->getUser()->getId(),'is_read'=>false]);
-
-    /*izlistaj recommendations */
         $recommendations = $em->getRepository(Recommend::class)->getAllRecommendations($this->getUser()->getId());
-
-    /*izlistaj notifications*/
         $notifications = $em->getRepository(Notifications::class)->getAllNotifications($this->getUser()->getId());
         return $this->render(':default:homepage.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-/*            'reviews'=>$reviews,*/
             'users'=>$users,
-/*            'films'=>$films,*/
-/*            'likes'=>$revlikes,*/
             'news'=>$news,
-/*            'filmsAct'=>$filmsLatestActivity,*/
             'top_rated'=>$jsonObjectTopRated,
             'friend_requests'=>$friend_requests,
             'chats'=>$chats,
@@ -124,14 +79,15 @@ class ProjectController extends Controller
     }
 
 
-
     /**
      * @Route("/notebook",name="notebook")
+     * @param Request $request
+     * @return RedirectResponse|Response
+     * @throws Exception
      */
     public function notebookAction(Request $request){
         $securityContext = $this->container->get('security.authorization_checker');
         if (!$securityContext->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
-            // authenticated REMEMBERED, FULLY will imply REMEMBERED (NON anonymous)
             return $this->redirectToRoute('fos_user_security_login');
         }
 
@@ -177,16 +133,11 @@ class ProjectController extends Controller
 
         $users = $em->getRepository(User::class)->findAll();
 
-        /*izlistaj frend requests*/
         $friend_requests = $em->getRepository(Friends::class)->getFriendRequests($this->getUser()->getId());
-        /*izlistaj chatove*/
         $chats = $em->getRepository(ChatPrivate::class)->getAllChats($this->getUser()->getId());
-        /*izlistaj neprocitane poruke gde je receiver=current user*/
         $unread_msgs = $em->getRepository(ChatMessage::class)->findBy(['received_by'=>$this->getUser()->getId(),'is_read'=>false]);
-        /*izlistaj notifications*/
         $notifications = $em->getRepository(Notifications::class)->getAllNotifications($this->getUser()->getId());
-        // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', [
+        return $this->render('default/notebook.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
             'form'=>$form->createView(),
             'status'=>$status,

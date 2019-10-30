@@ -25,7 +25,7 @@
                         <li class="feed-li">
                             <div>
                                 <div class="feed-li-img-container"><a href="{{ path('profile',{'id':news[i]['action_performer']}) }}">
-                                    <img src="http://localhost/project-418/web/images/profile/{{ filmsActJoinMovie[i]['profile_image'] }}"></a>
+                                    <img src="http://localhost:8888/project-418/web/images/profile/{{ filmsActJoinMovie[i]['profile_image'] }}"></a>
                                 </div><div class="feed-li-img-container">
                                     <img src="{{ asset('sm.png') }}">
                                 </div><div class="feed-li-img-container"><a href="{{ path('moviePage',{'movieId':filmsActJoinMovie[i]['id']}) }}">
@@ -50,7 +50,7 @@
                         <li class="feed-li">
                             <div>
                                 <div class="feed-li-img-container"><a href="{{ path('profile',{'id':news[i]['action_performer']}) }}">
-                                        <img src="http://localhost/project-418/web/images/profile/{{ filmsActJoinMovie[i]['profile_image'] }}"></a>
+                                        <img src="http://localhost:8888/project-418/web/images/profile/{{ filmsActJoinMovie[i]['profile_image'] }}"></a>
                                 </div><div class="feed-li-img-container">
                                     <img src="{{ asset('po.PNG') }}">
                                 </div><div class="feed-li-img-container"><a href="{{ path('moviePage',{'movieId':filmsActJoinMovie[i]['id']}) }}">
@@ -73,7 +73,7 @@
                         <li class="feed-li">
                             <div>
                                 <div class="feed-li-img-container"><a href="{{ path('profile',{'id':news[i]['action_performer']}) }}">
-                                        <img src="http://localhost/project-418/web/images/profile/{{ filmsActJoinMovie[i]['profile_image'] }}"></a>
+                                        <img src="http://localhost:8888/project-418/web/images/profile/{{ filmsActJoinMovie[i]['profile_image'] }}"></a>
                                 </div><div class="feed-li-img-container">
                                     <img src="http://www.myiconfinder.com/uploads/iconsets/128-128-6cc6135dbcdd8f769c00fcc7440dd898-popcorn.png">
                                 </div><div class="feed-li-img-container"><a href="{{ path('moviePage',{'movieId':filmsActJoinMovie[i]['movie']}) }}">
@@ -111,7 +111,6 @@
     </ul>
 </div>
         {#{{ dump(reviewsJoinMovie) }}#}
-        {#{% set broj = notifications|length-1 %}#}
         {% if  reviewsJoinMovie|length>5 %}
         <div class="latest-review-title"><h5>Latest reviews</h5></div>
             <div class="homepage-reviews-container">
@@ -119,29 +118,12 @@
                     <ul class="home-rev-ul">
 
                         {% for r in 0..2 %}
-                            {#{% set reviewAuthor = '' %}
-                            {% for u in users %}
-                                {% if u.id==reviews[r].user %}
-                                    {% set reviewAuthor = u  %}
-                                    {% endif %}
-                                {% endfor %}
-                            {% set title = '' %}
-                            {% set movieId = '' %}
-                            {% set imgUrl = '' %}
-                            {% for f in films %}
-                                {% if reviews[r].movie == f['id']|json_encode %}
-                                #}{#{{ dump(f) }}#}{#
-                                {%  set title = f['title']|json_encode  %}
-                                {% set movieId = f['id']|json_encode %}
-                                    {% set imgUrl = f['poster_path']|json_encode|raw|replace({'"':''}) %}
-                                {% endif %}
-                            {% endfor %}#}
 
                             <li class="home-rev-li-grid">
                                 <div class="home-rev-image-box"><a href="{{ path('moviePage',{'movieId': reviewsJoinMovie[r].id }) }}"><img src="https://image.tmdb.org/t/p/w92{{ reviewsJoinMovie[r].poster_path }}"></a></div>
                                 <div class="home-rev-content">
                                     <a href="{{ path('moviePage',{'movieId': reviewsJoinMovie[r].id }) }}"><span class="home-rev-title">{{ reviewsJoinMovie[r].title|replace({'"':''}) }}</span></a><br>
-                                     <img class="author-img" src="http://localhost/project-418/web/images/profile/{{ reviewsJoinMovie[r].profile_image }}"><span class="author-name">{{ reviewsJoinMovie[r].first_name }} {{ reviewsJoinMovie[r].last_name }}</span>
+                                     <img class="author-img" src="http://localhost:8888/project-418/web/images/profile/{{ reviewsJoinMovie[r].profile_image }}"><span class="author-name">{{ reviewsJoinMovie[r].first_name }} {{ reviewsJoinMovie[r].last_name }}</span>
                                     <span class="home-rev-date">{{ reviewsJoinMovie[r].created_at|date('M d, Y') }}</span><br>
                                     <img src="{{ reviewsJoinMovie[r].gif_url }}">{{ reviewsJoinMovie[r].review_txt }}
                                     {#{{ reviewsJoinMovie[r].broj }}#}
@@ -160,29 +142,12 @@
                 <div class="homepage-reviews-right-container">
                     <ul class="home-rev-ul">
                         {% for r in 3..5 %}
-                            {#{% set reviewAuthor = '' %}
-                            {% for u in users %}
-                                {% if u.id==reviews[r].user %}
-                                    {% set reviewAuthor = u  %}
-                                {% endif %}
-                            {% endfor %}
-                            {% set title = '' %}
-                            {% set movieId = '' %}
-                            {% set imgUrl = '' %}
-                            {% for f in films %}
-                                {% if reviews[r].movie == f['id']|json_encode %}
-                                    #}{#{{ dump(f) }}#}{#
-                                    {%  set title = f['title']|json_encode  %}
-                                    {% set movieId = f['id']|json_encode %}
-                                    {% set imgUrl = f['poster_path']|json_encode|raw|replace({'"':''}) %}
-                                {% endif %}
-                            {% endfor %}#}
 
                             <li class="home-rev-li-grid">
                                 <div class="home-rev-image-box"><a href="{{ path('moviePage',{'movieId': reviewsJoinMovie[r].id }) }}"><img src="https://image.tmdb.org/t/p/w92{{ reviewsJoinMovie[r].poster_path }}"></a></div>
                                 <div class="home-rev-content">
                                     <a href="{{ path('moviePage',{'movieId': reviewsJoinMovie[r].id }) }}"><span class="home-rev-title">{{ reviewsJoinMovie[r].title|replace({'"':''}) }}</span></a><br>
-                                    <img class="author-img" src="http://localhost/project-418/web/images/profile/{{ reviewsJoinMovie[r].profile_image }}"><span class="author-name">{{ reviewsJoinMovie[r].first_name }} {{ reviewsJoinMovie[r].last_name }}</span>
+                                    <img class="author-img" src="http://localhost:8888/project-418/web/images/profile/{{ reviewsJoinMovie[r].profile_image }}"><span class="author-name">{{ reviewsJoinMovie[r].first_name }} {{ reviewsJoinMovie[r].last_name }}</span>
                                     <span class="home-rev-date">{{ reviewsJoinMovie[r].created_at|date('M d, Y') }}</span><br>
                                     <img src="{{ reviewsJoinMovie[r].gif_url }}">{{ reviewsJoinMovie[r].review_txt }}
                                     {#{{ reviewsJoinMovie[r].broj }}#}

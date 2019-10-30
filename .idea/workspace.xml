@@ -2,13 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70bd7ee8-f27b-4a8a-91d0-5698b455b924" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/web/js/pages/Movies/Movie/GifImage/GifImageBlock.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/js/pages/Movies/Movie/Review/ReviewItem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AppBundle/Component/HttpFoundation/JsonResponse.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AppBundle/Component/HttpFoundation/RedirectResponse.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AppBundle/Component/HttpFoundation/Response.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AppBundle/Component/HttpFoundation/ResponseI.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/project-418.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/project-418.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/default/homepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/default/homepage.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/default/moviesDark.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/default/moviesDark.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/default/profile.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/default/profile.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/CommonController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/CommonController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/Movie/MovieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/Movie/MovieController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Movie.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Movie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ProfileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ProjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ProjectController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Repository/ReviewRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/ReviewRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/SymfonyRequirements.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/SymfonyRequirements.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/js/pages/Movies/Movie/Movie.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/pages/Movies/Movie/Movie.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -97,6 +109,25 @@
       <path value="$PROJECT_DIR$/vendor/pusher/pusher-php-server" />
       <path value="$PROJECT_DIR$/vendor/hwi/oauth-bundle" />
       <path value="$PROJECT_DIR$/vendor/kriswallsmith/buzz" />
+      <path value="$PROJECT_DIR$/vendor/ocramius/package-versions" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/sodium_compat" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/reflection" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/persistence" />
+      <path value="$PROJECT_DIR$/vendor/nyholm/psr7" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-client" />
+      <path value="$PROJECT_DIR$/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/vendor/php-http/httplug" />
+      <path value="$PROJECT_DIR$/vendor/php-http/message-factory" />
+      <path value="$PROJECT_DIR$/vendor/php-http/promise" />
     </include_path>
   </component>
   <component name="ProjectId" id="1RdjOlhuA1YqZOxsWUeOMG7hJAf" />
@@ -107,18 +138,18 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.debug" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/web/js" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/AppBundle" />
       <recent name="$PROJECT_DIR$/web/js/pages/Movies/Movie" />
       <recent name="$PROJECT_DIR$/src/AppBundle/Controller/Movie" />
       <recent name="$PROJECT_DIR$/web/js/pages/Movies" />
       <recent name="$PROJECT_DIR$/src/AppBundle/Controller/Movies" />
-      <recent name="$PROJECT_DIR$/web/js/components/Sidebar" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -247,7 +278,8 @@
       <workItem from="1571821121385" duration="15187000" />
       <workItem from="1571902467477" duration="15837000" />
       <workItem from="1571948486160" duration="571000" />
-      <workItem from="1571988352052" duration="1195000" />
+      <workItem from="1571988352052" duration="2156000" />
+      <workItem from="1572429265894" duration="12695000" />
     </task>
     <servers />
   </component>

@@ -5,6 +5,7 @@ namespace AppBundle\Controller\Movie;
 
 
 use AppBundle\AppBundle;
+use AppBundle\Component\HttpFoundation\ResponseI;
 use AppBundle\Controller\CommonController;
 use AppBundle\Controller\Movie\Constants\Constants as Constants;
 use AppBundle\Entity\ChatMessage;
@@ -23,10 +24,10 @@ use AppBundle\Utils\Helper;
 use Doctrine\Common\Persistence\ObjectManager;
 use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\JsonResponse;
+use AppBundle\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
+use AppBundle\Component\HttpFoundation\Response;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
@@ -68,7 +69,7 @@ class MovieController extends CommonController
      * @Route("/movies/{movieId}", name="moviePage")
      * @param Request $request
      * @param $movieId
-     * @return JsonResponse|RedirectResponse|Response
+     * @return ResponseI
      * @throws Exception
      */
     public function movieAction(Request $request, $movieId){
@@ -286,6 +287,7 @@ class MovieController extends CommonController
     /**
      * @param $movieData
      * @param Notifications $notification
+     * @throws Pusher\PusherException
      */
     private function triggerNotification($movieData, $notification) {
         $movieReviews = $this->entityManager->getRepository(Review::class)->getAllWhoReviewed();

@@ -3,7 +3,7 @@
 
 ![screencapture-localhost-8888-project-418-web-app-dev-php-movies-320288-2019-10-25-10_57_40](https://user-images.githubusercontent.com/23150870/67557981-69548a00-f716-11e9-9c9d-83cdd65abaa0.png)
 
-
+![screeshot-homepage](https://user-images.githubusercontent.com/23150870/67851592-0fcfcf00-fb0b-11e9-9010-c4ced25061b2.png)
 
 Movie enthusiast social network built with the help of [**TMDB Api**][15] in **PHP Symfony 3.3**, **JavaScript** & **JQuery**. Includes realtime notifications using **Pusher service**.
 

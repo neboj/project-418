@@ -1,3 +1,16 @@
+<img width="1424" alt="Screenshot 2019-10-25 at 10 33 47" src="https://user-images.githubusercontent.com/23150870/67557669-c7cd3880-f715-11e9-8f5f-66b7d3a51eb9.png">
+
+
+![screencapture-localhost-8888-project-418-web-app-dev-php-movies-320288-2019-10-25-10_57_40](https://user-images.githubusercontent.com/23150870/67557981-69548a00-f716-11e9-9c9d-83cdd65abaa0.png)
+
+![screeshot-homepage](https://user-images.githubusercontent.com/23150870/67851592-0fcfcf00-fb0b-11e9-9010-c4ced25061b2.png)
+
+Movie enthusiast social network built with the help of [**TMDB Api**][15] in **PHP Symfony 3.3**, **JavaScript** & **JQuery**. Includes realtime notifications using **Pusher service**.
+
+
+
+
+
 Symfony Standard Edition
 ========================
 
@@ -70,3 +83,4 @@ Enjoy!
 [11]: https://symfony.com/doc/3.3/logging.html
 [13]: https://symfony.com/doc/current/bundles/SensioGeneratorBundle/index.html
 [14]: https://symfony.com/doc/current/setup/built_in_web_server.html
+[15]: https://www.themoviedb.org/documentation/api

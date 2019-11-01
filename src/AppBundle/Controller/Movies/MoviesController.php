@@ -1,6 +1,11 @@
 <?php
+
+declare(strict_types=1);
+
 namespace AppBundle\Controller\Movies;
 
+use AppBundle\Component\HttpFoundation\JsonResponse;
+use AppBundle\Component\HttpFoundation\ResponseI;
 use AppBundle\Controller\CommonController;
 use AppBundle\Controller\Movies\Constants\Constants as Constants;
 use AppBundle\Entity\ChatMessage;
@@ -14,10 +19,7 @@ use AppBundle\Entity\UsersListItem;
 use Doctrine\Common\Persistence\ObjectManager;
 use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Doctrine\ORM\Mapping as ORM;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use AppBundle\Controller\Constants\API_Credentials;
@@ -38,10 +40,10 @@ class MoviesController extends CommonController {
     /**
      * @Route("/movies",name="movies")
      * @param Request $request
-     * @return JsonResponse|RedirectResponse|Response
+     * @return ResponseI
      * @throws Exception
      */
-    public function moviesAction(Request $request){
+    public function moviesAction(Request $request): ResponseI {
         $securityContext = $this->container->get('security.authorization_checker');
         if (!$securityContext->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
             return $this->redirectToRoute('fos_user_security_login');
@@ -77,8 +79,8 @@ class MoviesController extends CommonController {
 
     /**
      * @param Request $request
-     * @return JsonResponse
      * @throws Exception
+     * @return JsonResponse
      */
     private function handleAjax(Request $request) {
         switch ($request->request->get('methodName')) {

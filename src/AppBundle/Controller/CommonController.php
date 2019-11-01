@@ -1,5 +1,6 @@
 <?php
 
+declare(strict_types=1);
 
 namespace AppBundle\Controller;
 
@@ -21,6 +22,7 @@ use AppBundle\Component\HttpFoundation\RedirectResponse;
 
 class CommonController extends Controller
 {
+
     /**
      * Renders a view.
      *

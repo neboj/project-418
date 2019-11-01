@@ -1,5 +1,6 @@
 <?php
 
+declare(strict_types=1);
 
 namespace AppBundle\Controller;
 
@@ -21,15 +22,15 @@ use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\Mapping as ORM;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-class ProfileController extends CommonController
-{
+class ProfileController extends CommonController {
+
     /**
      * @Route("/profile/{id}",name="profile")
      * @param Request $request
      * @param $id
      * @return ResponseI
      */
-    public function profileAction(Request $request,$id): ResponseI{
+    public function profileAction(Request $request,int $id): ResponseI{
         $securityContext = $this->container->get('security.authorization_checker');
         if (!$securityContext->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
             // authenticated REMEMBERED, FULLY will imply REMEMBERED (NON anonymous)

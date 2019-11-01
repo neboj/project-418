@@ -1,5 +1,6 @@
 <?php
 
+declare(strict_types=1);
 
 namespace AppBundle\Controller\Movie;
 
@@ -72,7 +73,7 @@ class MovieController extends CommonController
      * @return ResponseI
      * @throws Exception
      */
-    public function movieAction(Request $request, $movieId){
+    public function movieAction(Request $request,int $movieId): ResponseI {
         $securityContext = $this->container->get('security.authorization_checker');
         if (!$securityContext->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
             return $this->redirectToRoute('fos_user_security_login');
@@ -139,7 +140,7 @@ class MovieController extends CommonController
      * @return JsonResponse
      * @throws Exception
      */
-    private function likeReview($reviewData) {
+    private function likeReview($reviewData): JsonResponse {
         $reviewObj = $this->helper->transformArrayToObject($reviewData);
         $postoji = $this->entityManager->getRepository(Like2::class)->findOneBy([
             'user' => $reviewObj->user, 'review_id' => $reviewObj->reviewid]);
@@ -175,7 +176,7 @@ class MovieController extends CommonController
      * @return JsonResponse
      * @throws Exception
      */
-    private function sendMovieRecommendation($recommendationData) {
+    private function sendMovieRecommendation($recommendationData): JsonResponse {
         $responseText = 'Exists';
         $recommendationObj = $this->helper->transformArrayToObject($recommendationData);
         $existsInDB = $this->entityManager->getRepository(Recommend::class)->findOneBy([
@@ -212,7 +213,7 @@ class MovieController extends CommonController
      * @param $gifData array
      * @return JsonResponse
      */
-    private function searchGifs($gifData) {
+    private function searchGifs($gifData): JsonResponse {
         $gifObj = $this->helper->transformArrayToObject($gifData);
         $queryStringGIF = $gifObj->queryStringGIF;
         $resultJSON = file_get_contents(
@@ -225,7 +226,7 @@ class MovieController extends CommonController
      * @return JsonResponse
      * @throws Exception
      */
-    private function addGifReaction($movieData) {
+    private function addGifReaction($movieData): JsonResponse {
         $movieObj = $this->helper->transformArrayToObject($movieData);
         $review = new Review($this->userId, $movieObj->movie__id, "", new \DateTime(),
             UsersList::LIST_STATE_PUBLIC, true, $movieObj->gifurl);
@@ -237,14 +238,20 @@ class MovieController extends CommonController
      * @return JsonResponse
      * @throws Exception
      */
-    private function addMovieReview($movieDataArray) {
+    private function addMovieReview($movieDataArray): JsonResponse {
         $movieObj = $this->helper->transformArrayToObject($movieDataArray);
         $review = new Review($this->userId, $this->movieId, $movieObj->review, new \DateTime(),
             UsersList::LIST_STATE_PUBLIC, false, '');
         return $this->handleSubmittedReview($movieObj, $review);
     }
 
-    private function handleSubmittedReview($movieObj, $review) {
+    /**
+     * @param $movieObj
+     * @param $review
+     * @return JsonResponse
+     * @throws Pusher\PusherException
+     */
+    private function handleSubmittedReview($movieObj, $review): JsonResponse {
         $movieInDB = $this->entityManager->getRepository(Movie::class)->find($movieObj->movie__id);
         if (!$movieInDB) {
             $movie = new Movie($movieObj->movie__id, $movieObj->movie__title, $movieObj->movie__poster_path,

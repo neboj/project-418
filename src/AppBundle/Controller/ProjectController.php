@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AppBundle\Controller;
 
 use AppBundle\AppBundle;
@@ -42,8 +44,7 @@ class ProjectController extends CommonController
      * @param Request $request
      * @return ResponseI
      */
-    public function indexAction(Request $request): ResponseI
-    {
+    public function indexAction(Request $request): ResponseI {
         $securityContext = $this->container->get('security.authorization_checker');
         if (!$securityContext->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
             // authenticated REMEMBERED, FULLY will imply REMEMBERED (NON anonymous)
@@ -82,7 +83,7 @@ class ProjectController extends CommonController
     /**
      * @Route("/notebook",name="notebook")
      * @param Request $request
-     * @return RedirectResponse|Response
+     * @return ResponseI
      * @throws Exception
      */
     public function notebookAction(Request $request){

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace AppBundle\Controller\Constants\Pusher;
+namespace AppBundle\Pusher;
 
 
 class Pusher_Credentials

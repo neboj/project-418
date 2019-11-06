@@ -2,8 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70bd7ee8-f27b-4a8a-91d0-5698b455b924" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/AppBundle/Controller/Movies/MoviesCommonController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AppBundle/Pusher/Pusher.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/ValueObject/Movie/MovieID.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Models/Movie/MovieID.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/services.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/services.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Component/HttpFoundation/RedirectResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Component/HttpFoundation/RedirectResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ChatController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ChatController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/CommonController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/CommonController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/Constants/Pusher/Pusher_Credentials.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Pusher/Pusher_Credentials.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/Movie/Constants/Constants.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/Movies/Constants/MovieConstants.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/Movie/MovieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/Movies/MovieController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/Movies/Constants/Constants.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/Movies/Constants/MoviesConstants.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/Movies/MoviesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/Movies/MoviesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ProfileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ProjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ProjectController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/RegistrationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/SearchPeopleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/SearchPeopleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/EventListener/RedirectAfterRegistrationSubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/EventListener/RedirectAfterRegistrationSubscriber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Models/Movie/MovieID.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Models/Movie/MovieID.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/ValueObject/Exceptions/InvalidValueException.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/ValueObject/Exceptions/InvalidValueException.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -123,15 +140,15 @@
     <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/web/js" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/AppBundle/Controller/Movies" />
+      <recent name="$PROJECT_DIR$/src/AppBundle/Controller/Movies/Constants" />
+      <recent name="$PROJECT_DIR$/src/AppBundle/Pusher" />
       <recent name="$PROJECT_DIR$/src/AppBundle/Models" />
       <recent name="$PROJECT_DIR$/src/AppBundle" />
-      <recent name="$PROJECT_DIR$/web/js/pages/Movies/Movie" />
-      <recent name="$PROJECT_DIR$/src/AppBundle/Controller/Movie" />
-      <recent name="$PROJECT_DIR$/web/js/pages/Movies" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -263,7 +280,9 @@
       <workItem from="1571988352052" duration="2156000" />
       <workItem from="1572429265894" duration="14360000" />
       <workItem from="1572511749602" duration="1061000" />
-      <workItem from="1572514155027" duration="8124000" />
+      <workItem from="1572514155027" duration="10506000" />
+      <workItem from="1572857117618" duration="344000" />
+      <workItem from="1573032122411" duration="10592000" />
     </task>
     <servers />
   </component>

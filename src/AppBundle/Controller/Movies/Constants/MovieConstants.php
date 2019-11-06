@@ -1,10 +1,13 @@
 <?php
 
 
-namespace AppBundle\Controller\Movie\Constants;
+namespace AppBundle\Controller\Movies\Constants;
 
-
-class Constants
+/**
+ * Class MovieConstants
+ * @package AppBundle\Controller\Movies\Constants
+ */
+class MovieConstants
 {
     const ADD_MOVIE_REVIEW = "AddMovieReview";
     const ADD_TO_PERSONAL_LIST = "AddToPersonalList";

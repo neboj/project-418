@@ -36,7 +36,10 @@ use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Validator\Constraints\DateTime;
 use Pusher;
 
-
+/**
+ * Class ProjectController
+ * @package AppBundle\Controller
+ */
 class ProjectController extends CommonController
 {
     /**
@@ -150,9 +153,4 @@ class ProjectController extends CommonController
             'notifications'=>$notifications
         ]);
     }
-
-
-
-
-
 }

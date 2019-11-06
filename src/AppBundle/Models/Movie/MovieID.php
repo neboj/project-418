@@ -1,11 +1,13 @@
 <?php
 
 
-namespace AppBundle\ValueObject\Movie;
+namespace AppBundle\Models\Movie;
 
 
 use AppBundle\ValueObject\PositiveIntegerValueObject;
-use AppBundle\ValueObject\ValueObject;
-use AppBundle\ValueObject\ValueObjectI;
 
+/**
+ * Class MovieID
+ * @package AppBundle\Models\Movie
+ */
 class MovieID extends PositiveIntegerValueObject {}

@@ -7,7 +7,7 @@ namespace AppBundle\Controller\Movies;
 use AppBundle\Component\HttpFoundation\JsonResponse;
 use AppBundle\Component\HttpFoundation\ResponseI;
 use AppBundle\Controller\CommonController;
-use AppBundle\Controller\Movies\Constants\Constants as Constants;
+use AppBundle\Controller\Movies\Constants\MoviesConstants as Constants;
 use AppBundle\Entity\ChatMessage;
 use AppBundle\Entity\ChatPrivate;
 use AppBundle\Entity\Friends;
@@ -24,13 +24,11 @@ use Doctrine\ORM\Mapping as ORM;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use AppBundle\Controller\Constants\API_Credentials;
 
-
-class MoviesController extends CommonController {
-
-    /**
-     * @var ObjectManager | Object
-     */
-    private $entityManager;
+/**
+ * Class MoviesController
+ * @package AppBundle\Controller\Movies
+ */
+class MoviesController extends MoviesCommonController {
 
     /**
      * @var int
@@ -48,7 +46,6 @@ class MoviesController extends CommonController {
         if (!$securityContext->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
             return $this->redirectToRoute('fos_user_security_login');
         }
-        $this->entityManager = $this->getDoctrine()->getManager();
         $this->userId = $this->getUser()->getId();
         if($request->isXmlHttpRequest()){
             return $this->handleAjax($request);
@@ -73,8 +70,6 @@ class MoviesController extends CommonController {
             'unread_msgs' => $unread_msgs,
             'notifications' => $notifications
         ]);
-
-
     }
 
     /**

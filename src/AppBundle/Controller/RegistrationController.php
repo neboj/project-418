@@ -30,6 +30,10 @@ use Symfony\Component\HttpFoundation\Response;
 use AppBundle\Entity\UsersList;
 use FOS\UserBundle\Controller\RegistrationController as BaseRegistrationController;
 
+/**
+ * Class RegistrationController
+ * @package AppBundle\Controller
+ */
 class RegistrationController extends BaseController
 {
     /**

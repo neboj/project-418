@@ -18,6 +18,7 @@ use AppBundle\Entity\Friends;
 use AppBundle\Entity\Notifications;
 use AppBundle\Utils\MyLogger;
 use AppBundle\Entity\User;
+use mysql_xdevapi\Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\BrowserKit\Response;
 use Symfony\Component\DependencyInjection\Tests\Compiler\J;
@@ -25,8 +26,14 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Pusher;
-class ChatController extends Controller
+
+/**
+ * Class ChatController
+ * @package AppBundle\Controller
+ */
+class ChatController extends CommonController
 {
+
     /**
      * @Route("/chat-api/message",name="see-message")
      */
@@ -37,18 +44,14 @@ class ChatController extends Controller
             // authenticated REMEMBERED, FULLY will imply REMEMBERED (NON anonymous)
             return $this->redirectToRoute('fos_user_security_login');
         }
+        try {
+            $pusher = $this->getPusherInstance();
+        } catch (Pusher\PusherException $e) {
+            // @TODO handle Exception
+            throw new \Exception('Pusher err: ' . $e->getMessage() . ' ' . $e->getTraceAsString());
+        }
 
-        $options = array(
-        'cluster' => 'eu',
-        'encrypted' => true
-        );
-        $pusher = new Pusher\Pusher(
-            '82800fdb37dfd38f4722',
-            'e5e2af578bbd993d3cc2',
-            '457440',
-            $options
-        );
-
+        // @TODO refactor this controller
         $em = $this->getDoctrine()->getManager();
 
 /*if left current chat set all unread msgs in that chat as read*/
@@ -344,16 +347,7 @@ class ChatController extends Controller
          * @Route("/friend/add",name="friend_requests")
          */
         public function friendsAction(Request $request){
-            $options = array(
-                'cluster' => 'eu',
-                'encrypted' => true
-            );
-            $pusher = new Pusher\Pusher(
-                '82800fdb37dfd38f4722',
-                'e5e2af578bbd993d3cc2',
-                '457440',
-                $options
-            );
+            $pusher = $this->getPusherInstance();
 
             $em = $this->getDoctrine()->getManager();
 

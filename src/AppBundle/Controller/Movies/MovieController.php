@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace AppBundle\Controller\Movie;
-
+namespace AppBundle\Controller\Movies;
 
 use AppBundle\AppBundle;
 use AppBundle\Component\HttpFoundation\ResponseI;
 use AppBundle\Controller\CommonController;
-use AppBundle\Controller\Movie\Constants\Constants as Constants;
+use AppBundle\Controller\Movies\Constants\MovieConstants as Constants;
+use AppBundle\Controller\Movies\MoviesCommonController;
 use AppBundle\Entity\ChatMessage;
 use AppBundle\Entity\ChatPrivate;
 use AppBundle\Entity\Friends;
@@ -21,9 +21,15 @@ use AppBundle\Entity\Review;
 use AppBundle\Entity\User;
 use AppBundle\Entity\UsersList;
 use AppBundle\Entity\UsersListItem;
+use AppBundle\Repository\ChatMessageRepository;
+use AppBundle\Repository\ChatPrivateRepository;
+use AppBundle\Repository\FriendsRepository;
+use AppBundle\Repository\NotificationsRepository;
+use AppBundle\Repository\ReviewRepository;
 use AppBundle\Utils\Helper;
 use Doctrine\Common\Persistence\ObjectManager;
 use Exception;
+use Psr\Container\ContainerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -37,29 +43,22 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Pusher;
 use AppBundle\Controller\Constants\API_Credentials;
 
-
-class MovieController extends CommonController
+/**
+ * Class MovieController
+ * @package AppBundle\Controller\Movie
+ */
+class MovieController extends MoviesCommonController
 {
-
-    /**
-     * @var ObjectManager | Object
-     */
-    private $entityManager;
 
     /**
      * @var int
      */
-    private $userId;
+    protected $userId;
 
     /**
      * @var int
      */
     private $movieId;
-
-    /**
-     * @var Pusher\Pusher
-     */
-    private $pusher;
 
     /**
      * @var Helper
@@ -69,21 +68,22 @@ class MovieController extends CommonController
     /**
      * @Route("/movies/{movieId}", name="moviePage")
      * @param Request $request
-     * @param $movieId
+     * @param int $movieId
      * @return ResponseI
      * @throws Exception
      */
-    public function movieAction(Request $request,int $movieId): ResponseI {
+    public function movieAction(
+        Request $request,
+        int $movieId
+    ): ResponseI {
         $securityContext = $this->container->get('security.authorization_checker');
         if (!$securityContext->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
             return $this->redirectToRoute('fos_user_security_login');
         }
-        $this->movieId = (int)$movieId;
-        $this->entityManager = $this->getDoctrine()->getManager();
         $this->userId = $this->getUser()->getId();
+        $this->movieId = (int)$movieId;
         $this->setUnreadMovieNotificationsAsRead();
         $this->helper = new Helper();
-        $this->pusher = $this->getPusherInstance();
         if($request->isXmlHttpRequest()){
             $result = $this->handleAjax($request);
             return $result;

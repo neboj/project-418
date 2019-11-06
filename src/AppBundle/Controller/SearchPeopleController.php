@@ -17,6 +17,10 @@ use Symfony\Component\Serializer\Serializer;
 use Doctrine\ORM\Mapping as ORM;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
+/**
+ * Class SearchPeopleController
+ * @package AppBundle\Controller
+ */
 class SearchPeopleController extends \Symfony\Bundle\FrameworkBundle\Controller\Controller {
     /**
      * @Route("/search",name="search_people")

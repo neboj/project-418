@@ -22,6 +22,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\Mapping as ORM;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
+/**
+ * Class ProfileController
+ * @package AppBundle\Controller
+ */
 class ProfileController extends CommonController {
 
     /**

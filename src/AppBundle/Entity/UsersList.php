@@ -45,6 +45,22 @@ class UsersList
     private $is_private;
 
     /**
+     * UsersList constructor.
+     * @param $name
+     * @param $user
+     * @param $isPrivate
+     */
+    public function __construct(
+        $name,
+        $user,
+        $isPrivate
+    ){
+        $this->name = $name;
+        $this->user = $user;
+        $this->is_private = $isPrivate;
+    }
+
+    /**
      * @return mixed
      */
     public function getId()

@@ -87,16 +87,9 @@ class RegistrationController extends BaseController
                 $user1 = $em->getRepository(User::class)->find($id);
                 $user1->setProfileImage('so.jpg');
                 $em->persist($user1);
-                $list = new UsersList();
-                $list->setName('Seen');
-                $list->setUser($id);
-                $list->setIsPrivate(false);
+                $list = new UsersList('Seen', $id, false);
 
-                $list2 = new UsersList();
-                $list2->setName('Watch later');
-                $list2->setUser($id);
-                $list2->setIsPrivate(false);
-
+                $list2 = new UsersList('Watch later', $id, false);
 
                 $em->persist($list);
                 $em->persist($list2);

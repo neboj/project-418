@@ -87,10 +87,7 @@ class ProfileController extends CommonController {
                 ]);
 
                 if(!$postoji){
-                    $list = new UsersList();
-                    $list->setUser($id);
-                    $list->setName($request->request->get('ime_nove_liste'));
-                    $list->setIsPrivate(false);
+                    $list = new UsersList($request->request->get('ime_nove_liste'),$id, false);
 
                     $em->persist($list);
                     $em->flush();

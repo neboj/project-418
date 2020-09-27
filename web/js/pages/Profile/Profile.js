@@ -10,7 +10,7 @@ $("#input-list").keypress(function (event) {
             'korisnik': korisnik
         };
         $.ajax({
-            url: 'http://localhost/project-418/web/app_dev.php/profile/' + korisnik,
+            url: '/project-418/web/profile/' + korisnik,
             type: 'POST',
             data: eventData,
             success: function (data, status) {
@@ -47,7 +47,7 @@ $(document).on("click", ".delete-list", function (event) {
         'list_name_to_delete': real_name
     };
     $.ajax({
-        url: 'http://localhost/project-418/web/app_dev.php/profile/' + korisnik,
+        url: '/project-418/web/profile/' + korisnik,
         type: 'POST',
         data: eventData,
         success: function (data, status) {
@@ -69,7 +69,7 @@ $(document).on("click", ".delete-item", function (event) {
         'movie_id_to_delete': movie_id
     };
     $.ajax({
-        url: 'http://localhost/project-418/web/app_dev.php/profile/' + korisnik,
+        url: '/project-418/web/profile/' + korisnik,
         type: 'POST',
         data: eventData,
         success: function (data, status) {
@@ -87,7 +87,7 @@ $(document).on("click", ".list-switcher", function (event) {
         'list_id_for_privacy_change': list_id
     };
     $.ajax({
-        url: 'http://localhost/project-418/web/app_dev.php/profile/' + korisnik,
+        url: '/project-418/web/profile/' + korisnik,
         type: 'POST',
         data: eventData,
         success: function (data, status) {

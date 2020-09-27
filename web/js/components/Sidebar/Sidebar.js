@@ -59,7 +59,7 @@ $(document).on("click",".accept-friend",function (event) {
 
 
     $.ajax({
-        url: 'http://localhost/project-418/web/app_dev.php/friend/add',
+        url: '/project-418/web/friend/add',
         type: 'POST',
         data: eventData,
         success:function(data,status){

@@ -58,6 +58,7 @@ class MoviesCommonController extends CommonController
         $listID = $movieData['list'];
         $tmdbID = $movieData['tmdbid'];
         $movieId = $movieData['movie__id'];
+        $userId = $movieData['user'];
         $movieVoteAverage = $movieData['movie__vote_average'];
         $movieBackdropPath = $movieData['movie__backdrop_path'];
         $movieOverview = mb_strimwidth($movieData['movie__overview'],0,254,'utf-8');
@@ -70,13 +71,13 @@ class MoviesCommonController extends CommonController
             $this->entityManager->persist($movie);
         }
         $listItemMaxID = $this->entityManager->getRepository(UsersListItem::class)->getMaxID($listID);
-        $movieInPersonalList = $this->entityManager->getRepository(UsersListItem::class)->alreadyInList($this->userId,$listID,$tmdbID);
+        $movieInPersonalList = $this->entityManager->getRepository(UsersListItem::class)->alreadyInList($userId,$listID,$tmdbID);
         if(!$movieInPersonalList){
             $listItemID = $listItemMaxID[0]['maxID'] + 1;
             $item = new UsersListItem($listID, $listItemID, $tmdbID, $movieTitle);
             $privacy = $this->entityManager->getRepository(UsersList::class)->find($listID);
             if($privacy->getIsPrivate() == false){
-                $latestNews = new LatestNews($this->userId, false, false,  true, false, $listID, $tmdbID, new \DateTime());
+                $latestNews = new LatestNews($userId, false, false,  true, false, $listID, $tmdbID, new \DateTime());
                 $this->entityManager->persist($latestNews);
             }
             $this->entityManager->persist($item);

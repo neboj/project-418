@@ -64,7 +64,7 @@ $(window).scroll(function() {
                         "                                        </div>\n" +
                         "                                </div>\n" +
                         "                                <div class=\"movie-title-container\">\n" +
-                        "                                     <span class=\"movie-title\"><a href=\"/project-418/web/app_dev.php/movies/"+obj.results[i].id+"\">"+obj.results[i].title+"</a></span>\n" +
+                        "                                     <span class=\"movie-title\"><a href=\"/project-418/web/movies/"+obj.results[i].id+"\">"+obj.results[i].title+"</a></span>\n" +
                         "                                </div>\n" +
                         "\n" +
                         "\n" +

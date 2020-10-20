@@ -66,11 +66,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70bd7ee8-f27b-4a8a-91d0-5698b455b924" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/project-418.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/project-418.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/default/homepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/default/homepage.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/app_dev.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/app_dev.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login_content.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login_content.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/default/moviePage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/default/moviePage.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/default/movies.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/default/movies.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/default/moviesDark.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/default/moviesDark.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/js/pages/Movies/InfiniteScroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/pages/Movies/InfiniteScroll.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/js/pages/Movies/Movie/Movie.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/pages/Movies/Movie/Movie.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/js/pages/Movies/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/pages/Movies/Search.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,6 +195,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
@@ -331,7 +335,7 @@
       <workItem from="1602419883938" duration="646000" />
       <workItem from="1602780158442" duration="1857000" />
       <workItem from="1602930549018" duration="1931000" />
-      <workItem from="1603206860348" duration="1477000" />
+      <workItem from="1603206860348" duration="4045000" />
     </task>
     <servers />
   </component>
@@ -351,31 +355,41 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="566" y="93" key="CommitChangelistDialog2" timestamp="1601228775896">
+    <state x="566" y="93" key="CommitChangelistDialog2" timestamp="1603208526148">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="566" y="93" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603208526148" />
     <state x="566" y="93" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1601228775896" />
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1603207110051">
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1603208746659">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603207110051" />
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603208746659" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1602935689860">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602935689860" />
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1602417043740" />
-    <state x="981" y="227" key="RollbackChangesDialog" timestamp="1601228768698">
+    <state x="184" y="86" key="MergeDialog" timestamp="1603208554432">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="184" y="86" key="MergeDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603208554432" />
+    <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1603208554440">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603208554440" />
+    <state x="981" y="227" key="RollbackChangesDialog" timestamp="1603208524368">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="981" y="227" key="RollbackChangesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603208524368" />
     <state x="981" y="227" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601228768698" />
-    <state x="667" y="253" width="585" height="534" key="find.popup" timestamp="1603207517936">
+    <state x="667" y="253" width="587" height="534" key="find.popup" timestamp="1603210855130">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="667" y="253" width="585" height="534" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603207517936" />
-    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup" timestamp="1603207693345">
+    <state x="667" y="253" width="587" height="534" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603210855130" />
+    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup" timestamp="1603210522296">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603207693345" />
+    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603210522296" />
     <state x="616" y="173" width="672" height="676" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601229371608" />
   </component>
   <component name="XDebuggerManager">

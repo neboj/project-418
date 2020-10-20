@@ -24,7 +24,7 @@ document.getElementById('src-ppl').addEventListener('keypress', function (ev) {
             "    </div>\n" +
             "  </div></li>";
         $.ajax({
-            url: searchEndpoint, type: 'POST', data: eventData,
+            url: '/project-418/web/search', type: 'POST', data: eventData,
             success: function (data, status) {
                 console.log(data);
                 let users = JSON.parse(data)['responseData'];

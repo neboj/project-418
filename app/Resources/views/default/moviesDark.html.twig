@@ -53,7 +53,7 @@
                                                 <div class="dot-open-menu" id="dots-{{ i['id'] }}" >
                                                     <ul >
                                                         {% for y in lists %}
-                                                         <li><span onclick="Materialize.toast('Added {{ i['title'] }} to {{ y.name }}', 4000)" class="add-to-list" id="user{{ app.user.id }}-list{{ y.id }}-movie{{ i['id'] }}-title{{ i['title'] }}"
+                                                         <li><span onclick='Materialize.toast("Added {{ i['title'] }} to {{ y.name }}", 4000)' class="add-to-list" id="user{{ app.user.id }}-list{{ y.id }}-movie{{ i['id'] }}-title{{ i['title'] }}"
                                                                    data-movie__id="{{ i['id'] }}"
                                                                    data-movie__title="{{ i['title'] }}"
                                                                    data-movie__poster_path="{{ i['poster_path'] }}"
@@ -69,7 +69,7 @@
                                         </div>
                                 </div>
                                 <div class="movie-title-container">
-                                     <span class="movie-title"><a href="/project-418/web/app_dev.php/movies/{{ i['id'] }}">{{ i['title'] }}</a></span>
+                                     <span class="movie-title"><a href="/project-418/web/movies/{{ i['id'] }}">{{ i['title'] }}</a></span>
                                 </div>
 
 

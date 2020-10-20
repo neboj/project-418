@@ -43,7 +43,7 @@
                             <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Add to</a>
                             <ul id='dropdown1' class='dropdown-content'>
                                 {% for y in lists %}
-                                    <li><span onclick="Materialize.toast('Added {{ info['title'] }} to {{ y.name }}', 4000)"><span  class="add-to-list1" id="user{{ app.user.id }}-list{{ y.id }}-movie{{ info['id'] }}-title{{ info['title'] }}"
+                                    <li><span onclick='Materialize.toast("Added {{ info['title'] }} to {{ y.name }}", 4000)'><span  class="add-to-list1" id="user{{ app.user.id }}-list{{ y.id }}-movie{{ info['id'] }}-title{{ info['title'] }}"
                                             data-movie__id="{{ info['id'] }}"
                                             data-movie__title="{{ info['title'] }}"
                                             data-movie__poster_path="{{ info['poster_path'] }}"

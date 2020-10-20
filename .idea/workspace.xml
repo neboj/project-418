@@ -1,28 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:bundler" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:bundler" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:pusher-realtime-chat-widget" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:bundler" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:pusher-realtime-chat-widget" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:src" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:bundler" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:pusher-realtime-chat-widget" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:src" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:ruby-sinatra" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:feature" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="70bd7ee8-f27b-4a8a-91d0-5698b455b924" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/AppBundle/Controller/Movies/MoviesCommonController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AppBundle/Pusher/Pusher.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/project-418.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/project-418.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/services.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/services.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Component/HttpFoundation/RedirectResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Component/HttpFoundation/RedirectResponse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ChatController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ChatController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/CommonController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/CommonController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/Constants/Pusher/Pusher_Credentials.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Pusher/Pusher_Credentials.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/Movie/Constants/Constants.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/Movies/Constants/MovieConstants.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/Movie/MovieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/Movies/MovieController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/Movies/Constants/Constants.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/Movies/Constants/MoviesConstants.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/Movies/MoviesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/Movies/MoviesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ProjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ProjectController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/RegistrationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/SearchPeopleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/SearchPeopleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/EventListener/RedirectAfterRegistrationSubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/EventListener/RedirectAfterRegistrationSubscriber.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Models/Movie/MovieID.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Models/Movie/MovieID.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/ValueObject/Exceptions/InvalidValueException.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/ValueObject/Exceptions/InvalidValueException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/default/homepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/default/homepage.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app_dev.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/app_dev.php" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,9 +79,7 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution>
-      <executable />
-    </execution>
+    <execution />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -130,16 +177,28 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1RdjOlhuA1YqZOxsWUeOMG7hJAf" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SearchEverywhereHistoryKey" value="styleda&#9;FILE&#9;file://C:/wamp/www/project-418/web/css/styleDark.css&#10;styl&#9;FILE&#9;file://C:/wamp/www/project-418/web/css/styleDark.css&#10;pusher.js&#9;FILE&#9;file://C:/wamp/www/project-418/web/js/pusher.js&#10;styledar&#9;FILE&#9;file://C:/wamp/www/project-418/web/css/styleDark.css&#10;time_a&#9;FILE&#9;file://C:/wamp/www/project-418/web/js/time_ago.js&#10;project&#9;FILE&#9;file://C:/wamp/www/project-418/src/AppBundle/Controller/ProjectController.php&#10;Styl&#9;FILE&#9;file://C:/wamp/www/project-418/web/css/styleDark.css&#10;time_ag&#9;FILE&#9;file://C:/wamp/www/project-418/web/js/time_ago.js&#10;pusher&#9;FILE&#9;file://C:/wamp/www/project-418/web/js/pusher.js&#10;ProjectC&#9;FILE&#9;file://C:/wamp/www/project-418/src/AppBundle/Controller/ProjectController.php&#10;RegistrationContro&#9;FILE&#9;file://C:/wamp/www/project-418/src/AppBundle/Controller/RegistrationController.php&#10;bravo&#9;null&#9;null&#10;registration&#9;FILE&#9;file://C:/wamp64/www/project-418/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php&#10;fosuserbundle.en&#9;FILE&#9;file://C:/wamp64/www/project-418/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.en.yml&#10;layou&#9;FILE&#9;file://C:/wamp64/www/project-418/vendor/friendsofsymfony/user-bundle/Resources/views/layout.html.twig&#10;register.&#9;FILE&#9;file://C:/wamp64/www/project-418/vendor/friendsofsymfony/user-bundle/Resources/views/Registration/register.html.twig&#10;layout.html&#9;FILE&#9;file://C:/wamp64/www/project-418/vendor/friendsofsymfony/user-bundle/Resources/views/layout.html.twig&#10;securitycontro&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/workspace" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Frontend/Flexbox" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/js" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/AppBundle/Controller/Movies" />
       <recent name="$PROJECT_DIR$/src/AppBundle/Controller/Movies/Constants" />
@@ -147,21 +206,6 @@
       <recent name="$PROJECT_DIR$/src/AppBundle/Models" />
       <recent name="$PROJECT_DIR$/src/AppBundle" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/web/js" />
-    </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -283,24 +327,56 @@
       <workItem from="1572514155027" duration="10506000" />
       <workItem from="1572857117618" duration="344000" />
       <workItem from="1573032122411" duration="10592000" />
+      <workItem from="1602416975292" duration="672000" />
+      <workItem from="1602419883938" duration="646000" />
+      <workItem from="1602780158442" duration="1857000" />
+      <workItem from="1602930549018" duration="1931000" />
+      <workItem from="1603206860348" duration="1477000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="566" y="93" key="CommitChangelistDialog2" timestamp="1601228775896">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="566" y="93" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1601228775896" />
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1603207110051">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603207110051" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1602935689860">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602935689860" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1602417043740" />
+    <state x="981" y="227" key="RollbackChangesDialog" timestamp="1601228768698">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="981" y="227" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601228768698" />
+    <state x="667" y="253" width="585" height="534" key="find.popup" timestamp="1603207517936">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="667" y="253" width="585" height="534" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603207517936" />
+    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup" timestamp="1603207693345">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603207693345" />
+    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601229371608" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
